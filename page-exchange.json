@@ -1435,7 +1435,14 @@
                     "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/MediaWiki%2FCitoid-template-type-map.json.mediawiki"
                 }                
             ],
-            "requiredExtensions": []
+            "requiredExtensions": [
+                "Cite",
+                "ParserFunctions",
+                "Scribunto",
+                "TemplateData",
+                "TemplateStyles",
+                "VisualEditor"
+            ]
         }
     }
 }
