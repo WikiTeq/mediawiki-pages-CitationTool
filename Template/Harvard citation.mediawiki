@@ -1,0 +1,6 @@
+<includeonly>{{#invoke:Footnotes|harvard_citation
+|bracket_left= (
+|bracket_right = )
+}}</includeonly><noinclude>
+{{documentation}}
+</noinclude>

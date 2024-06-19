@@ -1,0 +1,8 @@
+{{#switch:{{{label|}}}
+ |={{#ifeq:{{yesno-no|{{{lc}}}}}|no|S|s}}ee the monthly [https://bambots.brucemyers.com/TemplateParam.php?wiki=enwiki&template={{Urlencode:{{#if:{{{1|}}}|{{ROOTPAGENAME:{{{1|}}}}}|{{ROOTPAGENAME}}}}}} parameter usage report] for {{#if:{{{1|}}}|[[Template:{{ROOTPAGENAME:{{{1|}}}}}]]|this template}}.
+ |None|none=[https://bambots.brucemyers.com/TemplateParam.php?wiki=enwiki&template={{Urlencode:{{#if:{{{1|}}}|{{ROOTPAGENAME:{{{1|}}}}}|{{ROOTPAGENAME}}}}}} Parameter usage report]
+ |for|For=[https://bambots.brucemyers.com/TemplateParam.php?wiki=enwiki&template={{Urlencode:{{#if:{{{1|}}}|{{ROOTPAGENAME:{{{1|}}}}}|{{ROOTPAGENAME}}}}}} Parameter usage report] for {{#if:{{{1|}}}|[[Template:{{ROOTPAGENAME:{{{1|}}}}}]]|[[Template:{{ROOTPAGENAME}}]]}}.
+ |#default=[https://bambots.brucemyers.com/TemplateParam.php?wiki=enwiki&template={{Urlencode:{{#if:{{{1|}}}|{{ROOTPAGENAME:{{{1|}}}}}|{{ROOTPAGENAME}}}}}} {{{label|}}}]
+}}<noinclude>
+{{documentation}}
+</noinclude>

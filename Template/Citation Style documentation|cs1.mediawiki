@@ -1,0 +1,68 @@
+{{Infobox
+|bodystyle   =
+|name        = Citation Style documentation/cs1
+|title       = {{cs1}} templates
+|titlestyle  =
+|headerstyle =
+|labelstyle  =  width:50%; font-size:85%
+|datastyle   = font-size:85%
+|label1  = {{tl|Cite arXiv}}
+|data1   = [[arXiv]] preprints
+|label2  = {{tl|Cite AV media}}
+|data2   = audio and visual media
+|label3  = {{tl|Cite AV media notes}}
+|data3   = AV media liner notes
+|label4  = {{tl|Cite bioRxiv}}
+|data4   = [[bioRxiv]] preprints
+|label5  = {{tl|Cite book}}
+|data5   = books and chapters
+|label6  = {{tl|Cite citeseerx}}
+|data6   = [[CiteSeerX]] papers
+|label7  = {{tl|Cite conference}}
+|data7   = conference papers
+|label8  = {{tl|Cite encyclopedia}}
+|data8   = edited collections
+|label9  = {{tl|Cite episode}}
+|data9   = radio or TV episodes
+|label10 = {{tl|Cite interview}}
+|data10  = interviews
+|label11 = {{tl|Cite journal}}
+|data11  = academic journals
+|label12 = {{tl|Cite magazine}}
+|data12  = magazines, periodicals
+|label13 = {{tl|Cite mailing list}}
+|data13  = public mailing lists
+|label14 = {{tl|Cite map}}
+|data14  = maps
+|label15 = {{tl|Cite news}}
+|data15  = news articles
+|label16 = {{tl|Cite newsgroup}}
+|data16  = online newsgroups
+|label17 = {{tl|Cite podcast}}
+|data17  = podcasts
+|label18 = {{tl|Cite press release}}
+|data18  = press releases
+|label19 = {{tl|Cite report}}
+|data19  = reports
+|label20 = {{tl|Cite serial}}
+|data20  = audio or video serials
+|label21 = {{tl|Cite sign}}
+|data21  = signs, plaques
+|label22 = {{tl|Cite speech}}
+|data22  = speeches
+|label23 = {{tl|Cite ssrn}}
+|data23  = [[SSRN]] papers
+|label24 = {{tl|Cite techreport}}
+|data24  = technical reports
+|label25 = {{tl|Cite thesis}}
+|data25  = theses
+|label26 = {{tl|Cite web}}
+|data26  = web sources not covered by the above
+|label27 = See also
+|data27  =
+{{nowrap|''[[:Category:Citation Style 1 specific-source templates|Specific-source templates]]''}}<br/>
+''[[:Category:Citation templates that wrap CS1 templates|Wrapper templates]]''
+}}<noinclude>{{documentation|content=
+==See also==
+*{{tl|Citation Style 1}}
+}}</noinclude>

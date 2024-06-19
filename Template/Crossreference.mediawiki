@@ -1,0 +1,4 @@
+{{Hatnote inline|1={{{1|{{{text|{{{content|<noinclude>sample content</noinclude>}}}}}}}}}|extraclasses={{{class|{{{extraclasses|}}}}}}|selfref={{#if:{{{selfref|{{{printworthy|{{{unprintworthy|}}}}}}}}}||yes}}}}<noinclude>
+{{documentation}}
+<!-- Categories go on the /doc subpage, and interwikis go on Wikidata. -->
+</noinclude>

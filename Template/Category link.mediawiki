@@ -1,0 +1,3 @@
+{{#ifeq:{{#titleparts:{{PAGENAME}}|1}}|Stub types for deletion |[[:Category:{{{1}}}|Cat:{{{1}}}]] | [[:Category:{{{1}}}|{{{2|Category:{{{1}}}}}}]]{{#ifeq:{{Yesno|{{{count|no}}}}}|yes|<small> {{#ifexpr:{{PAGESINCAT:{{{1}}}|{{UC:{{{count_type|ALL}}}}}|R}}>={{{backlog|{{#expr:{{PAGESINCAT:{{{1}}}|{{UC:{{{count_type|ALL}}}}}|R}}+1}}}}}|<span style="font-weight: bold; color: #DD0000;">}}(&thinsp;{{PAGESINCAT:{{{1}}}|{{UC:{{{count_type|ALL}}}}}}}&thinsp;){{#ifexpr:{{PAGESINCAT:{{{1}}}|{{UC:{{{count_type|ALL}}}}}|R}}>={{{backlog|{{#expr:{{PAGESINCAT:{{{1}}}|{{UC:{{{count_type|ALL}}}}}|R}}+1}}}}}|</span>}}</small>}}}}<noinclude>
+{{Documentation}}
+</noinclude>

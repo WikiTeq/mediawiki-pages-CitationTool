@@ -1,0 +1,9 @@
+<includeonly>{{#ask:
+[[Link type::{{{2}}}]]
+[[Reference page::Reference:{{{1}}}]]
+|?{{{3}}}=
+|mainlabel=-
+|limit=1
+|searchlabel=
+|default=
+}}</includeonly>

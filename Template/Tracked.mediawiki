@@ -1,0 +1,11 @@
+<div role="note" style="float:{{{float|right}}}; clear:{{{float|right}}}; border:1px solid #72777d; border-radius: 2px; background-color:#eaecf0; font-size:85%; text-align:center; padding:0.5em; margin-left:1em; margin-bottom:1em; width:12em" class="plainlinks {{#if:{{{1|}}}|mw-trackedTemplate}}">Tracked in [[phabricator:|Phabricator]]<br />{{#if:{{{1|}}}|'''[[phabricator:{{ #ifeq: {{padleft: | 1 | {{ uc: {{{1}}} }} }} | T | {{ uc: {{{1}}} }} | T{{ #expr: {{{1}}} + 2000 }} }}|<span class="trakfab-{{ #ifeq: {{padleft: | 1 | {{ uc: {{{1}}} }} }} | T | {{ uc: {{{1}}} }} | T{{ #expr: {{{1}}} + 2000 }} }}"> Task {{ #ifeq: {{padleft: | 1 | {{ uc: {{{1}}} }} }} | T | {{ uc: {{{1}}} }} | T{{ #expr: {{{1}}} + 2000 }} }}</span>]]'''}}
+{{#switch:{{lc:{{{2|}}}}}
+  |resolved|fixed=<span style="color:green; font-weight:bold; text-transform:uppercase">Resolved</span>
+  |invalid=<span style="color:black; font-weight:bold; text-transform:uppercase">Invalid</span>
+  |duplicate=<span style="color:black; font-weight:bold; text-transform:uppercase">Duplicate</span>
+  |declined|wontfix=<span style="color:black; font-weight:bold; text-transform:uppercase">Declined</span>
+  |stalled|later=<span style="color:black; font-weight:bold; text-transform:uppercase">Stalled</span>
+  |open=<span style="color:black; font-weight:bold; text-transform:uppercase">Open</span>
+}}</div><noinclude>
+{{documentation}}
+</noinclude>

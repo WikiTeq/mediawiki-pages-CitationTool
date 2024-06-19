@@ -1,0 +1,16 @@
+* '''{{#switch:{{{title_title}}}
+| booktitle = booktitle
+| #default = chapter}}''': The chapter heading of the source. May be wikilinked or may use '''chapter-url''', but not both. {{#switch:{{BASEPAGENAME}}
+|Cite journal
+|Cite web
+|Cite news
+|Cite press release
+|Cite conference
+|Cite podcast = Not displayed even if set
+|#default = Displays in quotes}}.
+** '''script-chapter''': Chapter heading for languages that do not use a Latin-based script (Arabic, Chinese, Cyrillic, Greek, Hebrew, Japanese, Korean, etc); follows [[WP:ROMAN|Romanization]] defined in '''chapter'''. Should be prefixed with an [[List of ISO 639-1 codes|ISO 639-1]] two-character code to help browsers properly display the script:
+**:<code><nowiki>... |chapter=Tōkyō tawā |script-chapter=ja:東京タワー |trans-chapter=Tokyo Tower ...</nowiki></code>
+** '''trans-chapter''': English translation of the chapter heading, if the source cited is in a foreign language. Displays in square brackets after the '''{{#switch:{{{title_title}}}
+| booktitle = booktitle
+| #default = chapter}}''' field; if '''chapter-url''' is defined, then '''trans-chapter''' is included in the link. Use of the '''language''' parameter is recommended.
+* '''contribution''': A separately-authored part of '''author'''{{'}}s book. May be wikilinked or may use '''contribution-url''', but not both. Values of <code>Afterword</code>, <code>Foreword</code>, <code>Introduction</code>, or <code>Preface</code> will display unquoted; any other value will display in quotation marks. The author of the contribution is given in '''contributor'''.

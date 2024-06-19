@@ -1,0 +1,434 @@
+<noinclude>{{pp-protected|reason=Persistent [[WP:Disruptive editing|disruptive editing]] Protecting high visibility template.|small=yes}}</noinclude>{{Documentation subpage}}
+<!-- Categories go where indicated at the bottom of this page, please; interwikis go to Wikidata (see also: [[Wikipedia:Wikidata]]). -->
+{{high-risk| 1000000+ }}
+{{csdoc|lua}}
+{{csdoc|cs1}}
+{{csdoc|lead|books}} When citing an article in a periodical, use {{tl|cite journal}}. For conference papers, use {{tl|cite conference}}. For edited collections, use {{tl|cite encyclopedia}}. For theses, use {{tl|cite thesis}}.
+
+==Usage==
+{{csdoc|usage}}
+{{csdoc|usage common}}
+
+; To cite a book with a credited author
+: <code><nowiki>{{cite book |last= |first= |author-link= |date= |title= |url= |location= |publisher= |page= |isbn=}}</nowiki></code>
+; To cite a book with no credited author
+: <code><nowiki>{{cite book |author=<!--Staff writer(s); no by-line.--> |title= |url= |location= |publisher= |page= |date= |isbn=}}</nowiki></code>
+; To cite an online book that has been archived
+: <code><nowiki>{{cite book |last= |first= |date= |title= |url= |url-status= |location= |publisher= |isbn= |archive-url= |archive-date=}}</nowiki></code>
+; To cite a book written in a foreign language
+: <code><nowiki>{{cite book |last= |first= |date= |title= |trans-title= |url= |language= |location= |publisher= |isbn=}}</nowiki></code>
+; To cite and quote an archived, two-author, foreign language book re-published as a PDF on an information aggregation service requiring a subscription
+: <code><nowiki>{{cite book |last1= |first1= |last2= |first2= |date= |title= |trans-title= |url= |url-status= |format= |language= |location= |publisher= |isbn= |archive-url= |archive-date= |via= |subscription= |quote=}}</nowiki></code>
+{{end}}
+
+{{csdoc|usage vertical common}}
+<pre style="margin:0px; border:none; white-space:pre;">
+{{cite book
+ |last=
+ |first=
+ |author-link=
+ |date=
+ |title=
+ |url=
+ |location=
+ |publisher=
+ |page= <!-- or pages= -->
+ |isbn=
+}}
+</pre>
+{{end}}
+
+{{csdoc|usage full}}
+<code><nowiki>{{cite book |last1= |first1= |author-link1= |last2= |first2= |author-link2= |last3= |first3= |author-link3= |last4= |first4= |author-link4= |last5= |first5= |author-link5= |display-authors= |author-mask= |last-author-amp= |translator-last1= |translator-first1= |translator-link1= |translator-mask1= |date= |year= |orig-year= |chapter= |script-chapter= |trans-chapter= |chapter-url= |chapter-format= |editor1-last= |editor1-first= |editor1-link= |editor2-last= |editor2-first= |editor2-link= |editor3-last= |editor3-first= |editor3-link= |editor4-last= |editor4-first= |editor4-link= |editor5-last= |editor5-first= |editor5-link= |display-editors= |title= |script-title= |trans-title= |url= |url-status= |format= |type= |series= |language= |volume= |others= |edition= |location= |publisher= |publication-date= |page= |pages= |at= |nopp= |arxiv= |asin= |bibcode= |doi= |doi-broken-date= |isbn= |issn= |jfm= |jstor= |lccn= |mr= |oclc= |ol= |osti= |pmc= |pmid= |rfc= |ssrn= |zbl= |id= |archive-url= |archive-date= |access-date= |via= |registration= |subscription= |lay-summary= |lay-source= |lay-date= |quote= |name-list-format= |mode= |postscript= |ref=}}</nowiki></code>
+{{end}}
+
+{| class="wikitable"
+|+Full parameter set in vertical format
+! Parameters !! Prerequisites !! Brief instructions / notes !! Vertical list
+|-
+|| last1 ||  || may also use "last"; for additional authors, "last2", "last3", etc. || rowspan="79" style="vertical-align:top;" | <pre style="margin:0px; border:none;">
+{{cite book
+|last1=
+|first1=
+|author-link1=
+|author-mask1=
+|last2=
+|first2=
+|display-authors=
+|last-author-amp=
+|translator-last1=
+|translator-first1=
+|translator-link1=
+|translator-mask1=
+|date=
+|year=
+|orig-year=
+|chapter=
+|script-chapter=
+|trans-chapter=
+|chapter-url=
+|chapter-format=
+|editor1-last=
+|editor1-first=
+|editor1-link=
+|editor1-mask=
+|display-editors=
+|title=
+|script-title=
+|trans-title=
+|url=
+|url-status=
+|format=
+|type=
+|series=
+|language=
+|volume=
+|others=
+|edition=
+|location=
+|publisher=
+|publication-date=
+|page=
+|pages=
+|at=
+|nopp=
+|arxiv=
+|asin=
+|bibcode=
+|doi=
+|doi-broken-date=
+|isbn=
+|issn=
+|jfm=
+|jstor=
+|lccn=
+|mr=
+|oclc=
+|ol=
+|osti=
+|pmc=
+|pmid=
+|rfc=
+|ssrn=
+|zbl=
+|id=
+|archive-url=
+|archive-date=
+|access-date=
+|via=
+|registration=
+|subscription=
+|lay-summary=
+|lay-source=
+|lay-date=
+|quote=
+|name-list-format=
+|mode=
+|postscript=
+|ref=
+}}
+</pre>
+|-
+| first1 || last or last1 || may also use "first"; for additional authors, "first2", "first3", etc.
+|-
+|| author-link1 || last or last1 || may also use "author-link"
+|-
+|| author-mask1 || last or last1 || may also use "author-mask"
+|-
+|| last2 || last1 ||
+|-
+|| first2 || last2 ||
+|-
+|| display-authors || last or last1 ||
+|-
+|| last-author-amp ||  last or last1 ||
+|-
+|| translator-last1 || || may also use "translator-last"; for additional translators, "translator-last2, etc.
+|-
+|| translator-first1 || translator-last or translator-last1 ||
+|-
+|| translator-link1 || translator-last or translator-last1 ||
+|-
+|| translator-mask1 || translator-last or translator-last1 ||
+|-
+|| date || ||
+|-
+|| year || ||
+|-
+|| orig-year || year or date ||
+|-
+|| chapter || || This should be the title of the chapter cited. Do not wikilink "chapter" if "chapterurl" is provided
+|-
+|| script-chapter || ||
+|-
+|| trans-chapter || chapter  or script-chapter ||
+|-
+|| chapter-url || chapter or script-chapter ||
+|-
+|| chapter-format || chapter-url ||
+|-
+|| editor1-last ||   || may also use "editor-last"
+|-
+|| editor1-first ||  editor1-last || may also use 'editor-first"
+|-
+|| editor1-link ||  editor1-last || may also use "editor-link"
+|-
+|| editor1-mask ||  editor1-last
+|-
+|| display-editors || ||
+|-
+|| title || ||
+|-
+|| script-title || ||
+|-
+|| trans-title || title or script-title ||
+|-
+|| url || title or script-title ||
+|-
+|| url-status || ||
+|-
+|| format || url ||
+|-
+|| type || ||
+|-
+|| series || ||
+|-
+|| language || ||
+|-
+|| volume || ||
+|-
+|| others || ||
+|-
+|| edition || || Ordinal number
+|-
+|| location || publisher ||
+|-
+|| publisher || ||
+|-
+|| publication-date || ||
+|-
+|| page || || choose one: "page", "pages", or "at"
+|-
+|| pages || || choose one: "page", "pages", or "at". Use when content on multiple pages supports the article text.
+|-
+|| at || || choose one: "page", "pages", or "at"
+|-
+|| nopp || page or pages || set nopp to "yes" to suppress the "p." or "pp." before page numbers
+|-
+|| arxiv || ||
+|-
+|| asin || ||
+|-
+|| bibcode || ||
+|-
+|| doi || ||
+|-
+|| doi-broken-date ||  doi ||
+|-
+|| isbn || || '''always include ISBN''', if one has been assigned
+|-
+|| issn || || 
+|-
+|| jfm || ||
+|-
+|| jstor || ||
+|-
+|| lccn || ||
+|-
+|| mr || ||
+|-
+|| oclc || ||
+|-
+|| ol || ||
+|-
+|| osti || ||
+|-
+|| pmc || ||
+|-
+|| pmid || ||
+|-
+|| rfc || ||
+|-
+|| ssrn || ||
+|-
+|| zbl || ||
+|-
+|| id || ||
+|-
+|| archive-url ||  archive-date, url ||
+|-
+|| archive-date ||  archive-url ||
+|-
+|| access-date || url ||
+|-
+|| via || ||
+|-
+|| registration || ||
+|-
+|| subscription || ||
+|-
+|| lay-summary || ||
+|-
+|| lay-source || lay-summary ||
+|-
+|| lay-date || lay-summary ||
+|-
+|| quote || ||
+|-
+|| name-list-format || || <code>vanc</code> to emulate [[Vancouver style]]
+|-
+|| mode || || <code>cs1</code> or <code>cs2</code>
+|-
+|| postscript || ||
+|-
+|| ref || ||
+|-
+| colspan="4" style="text-align: center " | If a field name is listed in the '''Prerequisites''' column it is a prerequisite for the field to the left.
+|}
+
+==Examples==
+{{markup2|t=Title
+|m=<nowiki>{{cite book |title=Mysterious Book}}</nowiki>
+|r={{cite book |title=Mysterious Book}}
+}}
+{{markup2|t=Title and year
+|m=<nowiki>{{cite book |title=Mysterious Book |date=1901}}</nowiki>
+|r={{cite book |title=Mysterious Book |date=1901}}
+}}
+{{markup2|t=Basic usage (single author)
+|m=<nowiki>{{cite book |last=Bloggs |first=Joe |authorlink=Joe Bloggs |date=1974 |title=Book of Bloggs}}</nowiki>
+|r={{cite book |last=Bloggs |first=Joe |authorlink=Joe Bloggs |date=1974 |title=Book of Bloggs}}
+}}
+{{markup2|t=Basic usage (two authors)
+|m=<nowiki>{{cite book |last1=Bloggs |first1=Joe |authorlink1=Joe Bloggs |last2=Bloggs |first2=Fred |authorlink2=Fred Bloggs |date=1974 |title=Book of Bloggs}}</nowiki>
+|r={{cite book |last1=Bloggs |first1=Joe |authorlink1=Joe Bloggs |last2=Bloggs |first2=Fred |authorlink2=Fred Bloggs |date=1974 |title=Book of Bloggs}}
+}}
+{{markup2|t=Basic usage with url (and access-date) and edition
+|m=<nowiki>{{cite book |last=Bloggs |first=Joe |authorlink=Joe Bloggs |date=1974 |title=Book of Bloggs |edition=1st |url=http://en.wikipedia.org/ |access-date=February 17, 2006}}</nowiki>
+|r={{cite book |last=Bloggs |first=Joe |authorlink=Joe Bloggs |date=1974 |title=Book of Bloggs |edition=1st |url=http://en.wikipedia.org/ |access-date=February 17, 2006}}
+}}{{anchor|different authors}}
+{{markup2|t=Citing a chapter in a book with different authors for different chapters and an editor
+|m=<nowiki>{{cite book |last=Bloggs |first=Fred |editor-last=Doe |editor-first=John |title=Big Compilation Book with Many Chapters and Distinct Chapter Authors |publisher=Book Publishers |date=January 1, 2001 |pages=100–110 |chapter=Chapter 2: The History of the Bloggs Family |isbn=978-1-234-56789-7}}</nowiki>
+|r={{cite book |last=Bloggs |first=Fred |editor-last=Doe |editor-first=John |title=Big Compilation Book with Many Chapters and Distinct Chapter Authors |publisher=Book Publishers |date=January 1, 2001 |pages=100–110 |chapter=Chapter 2: The History of the Bloggs Family |isbn=978-1-234-56789-7}}
+}}
+{{markup2|t=Citing a chapter in a book with two joint authors and an editor
+|m=<nowiki>{{cite book |last1=Bloggs |first1=Joe |last2=Egg |first2=Fred |editor-last=Doe |editor-first=John |title=Big Book with Many Chapters and Two Co-authors |publisher=Book Publishers |date=January 1, 2001 |orig-year=1st pub. 1986 |pages=100–110 |chapter=Chapter 6: Getting There |chapterurl=http://en.wikipedia.org/ |isbn=978-1-234-56789-7 |lastauthoramp=y}}</nowiki>
+|r={{cite book |last1=Bloggs |first1=Joe |last2=Egg |first2=Fred |editor-last=Doe |editor-first=John |title=Big Book with Many Chapters and Two Co-authors |publisher=Book Publishers |date=January 1, 2001 |orig-year=1st pub. 1986 |pages=100–110 |chapter=Chapter 6: Getting There |chapterurl=http://en.wikipedia.org/ |isbn=978-1-234-56789-7 |lastauthoramp=y}}
+}}
+{{markup2|t=Three authors, title with a piped wikilink, edition
+|m=<nowiki>{{cite book |last1=Bloggs |first1=Joe |authorlink1=Joe Bloggs |last2=Smith |first2=John |last3=Smythe |first3=Jim |title=[[A Thousand Acres|1000 Acres]] |edition=2nd}}</nowiki>
+|r={{cite book |last1=Bloggs |first1=Joe |authorlink1=Joe Bloggs |last2=Smith |first2=John |last3=Smythe |first3=Jim |title=[[A Thousand Acres|1000 Acres]] |edition=2nd}}
+}}
+{{markup2|t=Complex usage showing effect of using volume parameter and lastauthoramp parameter (without volume and lastauthoramp)
+|m=<nowiki>{{cite book |last1=Playfair |first1=I.S.O. |authorlink1=Ian Stanley Ord Playfair |last2=Stitt |first2=G.M.S. |last3=Molony |first3=C.J.C. |last4=Toomer |first4=S.E. |editor-last=Butler |editor-first=J.R.M. |series=History of the Second World War, United Kingdom Military Series |title=Mediterranean and Middle East. Volume I: The Early Successes Against Italy (to May 1941) |publisher=Naval & Military Press |location=Uckfield, East Sussex |date=2007 |orig-year=1st pub. [[HMSO]]:1954 |isbn=1-845740-65-3}}</nowiki>
+|r={{cite book |last1=Playfair |first1=I.S.O. |authorlink1=Ian Stanley Ord Playfair |last2=Stitt |first2=G.M.S. |last3=Molony |first3=C.J.C. |last4=Toomer |first4=S.E. |editor-last=Butler |editor-first=J.R.M. |series=History of the Second World War, United Kingdom Military Series |title=Mediterranean and Middle East. Volume I: The Early Successes Against Italy (to May 1941) |publisher=Naval & Military Press |location=Uckfield, East Sussex |date=2007 |orig-year=1st pub. [[HMSO]]:1954 |isbn=1-845740-65-3}}
+}}
+{{markup2|t=Complex usage showing effect of using volume parameter and lastauthoramp parameter (with volume and lastauthoramp)
+|m=<nowiki>{{cite book |last1=Playfair |first1=I.S.O. |authorlink1=Ian Stanley Ord Playfair |last2=Stitt |first2=G.M.S. |last3=Molony |first3=C.J.C. |last4=Toomer |first4=S.E. |editor-last=Butler |editor-first=J.R.M. |series=History of the Second World War, United Kingdom Military Series |title=Mediterranean and Middle East |volume=Volume I: The Early Successes Against Italy (to May 1941) |publisher=Naval & Military Press |location=Uckfield, East Sussex |date=2007 |orig-year=1st pub. [[HMSO]]:1954 |isbn=1-845740-65-3 |lastauthoramp=y}}</nowiki>
+|r={{cite book |last1=Playfair |first1=I.S.O. |authorlink1=Ian Stanley Ord Playfair |last2=Stitt |first2=G.M.S. |last3=Molony |first3=C.J.C. |last4=Toomer |first4=S.E. |editor-last=Butler |editor-first=J.R.M. |series=History of the Second World War, United Kingdom Military Series |title=Mediterranean and Middle East |volume=Volume I: The Early Successes Against Italy (to May 1941) |publisher=Naval & Military Press |location=Uckfield, East Sussex |date=2007 |orig-year=1st pub. [[HMSO]]:1954 |isbn=1-845740-65-3 |lastauthoramp=y}}
+}}
+{{markup2|t=Date without day, wikilinked title and publisher, pages, edition, location
+|m=<nowiki>{{cite book |last1=Cordell |first1=Bruce R. |last2=Grubb |first2=Jeff |last3=Noonan |first3=David |date=September 2001 |title=[[Manual of the Planes]] |edition=3rd |publisher=Wizards of the Coast |location=Renton, Washington |isbn=0-7869-1850-0 |pages=134–137}}</nowiki>
+|r={{cite book |last1=Cordell |first1=Bruce R. |last2=Grubb |first2=Jeff |last3=Noonan |first3=David |date=September 2001 |title=[[Manual of the Planes]] |edition=3rd |publisher=Wizards of the Coast |location=Renton, Washington |isbn=0-7869-1850-0 |pages=134–137}}
+}}
+{{markup2|t=Other language
+|m=<nowiki>{{cite book |last=Bloggs |first=Jean |date=1974 |title=Livre de Bloggs |edition=1st |language=French |trans-title=Book of Bloggs |url=http://en.wikipedia.org/ |access-date=February 17, 2006}}</nowiki>
+|r={{cite book |last=Bloggs |first=Jean |date=1974 |title=Livre de Bloggs |edition=1st |language=French |trans-title=Book of Bloggs |url=http://en.wikipedia.org/ |access-date=February 17, 2006}}
+}}
+{{markup2|t=Using a [[Digital object identifier|DOI]]
+|m=<nowiki>{{cite book |last=Mumford |first=David |authorlink=David Mumford |date=1999 |title=The Red Book of Varieties and Schemes: Includes the Michigan Lectures (1974) on Curves and Their Jacobians |edition=2nd |publisher=Springer-Verlag |doi=10.1007/b62130 |isbn=354063293X}}</nowiki>
+|r={{cite book |last=Mumford |first=David |authorlink=David Mumford |date=1999 |title=The Red Book of Varieties and Schemes: Includes the Michigan Lectures (1974) on Curves and Their Jacobians |edition=2nd |publisher=Springer-Verlag |doi=10.1007/b62130 |isbn=354063293X}}
+}}
+{{markup2|t=Using author-mask parameter
+|m=<nowiki>{{cite book |last1=Playfair |first1=I.S.O. |authorlink1=Ian Stanley Ord Playfair |last2=Stitt |first2=G.M.S. |last3=Molony |first3=C.J.C. |last4=Toomer |first4=S.E. |editor-last=Butler |editor-first=J.R.M. |editor-link=James Ramsay Montagu Butler |series=History of the Second World War, United Kingdom Military Series |title=Mediterranean and Middle East Volume I: The Early Successes Against Italy (to May 1941) |publisher=Naval & Military Press |location=Uckfield, East Sussex |date=2004 |orig-year=1st pub. [[HMSO]]:1954 |isbn=1-845740-65-3 |lastauthoramp=y}}</nowiki>
+|m2=<nowiki>{{cite book |last1=Playfair |first1=I.S.O. |authorlink1=Ian Stanley Ord Playfair |last2=Flynn |first2=F.C. |last3=Molony |first3=C.J.C. |last4=Toomer |first4=S.E. |editor-last=Butler |editor-first=J.R.M. |editor-link=James Ramsay Montagu Butler |series=History of the Second World War, United Kingdom Military Series |title=The Mediterranean and Middle East, Volume II: The Germans Come to the Help of Their Ally (1941) |publisher=Naval & Military Press |location=Uckfield, East Sussex |date=2004 |orig-year=1st pub. [[HMSO]]:1954  |isbn=1-845740-66-1 |lastauthoramp=y |author-mask=2}}</nowiki>
+|m3=<nowiki>{{cite book |last1=Playfair |first1=I.S.O. |authorlink1=Ian Stanley Ord Playfair |last2=Flynn |first2=F.C. |last3=Molony |first3=C.J.C. |last4=Gleave |first4=T.P. |editor-last=Butler |editor-first=Sir James |editor-link=James Ramsay Montagu Butler |series=History of the Second World War, United Kingdom Military Series |title=The Mediterranean and Middle East, Volume III: British Fortunes Reach Their Lowest Ebb (September 1941 to September 1942) |publisher=Naval & Military Press |location=Uckfield, East Sussex |date=2004 |orig-year=1st pub. [[HMSO]]:1954  |isbn=1-845740-67-X |lastauthoramp=y |author-mask=2}}</nowiki>
+|r={{cite book |last1=Playfair |first1=I.S.O. |authorlink1=Ian Stanley Ord Playfair |last2=Stitt |first2=G.M.S. |last3=Molony |first3=C.J.C. |last4=Toomer |first4=S.E. |editor-last=Butler |editor-first=J.R.M. |editor-link=James Ramsay Montagu Butler |series=History of the Second World War, United Kingdom Military Series |title=Mediterranean and Middle East Volume I: The Early Successes Against Italy (to May 1941) |publisher=Naval & Military Press |location=Uckfield, East Sussex |date=2004 |orig-year=1st pub. [[HMSO]]:1954 |isbn=1-845740-65-3 |lastauthoramp=y}}
+|r2={{cite book |last1=Playfair |first1=I.S.O. |authorlink1=Ian Stanley Ord Playfair |last2=Flynn |first2=F.C. |last3=Molony |first3=C.J.C. |last4=Toomer |first4=S.E. |editor-last=Butler |editor-first=J.R.M. |editor-link=James Ramsay Montagu Butler |series=History of the Second World War, United Kingdom Military Series |title=The Mediterranean and Middle East, Volume II: The Germans Come to the Help of Their Ally (1941) |publisher=Naval & Military Press |location=Uckfield, East Sussex |date=2004 |orig-year=1st pub. [[HMSO]]:1954  |isbn=1-845740-66-1 |lastauthoramp=y |author-mask=2}}
+|r3={{cite book |last1=Playfair |first1=I.S.O. |authorlink1=Ian Stanley Ord Playfair |last2=Flynn |first2=F.C. |last3=Molony |first3=C.J.C. |last4=Gleave |first4=T.P. |editor-last=Butler |editor-first=Sir James |editor-link=James Ramsay Montagu Butler |series=History of the Second World War, United Kingdom Military Series |title=The Mediterranean and Middle East, Volume III: British Fortunes Reach Their Lowest Ebb (September 1941 to September 1942) |publisher=Naval & Military Press |location=Uckfield, East Sussex |date=2004 |orig-year=1st pub. [[HMSO]]:1954  |isbn=1-845740-67-X |lastauthoramp=y |author-mask=2}}
+}}
+{{markup2|t=Using display-authors parameter
+|m=<nowiki>{{cite book |last1=Playfair |first1=I.S.O. |authorlink1=Ian Stanley Ord Playfair |last2=Stitt |first2=G.M.S. |last3=Molony |first3=C.J.C. |last4=Toomer |first4=S.E. |editor-last=Butler |editor-first=J.R.M. |editor-link=James Ramsay Montagu Butler |series=History of the Second World War, United Kingdom Military Series |title=Mediterranean and Middle East Volume I: The Early Successes Against Italy (to May 1941) |publisher=Naval & Military Press |location=Uckfield, East Sussex |date=2004 |orig-year=1st pub. [[HMSO]]:1954 |isbn=1-845740-65-3 |display-authors=1}}</nowiki>
+|r={{cite book |last1=Playfair |first1=I.S.O. |authorlink1=Ian Stanley Ord Playfair |last2=Stitt |first2=G.M.S. |last3=Molony |first3=C.J.C. |last4=Toomer |first4=S.E. |editor-last=Butler |editor-first=J.R.M. |editor-link=James Ramsay Montagu Butler |series=History of the Second World War, United Kingdom Military Series |title=Mediterranean and Middle East Volume I: The Early Successes Against Italy (to May 1941) |publisher=Naval & Military Press |location=Uckfield, East Sussex |date=2004 |orig-year=1st pub. [[HMSO]]:1954 |isbn=1-845740-65-3 |display-authors=1}}
+}}
+
+==Parameters==
+===Syntax===
+{{csdoc|syntax}}
+
+===COinS===
+{{csdoc|coins}}
+
+===What's new===
+{{csdoc|whats new}}
+
+===Deprecated===
+{{csdoc|deprecated}}
+
+===Description===
+====Authors====
+{{csdoc|author|contributor=yes|others=yes}}
+
+====Title====
+{{csdoc|title|title_format=italics}}
+{{csdoc|type}}
+{{csdoc|chapter}}
+{{csdoc|language}}
+
+====Date====
+{{csdoc|date}}
+
+====Publisher====
+{{csdoc|publisher}}
+
+====Edition, series, volume====
+{{csdoc|edition}}
+{{csdoc|series}}
+{{csdoc|volume}}
+
+====In-source locations====
+{{csdoc|pages}}
+
+===={{Anchor|url}}URL====
+{{csdoc|url}}
+
+====Chapter URL====
+{{csdoc|chapterurl}}
+
+====Anchor====
+{{csdoc|ref}}
+
+====Identifiers====
+{{csdoc|id1}}
+{{csdoc|id2}}
+
+====Quote====
+{{csdoc|quote}}
+
+====Editors====
+{{csdoc|editor}}
+
+====Laysummary====
+{{csdoc|lay}}
+
+====Display options====
+{{csdoc|display}}
+
+====Subscription or registration required====
+{{csdoc|registration}}
+
+==TemplateData==
+
+See [[Template:Cite book/TemplateData]].
+
+==See also==
+* [https://reftag.appspot.com/ Reftag], tool for translating [[Google Books]] permalinks into Wikipedia references
+{{Citation Style 1}}
+{{Wikipedia referencing}}
+{{UF-COinS}}
+
+<includeonly>{{#ifeq:{{SUBPAGENAME}}|sandbox||
+<!-- Categories go below this line, please; interwikis go to Wikidata, thank you! -->
+[[Category:Citation Style 1 templates|B]]
+[[Category:Book templates]]
+}}</includeonly>

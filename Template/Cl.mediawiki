@@ -1,0 +1,2 @@
+#REDIRECT [[Template:Category link]]
+{{R from move}}

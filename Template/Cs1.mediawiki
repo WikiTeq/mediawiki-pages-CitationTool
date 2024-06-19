@@ -1,0 +1,3 @@
+[[Help:Citation Style 1|Citation Style 1]]<noinclude>
+[[Category:Documentation assistance templates]]
+</noinclude>

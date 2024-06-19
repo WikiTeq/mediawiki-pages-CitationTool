@@ -1,0 +1,3 @@
+{{#tag:syntaxhighlight|{{{code|{{{1}}}}}}|lang={{{lang|{{{2|text}}}}}}|class={{{class|}}}|id={{{id|}}}|style={{{style|}}}|inline=1}}<noinclude>
+{{documentation}}
+</noinclude>

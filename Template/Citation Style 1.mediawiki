@@ -1,0 +1,71 @@
+{{Navbox
+| name      = Citation Style 1
+| title     = [[Help:Citation Style 1|Citation Style 1]]
+
+| below     = [[Help talk:Citation Style 1|Citation Style 1 noticeboard]]
+
+| state     = {{{state|autocollapse}}}
+| listclass = hlist
+| selected  = {{{1|}}}
+
+| group1 = General <br />templates
+| list1  =
+; {{tl|Cite arXiv}}
+: [[arXiv]] preprints
+; {{tl|cite bioRxiv}}
+: [[bioRxiv]] preprints
+; {{tl|Cite book}}
+: books
+; {{tl|Cite conference}}
+: conference papers
+; {{tl|Cite encyclopedia}}
+: edited collections
+; {{tl|Cite interview}}
+: interviews
+; {{tl|Cite journal}}
+: academic journals and papers
+; {{tl|Cite magazine}}
+: magazines
+; {{tl|Cite mailing list}}
+: public mailing lists
+; {{tl|Cite map}}
+: maps
+; {{tl|Cite news}}
+: news articles
+; {{tl|Cite newsgroup}}
+: online newsgroups
+; {{tl|Cite press release}}
+: press releases
+; {{tl|Cite report}}
+: unpublished reports
+; {{tl|Cite sign}}
+: signs, plaques
+; {{tl|Cite speech}}
+: speeches
+; {{tl|Cite techreport}}
+: technical reports
+; {{tl|Cite thesis}}
+: theses
+; {{tl|Cite web}}
+: web sources
+
+| group2 = Audiovisual-related
+| list2  =
+* {{tl|Cite AV media}}
+* {{tl|Cite AV media notes}}
+* {{tl|Cite episode}}
+* {{tl|Cite podcast}}
+* {{tl|Cite serial}}
+
+| group3 = Categories
+| list3  =
+* [[:Category:Citation Style 1 templates|Citation Style 1 templates]]
+* [[:Category:Citation Style 1 specific-source templates|Citation Style 1 specific-source templates]]
+
+| group4 = Documentation
+| list4  =
+* {{tl|Citation Style documentation}}
+
+}}<noinclude>
+{{Documentation}}
+</noinclude>

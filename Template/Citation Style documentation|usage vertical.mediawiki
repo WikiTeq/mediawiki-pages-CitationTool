@@ -1,0 +1,5 @@
+{| class="wikitable"
+|+ Full parameter set in vertical format
+! Vertical list !! Prerequisites !! Brief instructions / notes
+|- style="vertical-align:top;"
+|

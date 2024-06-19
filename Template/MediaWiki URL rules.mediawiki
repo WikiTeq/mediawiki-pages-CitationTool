@@ -1,0 +1,13 @@
+URLs must begin with a supported [[URI scheme]]. <code>http://</code> and <code>https://</code> will be supported by all browsers; however, <code>ftp://</code>, <code>gopher://</code>, <code>irc://</code>, <code>ircs://</code>, <code>mailto:</code> and <code>news:</code> may require a plug-in or an external application and should normally be avoided. [[IPv6]] host-names are currently not supported.
+
+If URLs in [[Wikipedia:Citation_templates#Examples|citation template parameters]] contain certain characters, then they will not display and link correctly. Those characters need to be [[percent-encoded]]. For example, a space must be replaced by <code>%20</code>. To encode the URL, replace the following characters with:
+
+{| class="wikitable"
+! sp !! " !! ' !! < !! > !! [ !! ] !! { !! <nowiki>|</nowiki> !! }
+|-
+|| %20 || %22 || %27 || %3c || %3e || %5b || %5d || %7b || %7c || %7d
+|}
+
+Single apostrophes do not need to be encoded; however, unencoded multiples will be parsed as italic or bold markup. Single curly closing braces also do not need to be encoded; however, an unencoded pair will be parsed as the double closing braces for the template transclusion.<noinclude>
+{{documentation}}
+</noinclude>

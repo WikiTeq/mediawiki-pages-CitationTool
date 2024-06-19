@@ -1,0 +1,7 @@
+{| class="wikitable"  style="width: 30em"
+|+ Most commonly used parameters in vertical format
+|- style="vertical-align:top;"
+|<noinclude>
+|}
+{{doc|content={{Improve documentation}}}}
+</noinclude>

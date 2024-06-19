@@ -1,0 +1,10 @@
+<includeonly>{{Cite video game
+|title={{#show:Reference:{{{1}}}|?Title|link=none}}
+|developer={{Get Reference Person|{{{1}}}|Author|First name}} {{Get Reference Person|{{{1}}}|Author|Last name}}
+|publisher={{#show:Reference:{{{1}}}|?Document publisher|link=none}}
+|date={{#show:Reference:{{{1}}}|?Document date#-F[Y]|link=none}}
+|version={{#show:Reference:{{{1}}}|?Revision|link=none}}
+|language={{#show:Reference:{{{1}}}|?Language|link=none}}
+|quote={{#show:Reference:{{{1}}}|?Abstract|link=none}}
+|pages={{#if:{{{2|}}}|{{{2}}}}}
+}}</includeonly>

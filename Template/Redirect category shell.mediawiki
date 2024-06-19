@@ -1,0 +1,27 @@
+{{Mbox
+| name  = Redirect category shell
+| type  = move 
+| image = none
+| style = margin-top: 1.1em; border: solid 1px darkblue; border-left-width: 0.5em;
+| textstyle = padding-top: 0.9em; padding-bottom: 0.9em;
+| text  = [[File:Symbol redirect arrow with gradient.svg|25px|link=]] '''This page is a [[Wikipedia:Redirect|redirect]]:'''{{#if:{{{h|}}}
+ |:: ''{{{h}}}''
+ }}<!--
+  Automatically detect protected redirects:
+--><includeonly>{{#switch: {{PROTECTIONLEVEL:move}}
+   |sysop|templateeditor|extendedconfirmed={{pp-move|small=yes}}
+ }}{{#switch: {{PROTECTIONLEVEL:edit}}
+   |sysop={{pp-protected|small=yes}}{{R protected|embed=yes}}
+   |templateeditor={{pp-protected|small=yes}}{{R template protected|embed=yes}}
+   |extendedconfirmed={{pp-protected|small=yes}}{{R extended-protected|embed=yes}}
+   |autoconfirmed={{pp-protected|small=yes}}{{R semi-protected|embed=yes}}
+   | <!--Not protected, or only semi-move-protected-->
+ }}</includeonly>{{#if: {{{1|}}}||<includeonly>
+* {{red|'''Important – Please Read! {{maroon|This template should {{em|not}} be applied without parameters by bot nor by any automated or semi-automated process. It should {{em|not}} be used without parameters {{em|unless you want to learn how to categorize redirects}}. For editors who want to learn how to categorize redirects, this template is a {{em|learning tool}}. {{em|Only}} those editors who intend to return to the redirect to learn which rcats to use should apply this template without parameters, or with an empty first parameter!}}'''}}</includeonly>
+* '''Manifold sort''':  If help is needed to determine appropriate categories, then this redirect populates '''{{Cat|Miscellaneous redirects}}'''.  Monitors of that category will check this redirect and add or remove [[WP:RCAT|rcat]]s as needed.{{#ifeq: {{lc:{{{nocat|false}}}}} | false |{{{category|<includeonly>[[Category:Miscellaneous redirects]]</includeonly>}}}}}
+}}
+{{#if: {{{2|}}}|{{{2}}}|{{{1|}}}}}
+''<small>When appropriate, [[Wikipedia:Protection policy|protection levels]] are automatically sensed, described and categorized.</small>''
+}}<noinclude>
+{{Documentation}}
+</noinclude>

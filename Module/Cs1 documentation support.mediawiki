@@ -1,0 +1,1421 @@
+require('strict');
+local getArgs = require ('Module:Arguments').getArgs;
+
+local cfg = mw.loadData ('Module:Citation/CS1/Configuration');					-- load the configuration module
+local whitelist = mw.loadData ('Module:Citation/CS1/Whitelist');				-- load the whitelist module
+
+local exclusion_lists = {														-- TODO: move these tables into a separate ~/data module and mw.loadData() it
+	['cite book'] = {
+		['agency'] = true,
+		['air-date'] = true,
+		['arxiv'] = true,
+		['biorxiv'] = true,
+		['citeseerx'] = true,
+		['class'] = true,
+		['conference'] = true,
+		['conference-format'] = true,
+		['conference-url'] = true,
+		['degree'] = true,
+		['department'] = true,
+		['display-interviewers'] = true,
+		['docket'] = true,
+		['episode'] = true,
+		['interviewer#'] = true,
+		['interviewer-first#'] = true,
+		['interviewer-link#'] = true,
+		['interviewer-mask#'] = true,
+		['ismn'] = true,
+		['issn'] = true,
+		['issue'] = true,
+		['jfm'] = true,
+		['journal'] = true,
+		['jstor'] = true,
+		['mailinglist'] = true,
+		['message-id'] = true,
+		['minutes'] = true,
+		['MR'] = true,
+		['network'] = true,
+		['number'] = true,
+		['RFC'] = true,
+		['script-journal'] = true,
+		['season'] = true,
+		['section'] = true,
+		['sections'] = true,
+		['series-link'] = true,
+		['series-number'] = true,
+		['series-separator'] = true,
+		['sheet'] = true,
+		['sheets'] = true,
+		['SSRN'] = true,
+		['station'] = true,
+		['time'] = true,
+		['time-caption'] = true,
+		['trans-article'] = true,
+		['trans-journal'] = true,
+		['transcript'] = true,
+		['transcript-format'] = true,
+		['transcript-url'] = true,
+		['ZBL'] = true,
+		},
+	['cite journal'] = {
+		['agency'] = true,
+		['air-date'] = true,
+		['book-title'] = true,
+		['chapter'] = true,
+		['chapter-format'] = true,
+		['chapter-url'] = true,
+		['chapter-url-access'] = true,
+		['class'] = true,
+		['conference'] = true,
+		['conference-format'] = true,
+		['conference-url'] = true,
+		['contribution'] = true,
+		['contributor#'] = true,
+		['contributor-first#'] = true,
+		['contributor-link#'] = true,
+		['contributor-mask#'] = true,
+		['degree'] = true,
+		['department'] = true,
+		['display-interviewers'] = true,
+		['docket'] = true,
+		['edition'] = true,
+		['editor#'] = true,
+		['editor-first#'] = true,
+		['editor-link#'] = true,
+		['editor-mask#'] = true,
+		['editors'] = true,
+		['encyclopedia'] = true,
+		['episode'] = true,
+		['ignore-isbn-error'] = true,
+		['interviewer#'] = true,
+		['interviewer-first#'] = true,
+		['interviewer-link#'] = true,
+		['interviewer-mask#'] = true,
+		['isbn'] = true,
+		['ismn'] = true,
+		['LCCN'] = true,
+		['mailinglist'] = true,
+		['message-id'] = true,
+		['minutes'] = true,
+		['network'] = true,
+		['script-chapter'] = true,
+		['season'] = true,
+		['section'] = true,
+		['sections'] = true,
+		['series-link'] = true,
+		['series-number'] = true,
+		['series-separator'] = true,
+		['sheet'] = true,
+		['sheets'] = true,
+		['station'] = true,
+		['time'] = true,
+		['time-caption'] = true,
+		['trans-article'] = true,
+		['transcript'] = true,
+		['transcript-format'] = true,
+		['transcript-url'] = true,
+		},
+	}
+
+--[[-------------------------< A D D _ T O _ L I S T >---------------------------------------------------------
+
+adds code/name pair to code_list and name/code pair to name_list; code/name pairs in override_list replace those
+taken from the MediaWiki list; these are marked with a superscripted dagger.
+
+|script-<param>= lang codes always use override names so dagger is omitted
+
+]]
+
+local function add_to_list (code_list, name_list, override_list, code, name, dagger)
+	if false == dagger then
+		dagger = '';															-- no dagger for |script-<param>= codes and names
+	else
+		dagger = '<sup>†</sup>';												-- dagger for all other lists using override
+	end
+
+	if override_list[code] then													-- look in the override table for this code
+		code_list[code] = override_list[code] .. dagger;						-- use the name from the override table; mark with dagger
+		name_list[override_list[code]] = code .. dagger;
+	else
+		code_list[code] = name;													-- use the MediaWiki name and code
+		name_list[name] = code;
+	end
+end
+
+--[[-------------------------< L I S T _ F O R M A T >---------------------------------------------------------
+
+formats key/value pair into a string for rendering
+	['k'] = 'v'	→ k: v
+
+]]
+
+local function list_format (result, list)
+	for k, v in pairs (list)	do
+		table.insert (result, k .. ': ' .. v);
+	end
+end
+
+--[[-------------------------< L A N G _ L I S T E R >---------------------------------------------------------
+
+Module entry point
+
+Crude documentation tool that returns one of several lists of language codes and names.
+
+Used in Template:Citation Style documentation/language/doc
+
+{{#invoke:cs1 documentation support|lang_lister|list=<selector>|lang=<code>}}
+
+where <selector> is one of the values:
+	2char – list of ISO 639-1 codes and names sorted by code
+	3char – list of ISO 639-2, -3 codes and names sorted by code
+	ietf – list of IETF language tags and names sorted by tag
+	ietf2 – list of ISO 639-1 based IETF language tags and names sorted by tag
+	ietf3 – list of list of ISO 639-2, -3 based IETF language tags and names sorted by tag
+	name – list of language names and codes sorted by name
+	all - list all language codes/tags and names sorted by code/tag
+
+where <code> is a MediaWiki supported 2, 3, or ietf-like language code; because of fall-back, language names may
+be the English-language names.
+
+]]
+
+local function lang_lister (frame)
+	local lang = (frame.args.lang and '' ~= frame.args.lang) and frame.args.lang or mw.getContentLanguage():getCode()
+	local source_list = mw.language.fetchLanguageNames(lang, 'all');
+	local override = cfg.lang_code_remap;
+	local code_1_list={};
+	local code_2_list={};
+	local ietf_list={};
+	local ietf_list2={};
+	local ietf_list3={};
+	local name_list={};
+	
+	if not ({['2char']=true, ['3char']=true, ['ietf']=true, ['ietf2']=true, ['ietf3']=true, ['name']=true, ['all']=true})[frame.args.list] then
+		return '<span style="color:#d33">unknown list selector: ' .. frame.args.list .. '</span>';
+	end
+
+	for code, name in pairs (source_list) do
+		if 'all' == frame.args.list then
+			add_to_list (code_1_list, name_list, override, code, name);			-- use the code_1_list because why not?
+		elseif 2 == code:len() then
+			add_to_list (code_1_list, name_list, override, code, name);
+		elseif 3 == code:len() then
+			add_to_list (code_2_list, name_list, override, code, name);
+		elseif code:match ('^%a%a%-.+') then									-- ietf with 2-character language tag
+			add_to_list (ietf_list, name_list, override, code, name);			-- add to main ietf list for |list=ietf
+			add_to_list (ietf_list2, name_list, override, code, name);			-- add to ietf2 list
+		elseif code:match ('^%a%a%a%-.+') then									-- ietf with 3-character language tag
+			add_to_list (ietf_list, name_list, override, code, name);			-- add to main ietf list for |list=ietf
+			add_to_list (ietf_list3, name_list, override, code, name);			-- add to ietf3 list
+		end
+	end
+	
+	local result = {};
+	local out = {};
+
+	if '2char' == frame.args.list or 'all' == frame.args.list then				-- iso 639-1
+		list_format (result, code_1_list);
+	elseif '3char' == frame.args.list then										-- iso 639-2, 3
+		list_format (result, code_2_list);
+	elseif 'ietf' == frame.args.list then										-- all ietf tags
+		list_format (result, ietf_list);
+	elseif 'ietf2' == frame.args.list then										-- 2-character ietf tags
+		list_format (result, ietf_list2);
+	elseif 'ietf3' == frame.args.list then										-- 3 character ietf tags
+		list_format (result, ietf_list3);
+	else																		--must be 'name'
+		list_format (result, name_list);
+	end
+	
+	local templatestyles = frame:extensionTag{
+		name = 'templatestyles', args = { src = "Div col/styles.css" }
+	}
+	
+	table.sort (result);
+	table.insert (result, 1, templatestyles .. '<div class="div-col" style="column-width:16em">');
+	table.insert (out, table.concat (result, '\n*'));
+	table.insert (out, '</div>');
+	
+	return table.concat (out, '\n');
+end
+
+--[[--------------------------< S C R I P T _ L A N G _ L I S T E R >------------------------------------------
+
+Module entry point
+
+Crude documentation tool that returns list of language codes and names supported by the various |script-<param>= parameters.
+
+used in Help:CS1 errors
+
+{{#invoke:cs1 documentation support|script_lang_lister}}
+
+]]
+
+local function script_lang_lister (frame)
+	local lang_code_src = cfg.script_lang_codes ;								-- get list of allowed script language codes
+	local override = cfg.lang_code_remap;
+	local this_wiki_lang = mw.language.getContentLanguage().code;				-- get this wiki's language
+
+	local code_list = {};														-- interim list of aliases
+	local name_list={};															-- not used; defined here so that we can reuse add_to_list() 
+	local out = {};																-- final output (for now an unordered list)
+	
+	for _, code in ipairs (lang_code_src) do									-- loop through the list of codes
+		local name = mw.language.fetchLanguageName (code, this_wiki_lang);		-- get the language name associated with this code
+		add_to_list (code_list, name_list, override, code, name, false);		-- name_list{} not used but provided so that we can reuse add_to_list(); don't add superscript dagger
+	end
+	
+	local result = {};
+	local out = {};
+
+	list_format (result, code_list);
+	
+	local templatestyles = frame:extensionTag{
+		name = 'templatestyles', args = { src = "Div col/styles.css" }
+	}
+
+	table.sort (result);
+	table.insert (result, 1, templatestyles .. '<div class="div-col" style="column-width:16em">');
+	table.insert (out, table.concat (result, '\n*'));
+	table.insert (out, '</div>');
+	
+	return table.concat (out, '\n');
+end
+
+--[[--------------------------< A L I A S _ L I S T E R >------------------------------------------------------
+
+experimental code that lists parameters and their aliases.  Perhaps basis for some sort of documentation?
+
+{{#invoke:cs1 documentation support|alias_lister}}
+
+]]
+
+local function alias_lister ()
+	local alias_src = cfg.aliases;												-- get master list of aliases
+	local key;																	-- key for k/v in a new table
+	local list = {};															-- interim list of aliases
+	local out = {};																-- final output (for now an unordered list)
+	
+	for _, aliases in pairs (alias_src) do										-- loop throu the master list of aliases
+		if 'table' == type (aliases) then										-- table only when there are aliases
+			for i, alias in ipairs (aliases) do									-- loop through all of the aliases
+				if 1 == i then													-- first 'alias' is the canonical parameter name
+					key = alias;												-- so it becomes the key in list
+				else
+					list[key] = list[key] and (list[key] .. ', ' .. alias) or alias;	-- make comma-separated list of aliases
+					list[alias] = 'see ' .. key;								-- make a back reference from this alias to the canonical parameter
+				end
+			end
+		end
+	end
+	
+	for k, v in pairs (list) do													-- loop through the list to make a simple unordered list
+		table.insert (out, table.concat ({'*', k, ': ', v}));
+	end
+	
+	table.sort (out);															-- sort it
+	return table.concat (out, '\010');											-- concatenate with \n
+--	return (mw.dumpObject (list))
+end
+
+--[[--------------------------< C A N O N I C A L _ P A R A M _ L I S T E R >----------------------------------
+
+experimental code that lists canonical parameter names.  Perhaps basis for some sort of documentation?
+
+returns a comma separated, alpha sorted, list of the canonical parameters.  If given a template name, excludes
+parameters listed in that template's exclusion_list[<template>]{} table (if a table has been defined).
+
+{{#invoke:cs1 documentation support|canonical_param_lister|<template>}}
+
+]]
+
+local function canonical_param_lister (frame)
+	local template = frame.args[1];
+	if '' == template then
+		template = nil;
+	end
+
+	if template then
+		template = mw.text.trim (template:lower());
+	end
+
+	local alias_src = cfg.aliases;												-- get master list of aliases
+	local id_src = cfg.id_handlers;												-- get master list of identifiers
+	
+	local list = {};															-- interim list of aliases
+	local out = {};																-- final output (for now an unordered list)
+	
+	for _, aliases in pairs (alias_src) do										-- loop through the master list of aliases
+		local name;
+		if 'table' == type (aliases) then										-- table only when there are aliases
+			name = aliases[1];													-- first member of an aliases table is declared canonical
+		else
+			name = aliases;														-- for those parameters that do not have any aliases, the parameter is declared canonical
+		end
+
+		if not template then													-- no template name, add this parameter
+			table.insert (list, name);
+		elseif not exclusion_lists[template] then								-- template name but no exclusion list
+			table.insert (list, name);
+		elseif not exclusion_lists[template][name] then							-- template name and exclusion list but name not in list
+			table.insert (list, name);
+		end
+	end
+	
+	for k, ids in pairs (id_src) do												-- spin through the list of identifiers
+		local name = id_src[k].parameters[1];									-- get the first (left-most) parameter name
+		local access = id_src[k].custom_access;									-- get the access-icon parameter if it exists for this identifier
+		if not template then													-- no template name
+			table.insert (list, name);											-- add this parameter
+			if access then
+				table.insert (list, access);									-- add this access-icon parameter
+			end
+		elseif not exclusion_lists[template] then								-- template name but no exclusion list
+			table.insert (list, name);
+			if access then
+				table.insert (list, access);
+			end
+		elseif not exclusion_lists[template][name] then							-- template name and exclusion list but name not in list
+			table.insert (list, name);
+			if access then
+				table.insert (list, access);
+			end
+		end
+	end
+	
+	for _, param in ipairs (list) do											-- loop through the list to make a simple unordered list
+		table.insert (out, table.concat ({'*', param}));
+	end
+	
+	local function comp( a, b )													-- used in following table.sort()
+		return a:lower() < b:lower();
+	end
+	
+	table.sort (out, comp);														-- sort the list
+	return table.concat (out, '\010');											-- concatenate with \n
+--	return (mw.dumpObject (list))
+end
+
+--[[--------------------------< C A N O N I C A L _ N A M E _ G E T >------------------------------------------
+
+returns first (canonical) name when metaparameter is assigned a table of names
+returns name when metaparameter is assigned a single name
+returns empty string when metaparameter name not found in alias_src{}, id_src{}, or id_src[meta].custom_access
+
+metaparameter <metaparam> is the key in Module:Citation/CS1 aliases{} table or id_handlers{} table.  Because access-icon
+don't have <metaparam> keys, per se, we create pseudo <metaparam> keys by appending 'access' to the identifier <metaparam>:
+	the <metaparam> for |doi-access= is, for the purposes of this function, DOIaccess, etc
+
+Some lists of aliases might be better served when a particular alias is identified as the canonical alias for a 
+particular use case.  If, for example, <metaparam> Perodical lists:
+	'journal', 'magazine', 'newspaper', 'periodical', 'website', 'work'
+that order works fine for {{cite journal}} documentation but doesn't work so well for {{cite magazine}}, {{cite news}},
+or {{cite web}}.  So, for using this function to document {{cite magazine}} the returned value should be the
+parameter best suited for that template so we can specify magazine in the override (frame.args[2])
+
+While for this function, it would be just as simple to not use the function, this mechanism is implemented here 
+to match similar functionality in alias_names_get() (there are slight differences)
+	<override> must exist in the alias list
+	does not apply to the access icon parameters (ignored - these have no aliases)
+
+(and which would be best for {{cite news}}? |newspaper= or |work=? can't solve all of the worlds problems at once).
+
+output format is controlled by |format=
+	plain - renders in plain text in a <span> tag; may have id attribute
+	para - renders as it would in {{para|<param>}}
+
+{{#invoke:cs1 documentation support|canonical_name_get|<metaparam>|<override>|id=<attribute>|format=[plain|para]}}
+
+]]
+
+local function canonical_name_get (frame)
+	local alias_src = cfg.aliases;												-- get master list of aliases
+	local id_src = cfg.id_handlers;												-- get master list of identifiers
+	local args = getArgs (frame);
+
+	local name;
+	local meta = args[1]
+	local override = args[2];
+
+	local access;																-- for id-access parameters
+	if meta:match ('^(%u+)access') then											-- the metaparameter (which is not used in ~/Configuration) is id_handlers key concatenated with access: BIBCODEaccess
+		meta, access = meta:gsub ('^(%u+)access', '%1');						-- strip 'access' text from meta and use returned count value as a flag
+	end
+
+	if alias_src[meta] then
+		name = alias_src[meta];													-- name is a string or a table
+		if 'table' == type (name) then											-- table only when there are aliases
+			if not override then
+				name = name[1];													-- first member of an aliases table is declared canonical
+			else
+				for _, v in ipairs (name) do									-- here when override is set; spin throu the aliases to make sure override matches alias in table
+					if v == override then
+						name = v;												-- declare override to be the canonical param for this use case
+						break;
+					end
+				end
+			end
+		end
+
+	elseif id_src[meta]then														-- if there is an id handler
+		if access then															-- and if this is a request for the handler's custom access parameter
+			if id_src[meta].custom_access then									-- if there is a custom access parameter
+				name = id_src[meta].custom_access;								-- use it
+			else
+				return '';														-- nope, return empty string
+			end
+		else
+			if not override then
+				name = id_src[meta].parameters[1];								-- get canonical id handler parameter
+			else
+				for _, v in ipairs (id_src[meta].parameters) do					-- here when override is set; spin throu the aliases to make sure override matches alias in table
+					if v == override then
+						name = v;												-- declare override to be the canonical param for this use case
+						break;
+					end
+				end
+			end
+		end
+	else
+		return '';																-- metaparameter not specified, or no such metaparameter
+	end
+	
+	if 'plain' == args.format then												-- format and return the output
+		if args.id then
+			return string.format ('<span id="%s">%s</span>', args.id, name);	-- plain text with id attribute
+		else
+			return name;														-- plain text
+		end
+	elseif 'para' == args.format then
+		return string.format ('<code class="nowrap">|%s=</code>', name);		-- same as {{para|<param>}}
+	end
+
+	return string.format ('<b id="%s">%s</b>', args.id or '', name);			-- because {{csdoc}} bolds param names
+end
+
+--[[--------------------------< A L I A S _ N A M E S _ G E T >------------------------------------------------
+
+returns list of aliases for metaparameter <metaparam>
+returns empty string when there are no aliases
+returns empty string when <metaparam> name not found in alias_src{} or id_src{}; access icon parameters have no aliases so ignored
+
+metaparameter <metaparam> is the key in Module:Citation/CS1 aliases{} table or id_handlers{} table.
+
+Some lists of aliases might be better served when a particular alias is identified as the canonical alias for a 
+particular use case.  If, for example, <metaparam> Perodical lists:
+	'journal', 'magazine', 'newspaper', 'periodical', 'website', 'work'
+that order works fine for {{cite journal}} documentation but doesn't work so well for {{cite magazine}}, {{cite news}},
+or {{cite web}}.  So, for using this function to document {{cite magazine}} the returned value should be the
+aliases that are not best suited for that template so we can specify magazine in the override (frame.args[2])
+to be the canonical parameter so it won't be listed with the rest of the aliases (normal canonical journal will be)
+
+	<override> must exist in the alias list except:
+		when <override> value is 'all', returns the canonical parameter plus all of the aliases
+
+output format is controlled by |format=
+	plain - renders in plain text in a <span> tag; may have id attribute
+	para - renders as it would in {{para|<param>}}
+	when not specified, refurns the default bold format used for {{csdoc}}
+
+{{#invoke:cs1 documentation support|alias_name_get|<metaparam>|<override>|format=[plain|para]}}
+
+]]
+
+local function alias_names_get (frame)
+	local alias_src = cfg.aliases;												-- get master list of aliases
+	local id_src = cfg.id_handlers;												-- get master list of identifiers
+	local args = getArgs (frame);
+	
+	local meta = args[1];
+	local override = args[2];
+
+	local out = {};
+	local source;																-- selected parameter or id aliases list
+	local aliases;
+
+	source = alias_src[meta] or (id_src[meta] and id_src[meta].parameters);
+	if not source then
+		if meta:match ('%u+access') then
+			return 'no' == args.none and '' or 'none';							-- custom access parameters don't have aliases
+		else
+			return '';															-- no such meta
+		end
+	elseif not source[2] then													-- id_source[meta] is always a table; if no second member, no aliases
+		return 'no' == args.none and '' or 'none';
+	end
+	
+	if not override then
+		aliases = source;														-- normal skip-canonical param case
+	else
+		local flag = 'all' == override and true or nil;							-- so that we know that <override> parameter is a valid alias; spoof when override == 'all'
+		aliases = {[1] = ''};													-- spoof to push alias_src[meta][1] and id_src[meta][1] into aliases[2]
+		for _, v in ipairs (source) do											-- here when override is set; spin through the aliases to make sure override matches alias in table
+			if v ~= override then
+				table.insert (aliases, v);										-- add all but overridden param to the the aliases list for this use case
+			else
+				flag = true;													-- set the flag so we know that <override> is a valid alias
+			end
+		end
+		if not flag then
+			aliases = {}														-- unset the table as error indicator
+		end
+	end
+
+	if 'table' == type (aliases) then											-- table only when there are aliases
+		for i, alias in ipairs (aliases) do
+			if 1 ~= i then														-- aliases[1] is the canonical name; don't include it
+				if 'plain' == args.format then									-- format and return the output
+					table.insert (out, alias);									-- plain text
+				elseif 'para' == args.format then
+					table.insert (out, string.format ('<code class="nowrap">|%s=</code>', alias));	-- same as {{para|<param>}}
+				else
+					table.insert (out, string.format ("'''%s'''", alias));		-- because csdoc bolds param names
+				end
+			end
+		end
+		
+		return table.concat (out, ', ');										-- make pretty list and quit
+	end
+
+	return 'no' == args.none and '' or 'none';									-- no metaparameter with that name or no aliases
+end
+
+--[[--------------------------< I S _ B O O K _ C I T E _ T E M P L A T E >------------------------------------
+
+fetch the title of the current page; if it is a preprint template, return true; empty string else
+
+]]
+
+local book_cite_templates = {
+	['citation'] = true,
+	['cite book'] = true,
+	}
+
+local function is_book_cite_template ()
+	local title = mw.title.getCurrentTitle().rootText;							-- get title of current page without namespace and without sub-pages; from Template:Cite book/new -> Cite book
+	
+	title = title and title:lower() or '';
+	return book_cite_templates[title] or '';
+end
+
+--[[--------------------------< I S _ L I M I T E D _ P A R A M _ T E M P L A T E >----------------------------
+
+fetch the title of the current page; if it is a preprint template, return true; empty string else
+
+]]
+
+local limited_param_templates = {												-- if ever there is a need to fetch info from ~/Whitelist then
+	['cite arxiv'] = true,														-- this list could also be fetched from there
+	['cite biorxiv'] = true,
+	['citeseerx'] = true,
+	['ssrn'] = true,
+	}
+
+local function is_limited_param_template ()
+	local title = mw.title.getCurrentTitle().rootText;							-- get title of current page without namespace and without sub-pages; from Template:Cite book/new -> Cite book
+	
+	title = title and title:lower() or '';
+	return limited_param_templates[title] or '';
+end
+
+--[[--------------------------< H E A D E R _ M A K E >--------------------------------------------------------
+
+makes a section header from <header_text> and <level>; <level> defaults to 2; cannot be less than 2
+
+]]
+
+local function _header_make (args)
+	if not args[1] then
+		return '';																-- no header text
+	end
+	
+	local level = args[2] and tonumber (args[2]) or 2;
+	
+	level = string.rep ('=', level);
+	return level .. args[1] .. level;
+end
+
+--[[--------------------------< H E A D E R _ M A K E >--------------------------------------------------------
+
+Entry from an {{#invoke:}}
+makes a section header from <header_text> and <level>; <level> defaults to 2; cannot be less than 2
+
+]]
+
+local function header_make (frame)
+	local args = getArgs (frame);
+	return _header_make (args);
+end
+
+--[[--------------------------< I D _ L I M I T S _ G E T >----------------------------------------------------
+
+return the limit values for named identifier parameters that have <id> limits (pmc, pmid, ssrn, s2cid, oclc, osti, rfc); the return
+value used in template documentation and error message help-text
+
+{{#invoke:Cs1 documentation support|id_limits_get|<id>}}
+
+]]
+
+local function id_limits_get (frame)
+	local args = getArgs (frame);
+	local handlers = cfg.id_handlers;											-- get id_handlers {} table from ~/Configuration
+
+	return args[1] and handlers[args[1]:upper()].id_limit or ('<span style="color:#d33">No limit defined for identifier: ' .. (args[1] or '<unknown name>') .. '</span>');
+end
+
+--[[--------------------------< C A T _ L I N K _ M A K E >----------------------------------------------------
+]]
+
+local function cat_link_make (cat)
+	return table.concat ({'[[:Category:', cat, ']]'});
+end
+
+--[[--------------------------< S C R I P T _ C A T _ L I S T E R >--------------------------------------------
+
+utility function to get script-language categories
+
+]]
+
+local lang_list_t = mw.language.fetchLanguageNames ('en', 'all');
+ 
+local function script_cat_lister (script_lang_codes_t, lang_code_remap_t, cats_list_t)
+	for _, lang_code in ipairs (script_lang_codes_t) do
+		local lang_name = lang_code_remap_t[lang_code] or lang_list_t[lang_code];	-- use remap table to get Bengali instead of Bangla and the like; else use standard MediaWiki names
+		local cat = 'CS1 uses ' .. lang_name .. '-language script (' .. lang_code .. ')';	-- build a category name
+		cats_list_t[cat] = 1;													-- and save it
+	end
+end
+
+--[[--------------------------< C S 1 _ C A T _ L I S T E R >--------------------------------------------------
+
+This is a crude tool that reads the category names from Module:Citation/CS1/Configuration, makes links of them,
+and then lists them in sorted lists.  A couple of parameters control the rendering of the output:
+	|select=	-- (required) takes one of three values: error, maint, prop
+	|sandbox=	-- takes one value: no
+	|hdr-lvl=	-- base header level (number of == that make a header); default:2 min:2
+
+This tool will automatically attempt to load a sandbox version of ~/Configuration if one exists.
+Setting |sandbox=no will defeat this.
+
+{{#invoke:cs1 documentation support|cat_lister|select=<error|maint|prop>|sandbox=<no>}}
+
+]]
+
+local function cat_lister (frame)
+	local args = getArgs (frame);
+
+	local list_live_cats = {};													-- list of live categories
+	local list_sbox_cats = {};													-- list of sandbox categories
+	
+	local live_sbox_out = {}													-- list of categories that are common to live and sandbox modules
+	local live_not_in_sbox_out = {}												-- list of categories in live but not sandbox
+	local sbox_not_in_live_out = {}												-- list of categories in sandbox but not live
+	
+	local out = {};																-- final output assembled here
+	
+	local sandbox;																-- boolean; true: evaluate the sandbox module
+	local hdr_lvl;																-- 
+	
+	local sb_cfg;
+	local sandbox, sb_cfg = pcall (mw.loadData, 'Module:Citation/CS1/Configuration/sandbox');	-- get sandbox configuration
+
+	local cat;
+
+	local select = args.select;
+	if 'no' == args.sandbox then												-- list sandbox?
+		sandbox = false;														-- no, live only
+	end
+	if hdr_lvl then																-- if set and
+		if tonumber (hdr_lvl) then												-- can be converted to number
+			if 2 > tonumber (hdr_lvl) then										-- min is 2
+				hdr_lvl = 2;													-- so set to min
+			end
+		else																	-- can't be converted
+			hdr_lvl = 2;														-- so default to min
+		end
+	else
+		hdr_lvl = 2;															-- not set so default to min
+	end
+
+	if 'error' == select or 'maint' == select then								-- error and main categorys handling different from poperties cats
+		for _, t in pairs (cfg.error_conditions) do								-- get the live module's categories
+			if ('error' == select and t.message) or ('maint' == select and not t.message) then
+				cat = t.category:gsub ('|(.*)$', '');							-- strip sort key if any
+				list_live_cats[cat] = 1;										-- add to the list
+			end
+		end
+		
+		if sandbox then															-- if ~/sandbox module exists and |sandbox= not set to 'no'
+			for _, t in pairs (sb_cfg.error_conditions) do						-- get the sandbox module's categories
+				if ('error' == select and t.message) or ('maint' == select and not t.message) then
+					cat = t.category:gsub ('|(.*)$', '');						-- strip sort key if any
+					list_sbox_cats[cat] = 1;									-- add to the list
+				end
+			end
+		end
+		
+	elseif 'prop' == select then												-- prop cats
+		for _, cat in pairs (cfg.prop_cats) do									-- get the live module's categories
+			cat = cat:gsub ('|(.*)$', '');										-- strip sort key if any
+			list_live_cats[cat] = 1;											-- add to the list
+		end
+
+		script_cat_lister (cfg.script_lang_codes, cfg.lang_code_remap, list_live_cats);	-- get live module's foriegn language script cats
+
+		if sandbox then															-- if ~/sandbox module exists and |sandbox= not set to 'no'
+			for _, cat in pairs (sb_cfg.prop_cats) do							-- get the sandbox module's categories
+				cat = cat:gsub ('|(.*)$', '');									-- strip sort key if any
+				list_sbox_cats[cat] = 1;										-- add to the list
+			end
+
+			script_cat_lister (sb_cfg.script_lang_codes, sb_cfg.lang_code_remap, list_sbox_cats);	-- get sandbox module's foriegn language script cats
+		end
+	else
+		return '<span style="color:#d33; font-style:normal;">error: unknown selector: ' .. select .. '</span>'
+	end	
+
+	for k, _ in pairs (list_live_cats) do										-- separate live/sbox common cats from cats not in sbox
+		if not list_sbox_cats[k] and sandbox then
+			table.insert (live_not_in_sbox_out, cat_link_make (k));				-- in live but not in sbox
+		else
+			table.insert (live_sbox_out, cat_link_make (k));					-- in both live and sbox
+		end
+	end
+
+	for k, _ in pairs (list_sbox_cats) do										-- separate sbox/live common cats from cats not in live
+		if not list_live_cats[k] then
+			table.insert (sbox_not_in_live_out, cat_link_make (k));				-- in sbox but not in live
+		end
+	end
+
+	local function comp (a, b)													-- local function for case-agnostic category name sorting
+		return a:lower() < b:lower();
+	end
+
+	local header;																-- initialize section header with name of selected category list
+	if 'error' == select then
+		header = 'error';
+	elseif 'maint' == select then
+		header = 'maintenance';
+	else
+		header = 'properties';
+	end
+	
+	header = table.concat ({													-- build the main header
+		'Live ',																-- always include this
+		((sandbox and 'and sandbox ') or ''),									-- if sandbox evaluated, mention that
+		header,																	-- add the list name
+		' categories (',														-- finish the name and add
+		#live_sbox_out,															-- count of categories listed
+		')'																		-- close
+	})
+
+	local templatestyles = frame:extensionTag{
+		name = 'templatestyles', args = { src = "Div col/styles.css" }
+	}
+
+	header = table.concat ({													-- make a useable header
+		_header_make ({header, hdr_lvl}),
+		'\n' .. templatestyles .. '<div class="div-col">'	-- opening <div> for columns
+		});
+
+	table.sort (live_sbox_out, comp);											-- sort case agnostic acsending
+	table.insert (live_sbox_out, 1, header);									-- insert the header at the top
+	table.insert (out, table.concat (live_sbox_out, '\n*'));					-- make a big string of unordered list markup
+	table.insert (out, '</div>\n');												-- close the </div> and add new line so the next header works
+
+	if 0 ~= #live_not_in_sbox_out then											-- when there is something in the table
+		header = table.concat ({												-- build header for subsection
+			'In live but not in sandbox (',
+			#live_not_in_sbox_out,
+			')'
+			});
+	
+		header = table.concat ({												-- make a useable header
+			_header_make ({header, hdr_lvl+1}),
+			'\n' .. templatestyles .. '<div class="div-col">'
+			});
+	
+		table.sort (live_not_in_sbox_out, comp);
+		table.insert (live_not_in_sbox_out, 1, header);
+		table.insert (out, table.concat (live_not_in_sbox_out, '\n*'));
+		table.insert (out, '</div>\n');
+	end
+	
+	if 0 ~= #sbox_not_in_live_out then											-- when there is something in the table
+		header = table.concat ({												-- build header for subsection
+			'In sandbox but not in live (',
+			#sbox_not_in_live_out,
+			')'
+			});
+	
+		header = table.concat ({												-- make a useable header
+			_header_make ({header, hdr_lvl+1}),
+			'\n' .. templatestyles .. '<div class="div-col">'
+			});
+	
+		table.sort (sbox_not_in_live_out, comp);
+		table.insert (sbox_not_in_live_out, 1, header);
+		table.insert (out, table.concat (sbox_not_in_live_out, '\n*'));
+		table.insert (out, '</div>\n');
+	end
+
+	return table.concat (out);													-- concat into a huge string and done
+end
+
+--[=[--------------------------< H E L P _ T E X T _ C A T S >--------------------------------------------------
+
+To create category links at the bottom of each error help text section and on the individual error category pages;
+fetches category names from ~/Configuration; replaces this:
+	{{#ifeq:{{FULLPAGENAME}}|Category:CS1 errors: bioRxiv|Category:CS1 errors: bioRxiv|[[:Category:CS1 errors: bioRxiv]]}}
+with this:
+	{{#invoke:Cs1 documentation support|help_text_cats|err_bad_biorxiv}}
+where {{{1}}} is the error_conditions key from Module:Citation/CS1/Configuration
+
+add |pages=yes to append the number of pages in the category
+
+]=]
+
+local function help_text_cats (frame)
+	local args_t = getArgs (frame);
+	local error_conditions_t = cfg.error_conditions;							-- get the table of error conditions
+	local replacements_t = {};													-- table to hold replacement parameters for $1 etc placeholders in category names
+	for k, v in pairs (args_t) do												-- look for |$1=<replacement> parameters
+		if 'string' == type (k) and k:match ('^$%d+$') then						-- if found
+			replacements_t[k] = v;												-- save key and value
+		end
+	end
+
+	if args_t[1] and error_conditions_t[args_t[1]] then							-- must have error_condition key and it must exist
+		local error_cat = error_conditions_t[args_t[1]].category;				-- get error category from cs1|2 configuration
+		if error_cat:match ('$%d') then											-- look for placeholders in <error_cat>
+			error_cat = error_cat:gsub ('$%d', replacements_t)					-- replace place holders with matching value from replacements_t
+		end
+		
+		local title_obj = mw.title.getCurrentTitle();							-- get a title object for the currently displayed page
+		local name_space = title_obj.nsText;
+		if ('Category' == name_space) and (error_cat == title_obj.text) then	-- if this is the category page for the error message
+			return table.concat ({'Category:', error_cat});						-- no link; just category name
+		else																	-- here when currently displayed page is other than the error message category
+			local pages = '';													-- default empty strin for concatenation
+			if 'yes' == args_t.pages then										-- if we should display category page count: TODO: do we need to keep this?
+				pages = mw.site.stats.pagesInCategory (error_cat, 'all');		-- get category page count
+				pages = table.concat ({' (', mw.language.getContentLanguage():formatNum (pages), ' page', (1 == pages) and ')' or 's)'});	-- make renderable text
+			end
+			return table.concat ({'[[:Category:', error_cat, ']]', pages});		-- link to category with or without page count
+		end
+	else
+		return '<span style="color:#d33">unknown error_conditions key: ' .. (args_t[1] or 'key missing') .. '</span>';
+	end
+end
+
+--[[--------------------------< H E L P _ T E X T _ E R R O R _ M E S S A G E >--------------------------------
+
+to render help text example error messages
+	{{#invoke:Cs1 documentation support|help_text_error_messages|err_bad_biorxiv}}
+
+assign a single underscore to any of the |$n= parameters to insert an empty string in the error message:
+	{{#invoke:Cs1 documentation support|help_text_error_messages|err_bad_issn|$1=_}} -> Check |issn= value
+	{{#invoke:Cs1 documentation support|help_text_error_messages|err_bad_issn|$1=e}} -> Check |eissn= value
+
+error message is rendered at 120% font size; to specify another font size use |size=; must include unit specifier (%, em, etc)
+
+]]
+
+local function help_text_error_messages (frame)
+	local args_t = getArgs (frame);
+	local error_conditions = mw.loadData ('Module:Citation/CS1/Configuration').error_conditions;
+--	local span_o = '<span class="cs1-visible-error citation-comment">';
+	local span_o = '<span class="citation-comment" style="color:#d33; font-size:' .. ((args_t.size and args_t.size) or '120%') .. '">';
+	local span_c = '</span>';
+
+	local message;
+	local out = {};																-- output goes here
+	
+	if args_t[1] and error_conditions[args_t[1]] then								-- must have error_condition key and it must exist
+		message = error_conditions[args_t[1]].message;
+		local i=1;
+		local count;
+		local rep;
+		repeat
+			rep = '$'..i
+			args_t[rep] = args_t[rep] and args_t[rep]:gsub ('^%s*_%s*$', '') or nil;	-- replace empty string marker with actual empty string
+			message, count = message:gsub (rep, args_t[rep] or rep)
+			i = i + 1;
+			until (0 == count);
+
+		table.insert (out, span_o);
+		table.insert (out, message);
+		table.insert (out, span_c);
+	else
+		return '<span style="color:#d33">unknown error_conditions key: ' .. (args_t[1] or 'key missing') .. '</span>';
+	end
+	
+	local out_str = table.concat (out);
+	return table.concat ({frame:extensionTag ('templatestyles', '', {src='Module:Citation/CS1/styles.css'}), out_str});
+end
+
+--[[--------------------------< T E M P L A T E S _ T >--------------------------------------------------------
+
+This table is a k/v table of sequence tables.  The keys in this table are collapsed lowercase form of the cs1|2
+template names ({{ROOTPAGENAME}}):
+	Template:Cite AV media -> citeavmedia
+	
+Each subsequence table holds:
+	[1] documentation page where the TemplateData json is stored ({{cite book}} is the oddball)
+	[2] key to 'preprint_arguments' and unique_arguments' tables in Module:Citation/CS1/Whitelist; these keys
+		dictate which of the basic or limited arguments and numbered arguments tables will be used to validate
+		the content of the TemplateData
+
+]]
+
+local templates_t = {
+	citearxiv = {'Template:Cite_arXiv/doc', 'arxiv'},							-- preprint arguments 
+	citeavmedia = {'Template:Cite AV media/doc', 'audio-visual'},				-- unique arguments
+	citeavmedianotes = {'Template:Cite AV media notes/doc'},					-- no template data
+	citebiorxiv = {'Template:Cite bioRxiv/doc', 'biorxiv'},						-- preprint arguments
+	citebook = {'Template:Cite book/TemplateData'},
+	citeciteseerx = {'Template:Cite citeseerx/doc', 'citeseerx'},				-- no template data; preprint uses limited arguments
+	citeconference = {'Template:Cite conference/doc', 'conference'},			-- unique arguments
+	citeencyclopedia = {'Template:Cite encyclopedia/doc'},
+	citeepisode = {'Template:Cite episode/doc', 'episode'},						-- unique arguments
+	citeinterview = {'Template:Cite interview/doc'},
+	citejournal = {'Template:Cite journal/doc'},
+	citemagazine = {'Template:Cite magazine/doc'},
+	citemailinglist = {'Template:Cite mailing list/doc', 'mailinglist'},		-- unique arguments			-- no template data
+	citemap = {'Template:Cite map/TemplateData', 'map'},						-- unique arguments
+	citenews = {'Template:Cite news/doc'},
+	citenewsgroup = {'Template:Cite newsgroup/doc', 'newsgroup'},				-- unique arguments
+	citepodcast = {'Template:Cite podcast/doc'},
+	citepressrelease = {'Template:Cite press release/doc'},
+	citereport = {'Template:Cite report/doc', 'report'},						-- unique arguments
+	citeserial = {'Template:Cite serial/doc', 'serial'},						-- unique arguments			-- no template data
+	citesign = {'Template:Cite sign/doc'},
+	citespeech = {'Template:Cite speech/doc', 'speech'},						-- unique arguments			-- no template data
+	citessrn = {'Template:Cite ssrn/doc', 'ssrn'},								-- preprint arguments		-- no template data
+	citetechreport = {'Template:Cite techreport/doc'},
+	citethesis = {'Template:Cite thesis/doc', 'thesis'},						-- unique arguments
+	citeweb = {'Template:Cite web/doc'},
+	citation = {'Template:Citation/doc'},
+	}
+
+--[[--------------------------< N O _ P A G E _ T E M P L A T E S _ T >----------------------------------------
+
+]]
+
+local no_page_templates_t = {};
+
+--[[--------------------------< I D E N T I F I E R _ A L I A S E S _ T >--------------------------------------
+
+a table of the identifier aliases
+
+]]
+
+local identifier_aliases_t = {}
+for identifier, handler in pairs (cfg.id_handlers) do							-- for each identifier
+	local aliases_t = {};														-- create a table
+	for _, alias in ipairs (handler.parameters) do								-- get the alaises
+		aliases_t[alias] = true;												-- and add them to the table in a form that mimics the whitelist tables
+	end
+	identifier_aliases_t[identifier:lower()] = aliases_t;						-- add new table to the identifier aliases table; use lowercase identifier base name for the key
+end
+
+--[[--------------------------< T E M P L A T E _ D A T A _ J S O N _ G E T >----------------------------------
+
+get template doc page content and extract the content of the TemplateData tags (case insensitive)
+
+<template> is the canonical name of the template doc page (with namespace) that holds the template data; usually
+Template:Cite xxx/doc (except Template:Cite book/TemplateData)
+
+]]
+
+local function template_data_json_get (template)
+	local json = mw.title.new (template):getContent() or '';					-- get the content of the article or ''; new pages edited w/ve do not have 'content' until saved; ve does not preview; phab:T221625
+	json = json:match ('<[Tt]emplate[Dd]ata>(.-)</[Tt]emplate[Dd]ata>');		-- remove everything exept the content of the TemplatData tags
+	return json and mw.text.jsonDecode (json);									-- decode the json string and return as a table; nil if not found
+end
+
+--[[--------------------------< V A L I D A T E _ U N I Q U E _ P A R A M >------------------------------------
+
+looks for <param> (can be the canonical parameter name or can be an alias) in whitelist.basic_arguments{} and if
+necessary in whitelist.numbered_arguments{}.  When found, returns true; nil else
+
+<param> is the parameter's name as listed in the TemplateData
+
+]]
+
+local function validate_basic_param (param)
+	if true == whitelist.basic_arguments[param] or true == whitelist.numbered_arguments[param] then
+		return true;
+	end
+end
+
+--[[--------------------------< V A L I D A T E _ P R E P R I N T _ P A R A M >--------------------------------
+
+looks for <param> (can be the canonical parameter name or can be an alias) in whitelist.preprint_arguments{} or
+whitelist.limited_basic_arguments{} or whitelist.limited_numbered_arguments{}.  When found, returns true; nil else
+
+<param> is the parameter's name as listed in the TemplateData
+<key> is key neccessary to look in the appropriate subtable of whitelist.preprint_arguments{}
+
+]]
+
+local function validate_preprint_param (param, key)
+	if true == whitelist.preprint_arguments[key][param] or 
+		true == whitelist.limited_basic_arguments[param] or
+		true == whitelist.limited_numbered_arguments[param] then
+			return true;
+	end
+end
+
+--[[--------------------------< V A L I D A T E _ U N I Q U E _ P A R A M >------------------------------------
+
+looks for <param> (can be the canonical parameter name or can be an alias) in whitelist.unique_arguments{} or
+whitelist.basic_arguments{} or whitelist.numbered_arguments{}.  When found, returns true; nil else
+
+<param> is the parameter's name as listed in the TemplateData
+<key> is key neccessary to look in the appropriate subtable of whitelist.unique_arguments{}
+
+]]
+
+local function validate_unique_param (param, key, cfg_aliases_t)
+	if true == whitelist.unique_arguments[key][param] or true == validate_basic_param (param) then
+		return true;
+	end
+end
+
+--[[--------------------------< V A L I D A T E _ I D _ P A R A M >--------------------------------------------
+
+looks for <param> <alias> in identifier_aliases_t{}.  When found, returns true; nil else
+
+<param> is the parameter's name as listed in the TemplateData
+<alias> is the alias that we're looking for
+
+]]
+
+local function validate_id_alias (param, alias)
+	return identifier_aliases_t[param] and identifier_aliases_t[param][alias];
+end
+	
+
+--[[--------------------------< P A R A M _ E R R O R_ M S G >-------------------------------------------------
+
+]]
+
+local function param_error_msg (param)
+	return '<code style="color: inherit; background: inherit; border: none; padding: inherit">|' .. param .. '=</code> is not a valid parameter';
+end
+
+--[[--------------------------< A L I A S _ E R R O R_ M S G >-------------------------------------------------
+
+]]
+
+local function alias_error_msg (param, alias)
+	return '<code style="color: inherit; background: inherit; border: none; padding: inherit">|' .. alias .. '=</code> is not a valid alias of: <code style="color: inherit; background: inherit; border: none; padding: inherit">|' .. param .. '=</code>';
+end
+
+--[[--------------------------< C F G _ A L I A S E S _ T _ M A K E >------------------------------------------
+
+convert this from cfg.aliases{}:
+	['AccessDate'] = {'access-date', 'accessdate'}
+
+to this in out_t{}
+	['access-date'] = 'AccessDate',
+	['accessdate'] = 'AccessDate',
+
+to test if |accessdate= is an aliases of |access-date=:
+	if out_t['access-date'] == out_t['accessdate']
+]]
+
+local function cfg_aliasts_t_make ()
+	local out_t = {};
+	for meta, params_t in pairs (cfg.aliases) do
+		if 'table' == type (params_t) then										-- metaparameters that are assigned string values do not have aliases
+			for _, param in ipairs (params_t) do								-- for each alias
+				param = param:gsub ('#', '');									-- get rid of enumerators
+				out_t[param] = meta;											-- add it to the output table
+			end
+		end
+	end
+--error (mw.dumpObject (out_t))
+	return out_t;
+end
+
+--[[--------------------------< T E M P L A T E _ D A T A _ V A L I D A T E >----------------------------------
+
+compairs parameter names listed in a cs1|2 template's TemplateData structure (everything between <TemplateData>
+and </TemplateData> tag case insensitive).  Returns error messages when errors found, empty string else.
+
+	{{#invoke:Cs1 documentation support|template_data_validate|{{ROOTPAGENAME}}}}
+
+When called from a different page:
+	{{#invoke:cs1 documentation support|template_data_validate|<canonical template name>}}
+where the <canonical template name> is the template's canonical name with or without namespace and or subpages
+
+]]
+
+local function template_data_validate (frame)
+	local args_t = getArgs (frame);
+	
+	if not args_t[1] then
+		return '<span style="color:#d33">Error: cs1|2 template name required</span>';
+	end
+
+	local template_idx = args_t[1]:lower():match ('cit[ae][^/]+');				-- args_t[1] has something
+	if not template_idx then													-- but if not a cs1|2 template abandon with error message
+		return '<span style="color:#d33">Error: cs1|2 template name required</span>';
+	else
+		template_idx = template_idx:gsub (' ', '');								-- is what appears to be a cs1|2 template so strip spaces
+	end
+
+	local cfg_aliases_t = cfg_aliasts_t_make ();
+
+	local template_t = templates_t[template_idx];
+	local out = {};
+
+	local template_doc = template_t[1];
+	local json_t = template_data_json_get (template_doc);
+	
+	if not json_t then
+		 table.insert (out, 'Error: can\'t find TemplateData');
+	else
+		for param, param_t in pairs (json_t['params']) do
+			local param_i;														-- this will be the parameter name that gets validated
+			if param:find ('[Ss]2[Cc][Ii][Dd]') then							-- |s2cid*= parameters are not enumerated ...
+				param_i = param;												-- ... so don't convert the '2' to '#'
+			else
+				param_i = param:gsub ('%d+', '#');								-- for enumerated parameters, convert the enumerator digits to a single '#' character; all others unmolested
+			end
+
+			local param_is_valid;												-- boolean true when param is valid; nil else
+			if template_t[2] then												-- if template is a preprint or uses unique parameters
+				if whitelist.preprint_arguments[template_t[2]] then				-- if a preprint template
+					param_is_valid = validate_preprint_param (param_i, template_t[2]);
+					if param_is_valid then
+						if param_t['aliases'] then
+							for _, alias in ipairs (param_t['aliases']) do
+								local alias_i = alias:gsub ('%d+', '#');		-- in case an enumerated parameter, convert the enumerator digits to a single '#' character
+								if not validate_preprint_param (alias_i, template_t[2]) then	-- is 'alias' a known parameter?
+	 								table.insert (out, alias_error_msg (param, alias));			-- may be known but is not supported
+								elseif cfg_aliases_t[param_i:gsub ('#', '')] ~= cfg_aliases_t[alias_i:gsub ('#', '')] then	-- is 'alias' known to be an alias of 'param'?
+									table.insert (out, alias_error_msg (param, alias));
+ 								end
+							end
+						end
+					else														-- here when param not valid preprint param
+						table.insert (out, param_error_msg (param))
+ 					end
+				elseif whitelist.unique_arguments[template_t[2]] then			-- if a unique parameters template
+					param_is_valid = validate_unique_param (param_i, template_t[2]);
+					if param_is_valid then
+						if param_t['aliases'] then
+							for _, alias in ipairs (param_t['aliases']) do
+								local alias_i = alias:gsub ('%d+', '#');		-- in case an enumerated parameter, convert the enumerate digits to a single '#' character
+								if not validate_unique_param (alias_i, template_t[2]) then	-- is 'alias' a known parameter?
+									table.insert (out, alias_error_msg (param, alias));
+								elseif cfg_aliases_t[param_i:gsub ('#', '')] ~= cfg_aliases_t[alias_i:gsub ('#', '')] then	-- is 'alias' known to be an alias of 'param'?
+									table.insert (out, alias_error_msg (param, alias));
+ 								end
+							end
+						end
+					else														-- here when param not valid unique parameter
+						table.insert (out, param_error_msg (param))
+ 					end
+				else															-- should never be here if coder is doing the right thing ...
+					table.insert (out, 'internal error: unexpected keyword in templates_t: ' .. template_t[2]);
+					break;
+				end
+			else																-- here when not unique or preprint
+				param_is_valid = validate_basic_param (param_i);
+				if param_is_valid then
+					if param_t['aliases'] then
+						for _, alias in ipairs (param_t['aliases']) do
+							local alias_i = alias:gsub ('%d+', '#');			-- in case an enumerated parameter, convert the enumerate digits to a single '#' character
+							 if not validate_basic_param (alias_i) and not validate_id_alias (param, alias) then	-- for isbn13 (while still supported) must not mask the digits
+ 								table.insert (out, alias_error_msg (param, alias));
+ 							end
+						end
+					end
+				else															-- here when param not valid
+					table.insert (out, param_error_msg (param))
+ 				end
+			end
+		end
+	end
+
+---------- this emits errors when page/pages/at listed in templatedata of templates that don't support those parameters ----------
+--	if json_t then
+--		if ({['citeavmedia']=true, ['citeepisode']=true, ['citemailinglist']=true, ['citenewsgroup']=true, ['citepodcast']=true, ['citeserial']=true, ['citesign']=true, ['citespeech']=true})[template_idx] then
+--			local insource_params_t = {};										-- build sequence of pagination params not supported by these templates
+--			for _, meta_param in ipairs ({'At', 'Page', 'Pages', 'QuotePage', 'QuotePages'}) do
+--				if 'table' == type (cfg.aliases[meta_param]) then
+--					for _, alias in ipairs (cfg.aliases[meta_param]) do			-- metaparameter is a sequence
+--						table.insert (insource_params_t, alias);				-- add the aliases from the metaparameter sequence to the table
+--					end
+--				else															-- metaparameter is plain text
+--					table.insert (insource_params_t, cfg.aliases[meta_param]);	-- add the alias to the table
+--				end
+--			end
+--		
+--			for _, param in ipairs (insource_params_t) do
+--				if json_t.params[param] then
+--					table.insert (out, param_error_msg (param));				-- error; this parameter not supported by this template
+--				end
+--			end
+--		end
+--	end
+---------- end page/pages/at error detection ----------
+
+	if 0 ~= #out then
+		table.sort (out);
+		out[1] = '*' .. out[1];													-- add a splat to the first error message
+
+--		return table.concat ({'[[' .. template_doc .. ']] TemplateData has errors:<div style="color:#d33; font-style: normal">\n', table.concat (out, '\n*'), '</div>'});
+		return table.concat ({
+			'[[Template:' .. args_t[1] .. ']]  uses ',
+			whitelist.preprint_arguments[template_t[2]] and 'preprint and limited parameter sets' or (whitelist.unique_arguments[template_t[2]] and 'unique and standard parameter sets' or 'standard parameter set'),
+			'; TemplateData has errors:\n',
+			'<div style="color:#d33; font-style: normal">\n', table.concat (out, '\n*'), '</div>'
+			});
+	else
+		return;																	-- no errors detected; return nothing
+	end
+end
+
+--[[--------------------------< E R R O R _ C A T _ P A G E _ T A L L Y >--------------------------------------
+
+loop through Module:Citation/CS1/Configuration error_conditions {} fetching error category names.  For each error
+category add the number of pages in the category to the tally.  Render the number when done.
+
+{{#invoke:cs1 documentation support|error_cat_page_tally}}
+
+]]
+
+local function error_cat_page_tally ()
+	local error_conditions_t = cfg.error_conditions;							-- get the table of error conditions
+	local tally = 0;
+	local cat_t = {};															-- some error message share a category; save tallied cats here so we don't recount the already counted
+	local i = 0;																-- number of categories
+	
+	for k, v_t in pairs (error_conditions_t) do
+		if k:match ('^err') then
+			if not cat_t[v_t.category] then
+				cat_t[v_t.category] = true;
+				tally = tally +  mw.site.stats.pagesInCategory (v_t.category, 'pages');		-- get category page count; ignore subcats and files
+				i = i + 1;
+			end
+		end
+	end
+
+	return mw.language.getContentLanguage():formatNum (tally)
+end
+
+--[[--------------------------< M A I N T _ C A T _ P A G E _ T A L L Y >--------------------------------------
+
+loop through Module:Citation/CS1/Configuration error_conditions {} fetching error category names.  For each error
+category add the number of pages in the category to the tally.  Render the number when done.
+
+{{#invoke:cs1 documentation support|maint_cat_page_tally}}
+
+Dynamic subcats of CS1 maint: DOI inactive not counted because these names come and go as time goes by.
+
+]]
+
+local function maint_cat_page_tally ()
+	local error_conditions_t = cfg.error_conditions;							-- get the table of error conditions
+	local tally = 0;
+	local cat_t = {};															-- some error message share a category; save tallied cats here so we don't recount the already counted
+	local i = 0;																-- number of categories
+	
+	for k, v_t in pairs (error_conditions_t) do
+		if not k:match ('^err') then											-- if not an error key its a maint key
+			if not cat_t[v_t.category] then
+				cat_t[v_t.category] = true;
+				if 'maint_mult_names' == k or 'maint_numeric_names' == k then
+					local special_case_translation_t = cfg.special_case_translation;
+					for _, name in ipairs ({'AuthorList', 'ContributorList', 'EditorList', 'InterviewerList', 'TranslatorList'}) do
+						local cat_name = v_t.category:gsub ('$1', special_case_translation_t[name]);	-- replace $1 with translated list name
+						tally = tally +  mw.site.stats.pagesInCategory (cat_name, 'pages');		-- get category page count; ignore subcats and files
+						i = i + 1;
+					end
+				else	
+					tally = tally +  mw.site.stats.pagesInCategory (v_t.category, 'pages');		-- get category page count; ignore subcats and files
+					i = i + 1;
+				end
+			end
+		end
+	end
+
+	return mw.language.getContentLanguage():formatNum (tally)
+end
+
+--[[--------------------------< U N C A T E G O R I Z E D _ N A M E S P A C E _ L I S T E R >------------------
+
+For use in the Help:CS1 error §Notes
+
+Get namespace names and identifiers from MediaWiki.  Make a human readable list of namespace names and identifiers
+that cs1|2 does not categorize.
+
+{{#invoke:cs1 documentation support|uncategorized_namespace_lister}}
+
+For convenience, 
+{{#invoke:cs1 documentation support|uncategorized_namespace_lister|all=<anything>}}
+
+returns a list of all namespace names and identifiers used on the current wiki.  Any namespace with an
+identifier less than 1, currently Mainspace (0), Special (-1), and Media (-2), is excluded from the list.
+
+]]
+
+local function uncategorized_namespace_lister (frame)
+--TEMP DEVELOPMENT 2022-07-09 -- delete at next module update
+		local cfg = mw.loadData ('Module:Citation/CS1/Configuration/sandbox');	-- load the SANDBOX configuration module
+--END TEMP DEVELOPMENT
+	local list_t = {};
+	local function compare (a, b)												-- local function to sort namespaces numerically by the identifiers
+		local a_num = tonumber (a:match ('%d+'));								-- get identifiers and convert to numbers
+		local b_num = tonumber (b:match ('%d+'));
+		return a_num < b_num;													-- do the comparison
+	end
+	
+	for i, _ in pairs (mw.site.namespaces) do									-- for each namespace in the table
+		if '' == frame.args.all or not frame.args.all then						-- when |all= not set, make a list of uncategorized namespaces
+			if cfg.uncategorized_namespaces[i] then								-- if the identifier is listed in our uncategorized namespace list
+				table.insert (list_t, table.concat ({mw.site.namespaces[i].name, ' (', i, ')'}))	-- add name and identifier to our local list
+			end
+		elseif 0 < i then														-- |all=<anything>: all namespace names and identifiers; ignore identifiers less than 1
+			table.insert (list_t, table.concat ({'*', mw.site.namespaces[i].name, ' (', i, ')'}))	-- add name and identifier as an unordered list item
+		end
+	end
+	
+	table.sort (list_t, compare);												-- ascending numerical sort by identifier
+
+	if not frame.args.all then													-- when |all= not set, format list of uncategorized namespaces and identifiers
+		list_t[#list_t] = 'and ' .. list_t[#list_t];							-- add 'and ' to the last name/identifier pair
+		return table.concat (list_t, ', ');										-- make a big string and done
+	else																		-- make list of all namespaces and identifiers
+		return table.concat (list_t, '\n');									-- make a big string and done
+	end
+end
+
+--[[--------------------------< E X P O R T E D   F U N C T I O N S >------------------------------------------
+]]
+
+return {
+	alias_lister = alias_lister,
+	alias_names_get = alias_names_get,
+	canonical_param_lister = canonical_param_lister,
+	canonical_name_get = canonical_name_get,
+	cat_lister = cat_lister,
+	error_cat_page_tally = error_cat_page_tally,
+	header_make = header_make,
+	help_text_cats = help_text_cats,
+	help_text_error_messages = help_text_error_messages,
+	id_limits_get = id_limits_get,
+	is_book_cite_template = is_book_cite_template,
+	is_limited_param_template = is_limited_param_template,
+	lang_lister = lang_lister,
+	maint_cat_page_tally = maint_cat_page_tally,
+	script_lang_lister = script_lang_lister,
+	template_data_validate = template_data_validate,
+	uncategorized_namespace_lister = uncategorized_namespace_lister,
+	};

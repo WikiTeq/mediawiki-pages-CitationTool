@@ -1,0 +1,2 @@
+#REDIRECT [[Template:TemplateData header]]
+{{R from move}}

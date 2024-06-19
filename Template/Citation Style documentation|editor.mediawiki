@@ -1,0 +1,15 @@
+* <b id="csdoc_editors">editor-last</b>: surname of editor. Do not wikilink—use '''editor-link''' instead. Where the surname is usually written first—as in Chinese—or for corporate authors, simply use '''editor-last''' to include the same format as the source. Aliases: '''editor-last1''', '''editor1-last''', '''editor-surname''', '''editor-surname1''', '''editor1-surname''', '''editor''', '''editor1'''.
+** '''editor''': This parameter is used to hold the complete name of a single editor (first and last), or the name of an editorial committee. This parameter should never hold the names of more than one editor.
+** '''editor-first''': given or first names of editor, including title(s); example: ''Firstname Middlename'' or ''Firstname M.'' or ''Dr. Firstname M., Sr.'' Do not wikilink—use '''editor-link''' instead. Aliases: '''editor-first1''', '''editor1-first''', '''editor-given''', '''editor-given1''', '''editor1-given'''.
+**OR: for multiple editors, use '''editor-last1''', '''editor-first1''' through '''editor-last<var>n</var>''', '''editor-first<var>n</var>''' (Aliases: '''editor<var>n</var>-last''', '''editor-surname<var>n</var>''' or '''editor<var>n</var>-surname'''; '''editor<var>n</var>-first''', '''editor-given<var>n</var>''' or '''editor<var>n</var>-given'''; '''editor<var>n</var>'''). For an individual editor plus an institutional editor, you can use {{para|editor-first1|...}}{{para|editor-last1|...}} {{para|editor2|...}}.
+:* '''editor-link''': title of existing Wikipedia article about the editor—not the editor's website; do not wikilink. Aliases: '''editor-link1'''.
+:*OR: for multiple editors, use '''editor-link1''' through '''editor-link<var>n</var>''' (alias '''editor<var>n</var>-link''').
+:*'''name-list-format''': displays authors and editors in [[Vancouver style]] when set to <code>vanc</code> and when the list uses <code>last</code>/<code>first</code> parameters for the name list(s)
+*'''veditors''': comma separated list of editor names in [[Vancouver style]]; enclose corporate or institutional names in doubled parentheses:
+*:{{para|veditors|Smythe JB, ((Megabux Corp.))}}
+:* '''editor-link''n''''' and '''editor-mask''n''''' may be used for the individual names in {{para|veditors}}, as described above
+*'''editors''': free-form list of editor names; use of this parameter is discouraged; not an alias of '''editor-last'''
+:Display:
+::Use '''display-editors''' to control the length of the displayed editor name list and to specify when "et al." is included.
+::If authors: Authors are first, followed by the included work, then "In" and the editors, then the main work.
+::If no authors: Editors appear before the included work; a single editor is followed by "ed."; multiple editors are followed by "eds."

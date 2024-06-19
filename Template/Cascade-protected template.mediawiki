@@ -1,0 +1,14 @@
+{{protected page text
+    | image = Cascade-protection-shackle.svg
+    | protection-message = This {{{page|template}}} is [[Wikipedia:Transclusion|transcluded]] in one or more [[Wikipedia:Protection policy#Cascading protection|cascade-protected]] pages, therefore only [[Wikipedia:Administrators|administrators]] can edit it.
+    | suggestions = {{{suggestions|}}}
+    | protection-reason = Cascading protection is used to prevent vandalism to particularly visible pages, such as the [[Main Page]] and a few [[Wikipedia:High-risk templates|very highly used templates]].
+    | log-text = This page is [[Wikipedia:Transclusion|transcluded]] in one or more pages protected with the "[[Wikipedia:Protection policy#Cascading protection|cascading]]" option. If you "View source" on (attempt to edit) this page, the automatically generated version of the protection notice on the editing page will include a list of the cascade-protected pages that transclude this one.
+    | template-links = yes
+    | who-can-edit = An [[Wikipedia:Administrators|administrator]]
+    | request-type = full
+    | hide-requestlower = yes<!--Because such requests are automatically declined for cascade-protected templates.-->
+}}<noinclude>
+
+{{Documentation}}
+</noinclude>

@@ -1,0 +1,1 @@
+This {{cs1}} template is used to create [[WP:CITE|citations]] for {{{2|}}}.

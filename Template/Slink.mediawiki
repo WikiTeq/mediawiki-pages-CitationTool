@@ -1,0 +1,3 @@
+#REDIRECT [[Template:Section link]]
+
+{{Rcat shell|{{R from template shortcut}}{{R from short name}}}}

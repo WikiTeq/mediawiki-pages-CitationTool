@@ -1,0 +1,40 @@
+<noinclude>
+<templatedata>
+{
+    "description": "Inserts a citation based on a Reference page",
+    "params": {
+        "1": {
+            "label": "Reference Page name",
+            "type": "string",
+            "required": true
+        },
+        "2": {
+            "label": "Page number",
+            "type": "string"
+        }
+    }
+}
+</templatedata>
+</noinclude><includeonly>{{#tag:ref|[[:Reference:{{{1}}}|[Ref]]] {{#switch:{{#show:Reference:{{{1}}}|?Reference type}}
+|book={{Cite map/book|{{{1}}}|{{{2|}}}}}
+|bill={{Cite map/act|{{{1}}}|{{{2|}}}}}
+|book section={{Cite map/book|{{{1}}}|{{{2|}}}}}
+|case={{Cite map/court|{{{1}}}|{{{2|}}}}}
+|computer program={{Cite map/video game|{{{1}}}|{{{2|}}}}}
+|conference proceedings={{Cite map/conference|{{{1}}}|{{{2|}}}}}
+|encyclopedia article={{Cite map/encyclopedia|{{{1}}}|{{{2|}}}}}
+|film={{Cite map/film|{{{1}}}|{{{2|}}}}}
+|generic={{Cite map/generic|{{{1}}}|{{{2|}}}}}
+|hearing={{Cite map/generic|{{{1}}}|{{{2|}}}}} <!-- mapped to generic -->
+|journal={{Cite map/journal|{{{1}}}|{{{2|}}}}}
+|magazine article={{Cite map/magazine|{{{1}}}|{{{2|}}}}}
+|newspaper article={{Cite map/newspaper|{{{1}}}|{{{2|}}}}}
+|patent={{Cite map/patent|{{{1}}}|{{{2|}}}}}
+|report={{Cite map/report|{{{1}}}|{{{2|}}}}}
+|statute={{Cite map/court|{{{1}}}|{{{2|}}}}} <!-- mapped to court -->
+|television broadcast={{Cite map/episode|{{{1}}}|{{{2|}}}}}
+|thesis={{Cite map/thesis|{{{1}}}|{{{2|}}}}}
+|working paper={{Cite map/journal|{{{1}}}|{{{2|}}}}} <!-- mapped to journal -->
+|web page={{Cite map/web|{{{1}}}|{{{2|}}}}}
+|{{Cite map/generic|{{{1}}}|{{{2|}}}}}<!-- default -->
+}}|name="{{{1}}}{{{2|}}}"}}[[Has reference::Reference:{{{1}}}| ]]</includeonly>

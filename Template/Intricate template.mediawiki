@@ -1,0 +1,16 @@
+{{#switch:{{{form|}}}
+ |editnotice = {{editnotice
+  |id    = {{{id|}}}
+  |image = [[Image:Ambox warning yellow.svg|40x40px|alt=|link=]]
+  |text  = {{Intricate template/text}}
+  |expiry= {{{expiry|}}}
+ }}
+ |#default = {{ombox
+  |type  = style
+  |image = [[Image:Ambox warning yellow.svg|40x40px|alt=|link=]]
+  |text  = {{Intricate template/text}}
+ }}
+}}<includeonly>{{#ifeq: {{PAGENAME}} | {{BASEPAGENAME}} | [[Category:Intricate templates]] }}</includeonly><noinclude>
+{{Documentation}}
+<!-- Add categories and interwikis to the /doc subpage, not here! -->
+</noinclude>

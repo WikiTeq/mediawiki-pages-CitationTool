@@ -1,0 +1,18 @@
+{{mbox|text=This template is a {{#switch:{{lc:{{{type|}}}}}
+|meta=[[:Category:Citation Style 1 meta-templates|Citation Style 1 meta-template]]
+|source=[[:Category:Citation Style 1 specific-source templates|Citation Style 1 specific-source template]]
+|#default=Citation Style 1 [[Wikipedia:Wrapper templates|wrapper template]]
+}} based on {{#switch:{{lc:{{str left|{{{base}}}|7}}}}
+|module:=[[{{{base}}}]].
+|#default={{tl|{{ucfirst:{{{base}}}}}}}.
+}} For centrali{{#switch:{{lc:{{{spell|}}}}}|z=z|s|#default=s}}ed [[Help:Citation Style 1|Citation Style 1]] discussions, see [[Help talk:Citation Style 1]].}}<includeonly>{{category handler
+|template = {{#switch:{{lc:{{SUBPAGENAME}}}}
+  |doc
+  |sandbox
+  |testcases=<noinclude><!-- do not categorize template maintenance subpages --></noinclude>
+  |#default=[[Category:Templates that wrap {{ucfirst:{{{base}}}}}]]
+}}
+|nocat = {{{nocat|}}}
+}}</includeonly><noinclude>
+{{Documentation}}
+</noinclude>

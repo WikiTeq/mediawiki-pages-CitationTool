@@ -1,0 +1,7 @@
+Nested parameters rely on their parent parameters:
+*''parent''
+*OR: ''parent2''—may be used instead of ''parent''
+**''child''—may be used with ''parent'' (and is ignored if ''parent'' is not used)
+**OR: ''child2''—may be used instead of ''child'' (and is ignored if ''parent2'' is not used)
+
+:Where aliases are listed, only one of the parameters may be defined; if multiple aliased parameters are defined, then only one will show.

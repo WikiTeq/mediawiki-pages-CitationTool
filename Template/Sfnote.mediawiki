@@ -1,0 +1,1 @@
+[[Help:Shortened footnotes|{{#ifeq:{{{lc}}}|{{{lc|}}}|shortened footnotes|Shortened footnotes}}]]<noinclude>{{documentation}}</noinclude>

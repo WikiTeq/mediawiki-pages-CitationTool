@@ -1,0 +1,13 @@
+{|class="wikitable"
+|+What's new or changed recently
+!Parameter!!New or changed param
+|-
+|{{para|sbn}}
+|identifier parameter for [[Standard Book Number]]s
+|-
+|{{para|s2cid}}
+|identifier parameter for [[Semantic Scholar]] corpus ID
+|-
+|{{para|s2cid-access}}
+|access-icon parameter for {{para|s2cid}}
+|}

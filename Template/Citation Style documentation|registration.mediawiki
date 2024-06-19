@@ -1,0 +1,65 @@
+<span id="csdoc_access_level"></span>{{tracked|T225430}}Citations of online sources that require registration or a subscription are acceptable in Wikipedia as documented in [[WP:PAYWALL|Verifiability § Access to sources]]. As a courtesy to readers and other editors, editors should signal the access restrictions of the external links included in a citation.  {{lang|la|Nota bene}}: access icons do not display correctly for editors who use Modern skin.
+
+Four access levels can be used:
+*[[#Access indicator for named identifiers|access indicator for named identifiers]]:
+** [[File:Lock-green.svg|9px|link=|alt=Freely accessible|Freely accessible]] <code>free</code>: the source is free to read for anyone
+*[[#Access indicators for url-holding parameters|access indicators for url-holding parameters]]:
+** [[File:Lock-gray-alt-2.svg|9px|link=|alt=Free registration required|Free registration required]] <code>registration</code>: a free registration is required to access the source
+** [[File:Lock-gray-alt-2.svg|9px|link=|alt=Free access subject to limited trial, subscription normally required|Free access subject to limited trial, subscription normally required]] <code>limited</code>: there are other constraints (such as a cap on daily views) to freely access this source
+** [[File:Lock-red-alt-2.svg|9px|link=|alt=Paid subscription required|Paid subscription required]] <code>subscription</code>: the source is only accessible via a paid subscription ("[[paywall]]")
+
+As there are often multiple external links with different access levels in the same citation, these values are attributed to a particular external link.
+
+=====Access indicators for url-holding parameters=====
+Sources linked by {{para|url}}, {{para|article-url}}, {{para|chapter-url}}, {{para|contribution-url}}, {{para|entry-url}}, {{para|map-url}}, and {{para|section-url}} are presumed to be free-to-read.<ref name=NotRef>{{NotRef}}</ref> When they are not free-to-read, editors should mark those sources with the matching access-indicator parameter so that an appropriate icon is included in the rendered citation. Because the sources linked by these url-holding parameters are presumed to be free-to-read, they may not be marked as <code>free</code>.
+
+{| class="wikitable"
+|+ url-holding and access-indicator parameters
+|-
+! url !! access !! allowed keywords
+|-
+| {{para|url}} || {{para|url-access}} || rowspan="7" | <code>registration</code> [[File:Lock-gray-alt-2.svg|9px|link=|alt=Free registration required|Free registration required]]<br /><code>limited</code> [[File:Lock-gray-alt-2.svg|9px|link=|alt=Free access subject to limited trial, subscription normally required|Free access subject to limited trial, subscription normally required]]<br /><code>subscription</code> [[File:Lock-red-alt-2.svg|9px|link=|alt=Paid subscription required|Paid subscription required]]
+|-
+| {{para|article-url}} || {{para|article-url-access}}
+|-
+| {{para|chapter-url}} || {{para|chapter-url-access}}
+|-
+| {{para|contribution-url}} || {{para|contribution-url-access}}
+|-
+| {{para|entry-url}} || {{para|entry-url-access}}
+|-
+| {{para|map-url}} || {{para|map-url-access}}
+|-
+| {{para|section-url}} || {{para|section-url-access}}
+|}
+
+=====Access indicator for named identifiers=====
+Links inserted by named identifiers are presumed to lie behind a paywall or registration barrier – exceptions listed below. When they are free-to-read, editors should mark those sources with the matching access-indicator parameter so that an appropriate icon is included in the rendered citation.  Because the sources linked by these named-identifier parameters are not presumed to be free-to-read, they may not be marked as <code>limited</code>, <code>registration</code>, or <code>subscription</code>.
+
+{| class="wikitable"
+|+ named-identifier and access-indicator parameters
+|-
+! identifier!! access !! allowed keywords
+|-
+| {{para|bibcode}} || {{para|bibcode-access}} || rowspan="7" | <code>free</code> [[File:Lock-green.svg|9px|link=|alt=Freely accessible|Freely accessible]]
+|-
+| {{para|doi}} || {{para|doi-access}}
+|-
+| {{para|hdl}} || {{para|hdl-access}}
+|-
+| {{para|jstor}} || {{para|jstor-access}}
+|-
+| {{para|ol}} || {{para|ol-access}}
+|-
+| {{para|osti}} || {{para|osti-access}}
+|-
+| {{para|s2cid}} || {{para|s2cid-access}}
+|}
+
+Some named-identifiers are always free-to-read. For those named-identifiers there are no access-indicator parameters, the access level is automatically indicated by the template. These named identifiers are:
+*{{para|arxiv}}
+*{{para|biorxiv}}
+*{{para|citeseerx}}
+*{{para|pmc}}
+*{{para|rfc}}
+*{{para|ssrn}}

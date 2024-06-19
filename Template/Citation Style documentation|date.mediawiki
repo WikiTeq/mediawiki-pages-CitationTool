@@ -1,0 +1,19 @@
+* <b id="csdoc_date">date</b>: Date of referenced source. Can be full date (day, month, and year) or partial date (month and year, season and year, or year). Use same format as other publication dates in the citations.{{r|date|group=date}} Required when '''year''' is used to disambiguate {{tlx|sfn}} links to multiple-work citations by the same author in the same year.{{sup|[[Template:Sfn#More_than_one_work_in_a_year|[more]]]}} Do not wikilink. Displays after the authors and is enclosed in parentheses. If there is no author, then displays after publisher.{{#if:{{{aliases|}}}|&#32;Aliases: {{{aliases}}}}}. {{crossref|For acceptable date formats, see {{section link|Help:Citation Style 1|Dates}}.}}
+:For approximate year, precede with "<code>c. </code>", like this: {{para|date|c. 1900}}.
+{{anchor|Undated}}
+:For no date, or "undated", use {{para|date|n.d.}}
+
+{{Citation Style documentation/auto-date-format}}
+* <b id="csdoc_year">year</b>: Year of source being referenced. Use of {{para|date}} is recommended unless {{em|all}} of the following conditions are met:
+*# The {{para|date}} format is YYYY-MM-DD.
+*# The citation requires a <code>[[Wikipedia:Citation templates and reference anchors|CITEREF]]</code> [[Template:Sfn#More than one work in a year|disambiguator]].
+* <b id="csdoc_origyear">orig-year</b>: Original publication year; displays in square brackets after the '''date''' (or '''year'''). For clarity, please supply specifics. For example: {{para|orig-year|First published 1859}} or {{para|orig-year|Composed 1904}}. Alias: '''origyear'''}}
+* <b id="csdoc_df">df</b>: date format; sets rendered dates to the specified format; does not support date ranges or seasonal dates; overrides the automatic date formatting described above. Accepts one value which may be one of these:
+*:<code>dmy</code> – set publication dates to day month year format; access- and archive-dates are not modified;
+*:<code>mdy</code> – as above for month day, year format
+*:<code>ymd</code> – as above for year initial numeric format YYYY-MM-DD
+*:<code>dmy-all</code> – set publication, access-, and archive-dates to day month year format;
+*:<code>mdy-all</code> – as above for month day, year format
+*:<code>ymd-all</code> – as above for year initial numeric format YYYY-MM-DD
+
+{{reflist|group=date|refs=<ref name=date>Publication dates in references within an article should all have the same format. This may be a different format from that used for archive and access dates. {{crossref|See [[MOS:DATEUNIFY]].}}</ref>}}

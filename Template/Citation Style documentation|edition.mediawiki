@@ -1,0 +1,1 @@
+* '''edition''': When the publication has more than one edition; for example: "2nd", "Revised", and so forth. Appends the string "&nbsp;ed." after the field, so {{para|edition|2nd}} produces "2nd&nbsp;ed." Does not display if a periodical field is defined.

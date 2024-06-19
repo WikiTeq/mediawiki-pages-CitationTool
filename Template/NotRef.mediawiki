@@ -1,0 +1,6 @@
+This {{#ifeq: {{FULLPAGENAME}} | Wikipedia:External links |guideline|guidance}} does not restrict linking to websites that are being used as [[Wikipedia:Citing sources|sources]] to provide content in articles.<noinclude>
+
+;Documentation
+:Text of the caveat, which applies to guidance preferring free content as target for external links above web resources with a more restricted access (including subscription, registration, or otherwise limited access).
+:This caveat is used multiple times in the [[WP:EL]] guidance.
+</noinclude>

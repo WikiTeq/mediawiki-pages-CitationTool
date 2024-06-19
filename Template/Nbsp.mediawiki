@@ -1,0 +1,7 @@
+#REDIRECT [[Template:Spaces]]
+
+{{Redirect category shell|
+{{R from move}}
+{{R from alternative name}}
+{{R from template shortcut}}
+}}

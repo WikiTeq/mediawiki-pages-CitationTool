@@ -1,0 +1,1 @@
+:This parameter is required and will generate an error if not defined. On errors, main, help and template pages are placed into [[:Category:Articles with incorrect citation syntax]]. Set {{para|template-doc-demo|true}} to disable categorization; mainly used for documentation where the error is demonstrated.

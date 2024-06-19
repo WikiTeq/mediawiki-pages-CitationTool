@@ -1,0 +1,4 @@
+{{#invoke:Infobox|infobox}}<includeonly>{{template other|{{#ifeq:{{PAGENAME}}|Infobox||{{#ifeq:{{str left|{{SUBPAGENAME}}|7}}|Infobox|[[Category:Infobox templates|{{remove first word|{{SUBPAGENAME}}}}]]}}}}|}}</includeonly><noinclude>
+{{documentation}}
+<!-- Categories go in the /doc subpage, and interwikis go in Wikidata. -->
+</noinclude>

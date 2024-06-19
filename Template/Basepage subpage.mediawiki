@@ -1,0 +1,6 @@
+#REDIRECT [[Template:When on basepage]]
+
+{{Redirect category shell|
+{{R from move}}
+{{R from template shortcut}}
+}}

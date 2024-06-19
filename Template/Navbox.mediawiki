@@ -1,0 +1,3 @@
+<includeonly>{{#invoke:Navbox|navbox}}</includeonly><noinclude>
+{{Documentation}}
+</noinclude>

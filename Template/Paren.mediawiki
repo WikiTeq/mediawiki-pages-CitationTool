@@ -1,0 +1,8 @@
+[[Wikipedia:Parenthetical referencing|{{#ifeq:{{{lc}}}|{{{lc|}}}|parenthetical referencing|Parenthetical referencing}}]]<noinclude>{{documentation|content=
+==Usage==
+===Optional===
+For the first letter to be in lower case, use:
+{{para|lc|<var>y</var>}}
+}}
+[[Category:Documentation assistance templates]]
+</noinclude>

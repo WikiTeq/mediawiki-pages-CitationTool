@@ -1,0 +1,3 @@
+* '''minutes''': Time the event occurs in the source; followed by "minutes in".
+* OR: '''time''': Time the event occurs in the source; preceded by default text "Event occurs at".
+** '''time-caption''': Changes the default text displayed before '''time'''. Alias: '''timecaption'''.

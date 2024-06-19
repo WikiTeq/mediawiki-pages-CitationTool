@@ -1,0 +1,10 @@
+<includeonly>{{Cite court
+|quote={{#show:Reference:{{{1}}}|?Abstract|link=none}}
+|date={{#show:Reference:{{{1}}}|?Document date#-F[Y]|link=none}}
+|url={{#explode:{{#show:Reference:{{{1}}}|?Websites}}|,|-1}}
+|access-date={{#show:Reference:{{{1}}}|?Accessed|link=none}}
+|vol={{#show:Reference:{{{1}}}|?Volume}}
+|lang={{#show:Reference:{{{1}}}|?Language|link=none}}
+|reporter={{#show:Reference:{{{1}}}|?Document publisher|link=none}}
+|pages={{#if:{{{2|}}}|{{{2}}}}}
+}}</includeonly>

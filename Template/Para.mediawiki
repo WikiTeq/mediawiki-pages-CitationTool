@@ -1,0 +1,4 @@
+<code class="nowrap" style="{{SAFESUBST:<noinclude />#if:{{{plain|}}}|border: none; background-color: inherit;}} {{SAFESUBST:<noinclude />#if:{{{plain|}}}{{{mxt|}}}{{{green|}}}{{{!mxt|}}}{{{red|}}}|color: {{SAFESUBST:<noinclude />#if:{{{mxt|}}}{{{green|}}}|#006400|{{SAFESUBST:<noinclude />#if:{{{!mxt|}}}{{{red|}}}|#8B0000|inherit}}}};}} {{SAFESUBST:<noinclude />#if:{{{style|}}}|{{{style}}}}}">&#124;{{SAFESUBST:<noinclude />#if:{{{1|}}}|{{{1}}}&#61;}}{{{2|}}}</code><noinclude>
+{{Documentation}}
+<!--Categories and interwikis go near the bottom of the /doc subpage.-->
+</noinclude>

@@ -1,0 +1,48 @@
+{{#if:{{{litigants|}}}
+ |<cite>{{#ifexist:{{{litigants|}}}
+  |{{#ifeq:{{{litigants|}}}|{{PAGENAME}}
+   |''{{{litigants}}}''
+   |''[[{{{litigants}}}]]''
+  }}
+  |''{{{litigants}}}''
+ }}</cite>{{#if:{{{vol|}}}{{{reporter|}}}{{{opinion|}}}
+  |,&#32;
+ }}
+}}{{#if:{{{url|}}}
+ |{{#if:{{{vol|}}}{{{reporter|}}}{{{opinion|}}}
+  |[{{{url}}} {{#if:{{{vol|}}}
+   |{{{vol}}}
+  }}{{#if:{{{reporter|}}}
+   |&#32;{{delink|{{{reporter}}}}}
+  }}{{#if:{{{opinion|}}}
+   |&#32;{{{opinion}}}
+  }}]
+ }}
+ |{{#if:{{{vol|}}}
+  |{{{vol}}}
+ }}{{#if:{{{reporter|}}}
+  |&#32;{{delink|{{{reporter}}}}}
+ }}{{#if:{{{opinion|}}}
+  |&#32;{{{opinion}}}
+ }}
+}}{{#if:{{{pinpoint|}}}
+ |, {{{pinpoint}}}
+}}{{#if:{{{court|}}}{{{date|}}}{{{year|}}}
+ |&#32;({{#if:{{{court|}}}
+  |{{{court}}}
+ }}{{#if:{{{date|{{{year|}}}}}}
+  |{{#if:{{{court|}}}
+   |&#32;
+  }}{{{date|{{{year}}}}}}
+ }})
+}}{{#if:{{{quote|}}}
+ |&#32;("{{{quote}}}")
+ |
+}}. {{#if:{{{url|}}}
+ |{{#if:{{{vol|}}}{{{reporter|}}}{{{opinion|}}}
+  |
+  |[{{{url}}} {{{text|Text}}}]
+ }}
+}}<noinclude>
+{{Documentation}}
+</noinclude>

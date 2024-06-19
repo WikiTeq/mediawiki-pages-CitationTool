@@ -1,0 +1,1 @@
+* '''series''' or '''version''': When the source is part of a series, such as a book series or a journal where the issue numbering has restarted.

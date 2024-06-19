@@ -1,0 +1,260 @@
+{{Documentation subpage}}
+==Purpose==
+This template allows for the easy citing and linking to of [[act (document)|act]]s.
+
+==Syntax==
+
+===Horizontal===
+<pre>{{cite act |type= |index= |date= |article= |article-type= |legislature= |title= |trans-title= |page= |url= |language=}}</pre>
+
+===Vertical===
+<pre>{{cite act 
+| type = 
+| index = 
+| date = 
+| article = 
+| article-type = 
+| title = 
+| trans-title = 
+| page = 
+| url = 
+| language =
+}}</pre>
+
+==Examples==
+
+===Custom wording===
+<pre>{{cite act
+| url = http://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32000L0013&from=EN
+| title = The approximation of the laws of the Member States relating to the labelling, presentation and advertising of foodstuffs
+| legislature = The European Parliament & Council of the European Union
+| date = 20 March 2000
+| article = II
+| article-type = Annex
+| index = 2000/13/EC
+| page = 29-42
+| type = Directive
+}}</pre>
+
+will display as:
+
+{{cite act
+| url = http://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32000L0013&from=EN
+| title = The approximation of the laws of the Member States relating to the labelling, presentation and advertising of foodstuffs
+| legislature = The European Parliament & Council of the European Union
+| date = 20 March 2000
+| article = II
+| article-type = Annex
+| index = 2000/13/EC
+| page = 29-42
+| type = Directive}}
+
+===All main parameters specified, standard wording===
+<pre>{{cite act
+| title = [[Autonomous Municipalities Act of 1991]]
+| index = 81
+| language = Spanish
+| date = {{date|1991-08-30|mdy}}
+| article = 1.006
+| page = 29–42
+| url = http://www2.pr.gov/presupuestos/presupuesto2012-2013/PresupuestoRecomendado2013/suppdocs/baselegal/036/036.pdf
+}}</pre>
+
+will display as:
+
+{{cite act
+| title = [[Autonomous Municipalities Act of 1991]]
+| index = 81
+| language = Spanish
+| date = {{date|1991-08-30|mdy}}
+| article = 1.006
+| page = 29–42
+| url = http://www2.pr.gov/presupuestos/presupuesto2012-2013/PresupuestoRecomendado2013/suppdocs/baselegal/036/036.pdf
+| accessdate = 2012-12-21
+| archiveurl = https://web.archive.org/web/20170215015949/http://www2.pr.gov/presupuestos/presupuesto2012-2013/PresupuestoRecomendado2013/suppdocs/baselegal/036/036.pdf
+| archivedate = 2017-02-15
+}}
+
+===No article specified===
+<pre>{{cite act
+| title = [[Autonomous Municipalities Act of 1991]]
+| index = 81
+| language = Spanish
+| date = {{date|1991-08-30|mdy}}
+| url = http://www2.pr.gov/presupuestos/presupuesto2012-2013/PresupuestoRecomendado2013/suppdocs/baselegal/036/036.pdf
+}}</pre>
+
+will display as:
+
+{{cite act
+| title = [[Autonomous Municipalities Act of 1991]]
+| index = 81
+| language = Spanish
+| date = {{date|1991-08-30|mdy}}
+| url = http://www2.pr.gov/presupuestos/presupuesto2012-2013/PresupuestoRecomendado2013/suppdocs/baselegal/036/036.pdf
+| accessdate = 2012-12-21
+| archiveurl = https://web.archive.org/web/20170215015949/http://www2.pr.gov/presupuestos/presupuesto2012-2013/PresupuestoRecomendado2013/suppdocs/baselegal/036/036.pdf
+| archivedate = 2017-02-15
+}}
+
+===No title specified===
+<pre>{{cite act
+| index = 81
+| language = Spanish
+| date = {{date|1991-08-30|mdy}}
+| url = http://www2.pr.gov/presupuestos/presupuesto2012-2013/PresupuestoRecomendado2013/suppdocs/baselegal/036/036.pdf
+}}</pre>
+
+will display as:
+
+{{cite act
+| index = 81
+| language = Spanish
+| date = {{date|1991-08-30|mdy}}
+| url = http://www2.pr.gov/presupuestos/presupuesto2012-2013/PresupuestoRecomendado2013/suppdocs/baselegal/036/036.pdf
+}}
+
+===Index, year, and URL only===
+<pre>{{cite act
+| index = 81
+| year = 1991
+| url = http://www2.pr.gov/presupuestos/presupuesto2012-2013/PresupuestoRecomendado2013/suppdocs/baselegal/036/036.pdf
+}}</pre>
+
+will display as:
+
+{{cite act
+| index = 81
+| year = 1991
+| url = http://www2.pr.gov/presupuestos/presupuesto2012-2013/PresupuestoRecomendado2013/suppdocs/baselegal/036/036.pdf
+| accessdate = 2012-12-21
+}}
+
+===With a translated title===
+<pre>{{Cite act
+| title = Kuntalaki
+| trans-title = The Local Government Act
+| index = 410
+| date = October 4, 2015
+| article = 4
+| url = http://www.finlex.fi/fi/laki/ajantasa/2015/20150410
+| language = Finnish
+}}</pre>
+
+will display as:
+
+{{Cite act
+| title=Kuntalaki
+| trans-title=The Local Government Act
+| index=410
+| date=October 4, 2015
+| article=4
+| url=http://www.finlex.fi/fi/laki/ajantasa/2015/20150410
+| language=Finnish
+}}
+
+==Parameters==
+
+<templatedata>
+{
+"params": {
+"title": {
+"label": "Name",
+"description": "A unique given name of the specific cited act or article",
+"type": "string"
+},
+"trans-title": {
+"label": "Translated name",
+"description": "A translated title of the name. For non-English acts.",
+"type": "string"
+},
+"type": {
+"label": "Type",
+"description": "The type of act cited, to be used if the legislation isn't called an act, such as in bills. When citing a specific section, use the name of that specific section, be it Directive, Clause, Article, etc.",
+"type": "string",
+"default": "Act",
+"suggested": true
+},
+"index": {
+"label": "Index",
+"description": "The index of the Type parameter. For when citing specific sections, this is the specific index of that section, and so if you're specifically citing clause '''A/500 - B''', that'll be what is written in this field.",
+"type": "string",
+"suggested": true,
+"aliases": [
+"number"
+]
+},
+"language": {
+"label": "Language",
+"description": "The language the act or article is written in.",
+"type": "string"
+},
+"legislature": {
+"label": "Legislature",
+"description": "The legislature that passed the cited act or article.",
+"type": "string",
+"suggested": true
+},
+"date": {
+"label": "Date",
+"description": "The date the legislation was passed, unless there's some other date or year that appears in the name of the act. Must be in DMY, MDY, MY or Y date format.",
+"type": "date",
+"aliases": [
+"year"
+],
+"required": true
+},
+"article": {
+"label": "Article",
+"description": "The path of articles leading to the cited article abbreviated; doesn't mentions section types such as chapter, section, article, etc.",
+"type": "string",
+"suggested": true
+},
+"article-type": {
+"label": "Article type",
+"description": "The type of the highest ranking article in the article path. Only appears if the Article parameter is set to something.",
+"type": "string",
+"default": "Article"
+},
+"pages": {
+"label": "Page",
+"description": "Page number or range.",
+"aliases": [
+"page"
+],
+"type": "string"
+},
+"url": {
+"label": "URL",
+"description": "URL where the legislation may be found.",
+"type": "string"
+},
+"odf": {
+"label": "Other date format",
+"description": "set to 'yes' to override the formatting requirement for the Date parameter, allowing to use YMD. Use only in special cases when it is important to keep consistency in reference date formats AND there's no date associated with the law except of the date it was passed.",
+"type": "string",
+"default": "empty"
+}
+},
+"description": "This template allows the easy citing of legislation.",
+"paramOrder": [
+"type",
+"index",
+"date",
+"article",
+"article-type",
+"legislature",
+"title",
+"trans-title",
+"pages",
+"url",
+"language",
+"odf"
+],
+"format": "inline"
+}
+</templatedata>
+
+<includeonly>{{Sandbox other||
+[[Category:Law citation templates|Act]]
+}}</includeonly>

@@ -1,0 +1,3 @@
+#REDIRECT [[Template:CS1 wrapper]]
+
+{{R from move}}

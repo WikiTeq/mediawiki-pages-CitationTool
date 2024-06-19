@@ -1,0 +1,2 @@
+* '''conference''': Name of the conference, may include location if different from '''location''' and date if different from '''date''' or '''year'''.
+** '''conference-url''': URL of conference proceedings, if different from '''url'''. Alias: '''conferenceurl'''.

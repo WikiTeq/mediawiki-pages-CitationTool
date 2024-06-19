@@ -1,0 +1,31 @@
+{{Crossreference|(See also [[Help:Citation Style 1#Titles and chapters|Help:Citation Style 1 § Titles and chapters]].)}}
+* '''{{#switch:{{{title_title}}}
+|encyclopedia=encyclopedia
+|#default = title}}''': Title of source. {{#switch:{{{link}}}|no=|wikilink_only=Can be wikilinked to an existing Wikipedia article.|Can be wikilinked to an existing Wikipedia article or '''url''' may be used to add an external link, but not both.}} {{#switch:{{BASEPAGENAME}}
+|Cite arXiv = Displays in quotes
+|Cite book = Displays in italics
+|Cite conference = Displays in quotes
+|Cite episode = Displays in quotes
+|Cite journal = Displays in quotes
+|Cite magazine = Displays in quotes
+|Cite news = Displays in quotes
+|Cite web = Displays in quotes
+|Cite press release = Displays in quotes
+|Cite podcast = Displays in quotes
+|Cite report = Displays unformatted, without italics or quotes
+|#default = Displays in italics}}. {{#if:{{{limited_param_list|}}}||If '''script-title''' is defined, '''title''' holds a [[WP:ROMAN|Romanization]] of title in '''script-title'''.
+** '''script-title''': Original title for languages that do not use a Latin-based script (Arabic, Chinese, Cyrillic, Greek, Hebrew, Japanese, Korean, etc); not italicized, follows italicized Romanization defined in '''title'''. May be prefixed with an [[List of ISO 639-1 codes|ISO 639-1]] two-character code to help browsers properly display the script:
+**:<code><nowiki>... |title=Tōkyō tawā |script-title=ja:東京タワー |trans-title=Tokyo Tower ...</nowiki></code>
+** '''trans-title''': English translation of the title if the source cited is in a foreign language. Displays in square brackets after '''{{#switch:{{{title_title}}}
+|encyclopedia=encyclopedia
+|#default = title}}'''; if '''url''' is defined, then '''trans-title''' is included in the link. Use of the '''language''' parameter is recommended.}}
+:Titles containing certain characters will not display and link correctly unless those characters are encoded.
+{| class="wikitable" style="margin-left: 5em"
+! newline !! [ !! ] !! &#124;
+|-
+| space || style="text-align: center;" | &amp;#91; || style="text-align: center;" | &amp;#93; || style="text-align: center;" | <code><nowiki>{{!}}</nowiki></code> (preferred)
+|-
+|
+| colspan="2" style="text-align: center;" | [[Template:Bracket|<nowiki>{{bracket|text}}</nowiki>]] || &amp;#124; or [[Template:Pipe|<nowiki>{{pipe}}</nowiki>]] – {{crossref|see also {{section link|Help:Table|Rendering the pipe}}}}
+|}{{#if:{{{limited_param_list|}}}||
+:* '''title-link''': Title of existing Wikipedia article about the source named in '''title''' – do not use a web address; do not wikilink. Alias: '''titlelink'''.}}

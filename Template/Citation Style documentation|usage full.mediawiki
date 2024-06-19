@@ -1,0 +1,4 @@
+{| class="wikitable" style="width: 100%"
+|+ Full parameter set in horizontal format
+|- style="vertical-align:top;"
+|

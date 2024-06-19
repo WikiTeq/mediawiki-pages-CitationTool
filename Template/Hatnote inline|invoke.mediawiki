@@ -1,0 +1,2 @@
+<includeonly>{{#invoke:Hatnote inline|hatnote}}</includeonly><noinclude>
+{{Documentation|content=This is an includeonly part of [[Template:Hatnote inline]].}}</noinclude>

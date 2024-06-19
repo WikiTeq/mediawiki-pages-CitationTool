@@ -1,0 +1,4 @@
+{{safesubst:<noinclude />yesno|{{{1}}}|yes={{{yes|yes}}}|no={{{no|no}}}|blank={{{blank|no}}}|¬={{{¬|no}}}|def={{{def|no}}}}}<noinclude>
+{{Documentation|Template:Yesno/doc}}
+<!--Categories go in the doc page referenced above; interwikis go in Wikidata.-->
+</noinclude>

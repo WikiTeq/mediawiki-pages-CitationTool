@@ -1,0 +1,1091 @@
+{{pp-semi-indef}}
+{{Wikipedia how to}}
+{{Skip to top and bottom}}
+<!-- IMPORTANT: do not remove or change section header span ids without also changing links in Module:Citation/CS1 -->
+This page describes the error messages reported by the {{cs1}} and {{cs2}} citations, what they mean, and how editors might resolve the errors. [[:Category:CS1 errors]] is the general errors category and [[:Category:CS1 maintenance]] is the general maintenance category.
+
+Errors in the &lt;ref> system can be found at [[Help:Cite errors]].
+
+==Controlling error message display==
+<section begin=control_error_messages_help_text /><section begin=show_error_messages_help_text /><section begin=show_all_messages_help_text />By default, {{cs1}} and {{cs2}} error messages are visible to all readers and maintenance category messages are hidden from all readers.
+
+To display maintenance messages, include the following text in your common [[Cascading Stylesheets|CSS]] page or your specific skin's CSS page ([[Special:MyPage/common.css|common.css]] and [[Special:MyPage/skin.css|skin.css]] respectively):
+
+<syntaxhighlight lang=css>.mw-parser-output span.cs1-maint {display: inline;} /* display Citation Style 1 maintenance messages */</syntaxhighlight>
+<!-- For i18n
+
+To display hidden-by-default error messages:
+
+<syntaxhighlight lang=css>.mw-parser-output span.cs1-hidden-error {display: inline;} /* hide Citation Style 1 error messages */</syntaxhighlight>
+-->
+
+Even with this css installed, older pages in Wikipedia's cache may not have been updated to show these error messages even though the page is listed in one of the tracking categories. A [[WP:NULLEDIT|null edit]] will resolve that issue.
+
+To hide error messages:
+<syntaxhighlight lang=css>.mw-parser-output span.cs1-visible-error {display: none;} /* hide Citation Style 1 error messages */</syntaxhighlight>
+
+You can personalize the display of these messages (such as changing the color), but you will need to ask someone who knows CSS or at [[WP:VPT|the technical village pump]] if you do not understand how.<section end=show_error_messages_help_text /><section end=show_all_messages_help_text />
+
+==Most common errors==
+<!-- Items listed here with ~10k or more -->
+* [[#Cite &lt;template> requires %7C&lt;param>=]], ~54k pages
+* [[#Citation without a title of any form]], ~33k pages
+* [[#Bare URL without a title]], ~25k pages
+* [[#Check date values in: %7C&lt;param1>=, %7C&lt;param2>=, ...]], ~16k pages
+* [[#External link in %7C&lt;param>=]], ~14k pages
+* [[#Missing or empty %7Curl=]], ~9k pages
+
+==<span id="accessdate_missing_url">|access-date= requires |url= </span>==
+
+<section begin=accessdate_missing_url_help_text />{{help desk}}<span class="error"><code style="color:inherit; border:inherit; padding:inherit;">|access-date=</code> requires <code style="color:inherit; border:inherit; padding:inherit;">|url=</code></span>
+
+The {{para|access-date}} (or its alias, {{para|accessdate}}) is the date that the online resource addressed by {{para|url}} was added to the article. If {{para|access-date}} has been included in the citation without {{para|url}} then this message appears. If the citation does not use a web link, then {{para|access-date}} is redundant and should be removed.
+
+When the online resource has a publication or other fixed date associated with it, {{para|access-date}} is of limited value though may be useful in identifying an appropriate archived version of the resource. Without {{para|url}}, {{para|access-date}} is not considered useful.
+
+To resolve this error, provide a value for {{para|url}} or remove {{para|access-date}}. Editors should try to determine why the citation has {{para|access-date}} without {{para|url}}. For example, the citation may never have had a {{para|url}}, or {{para|url}} may have been removed because it links to a site that violates the creator's copyright (see [[WP:COPYLINK]]), or because {{para|url}} was deemed to be dead. If the citation never had {{para|url}} or it was removed for copyright violations, remove {{para|access-date}}. When a dead {{para|url}} has been removed, restore the {{para|url}} and if possible repair it (see [[WP:LINKROT]]).
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:Pages using citations with accessdate and no URL | Category:Pages using citations with accessdate and no URL | [[:Category:Pages using citations with accessdate and no URL]] ({{PAGESINCATEGORY:Pages using citations with accessdate and no URL}} pages)}}.<ref group="lower-alpha" name="categories" /><section end=accessdate_missing_url_help_text />
+
+==<span id="archive_url">|archive-url= is malformed </span>==
+<section begin=archive_url_help_text />{{help desk}}<span class="error"><code style="color:inherit; border:inherit; padding:inherit;">|archive-url=</code> is malformed: &lt;reason></span>
+
+Archive.org allows a variety of urls to access snapshots of an archived page.  Some of these are:
+:<code><nowiki>https://web.archive.org/web/YYYYMMDD</nowiki><wbr /><nowiki>hhmmss/http://www.example.com</nowiki></code> – a single snapshot; this is the preferred form for use with {{para|archive-url}}
+:<code><nowiki>https://web.archive.org/web/*/http://</nowiki><wbr />www.example.com</code> – a wildcard search results page; useful for locating an appropriate snapshot but not appropriate in a citation
+:<code><nowiki>https://web.archive.org/web/</nowiki><wbr />201603/<nowiki>http://www.example.com</nowiki></code> – incomplete timestamp; archive.org returns the most recent snapshot
+:<code><nowiki>https://web.archive.org/save/http://</nowiki><wbr />www.example.com</code> – saves a new snapshot of the current target; do not use this form
+There are two forms of the basic url:
+:<code><nowiki>https://web.archive.org/</nowiki><''timestamp''>/...</code> – the old form
+:<code><nowiki>https://web.archive.org</nowiki>/'''web/'''<''timestamp''><''flags''>/...</code> – the new form
+The error message identifies the reason for the message.  The reasons are:
+:<span class="error" style="font-size:inherit;">save command</span> – the archive.org url is the save command
+:<span class="error" style="font-size:inherit;">path</span> – '''web/''' was expected but something else was found
+:<span class="error" style="font-size:inherit;">timestamp</span> – the timestamp portion of the url path is not 14 digits
+:<span class="error" style="font-size:inherit;">flag</span> – the flag portion of the url path (if present; new form urls only) is not 2 lowercase letters followed by an underscore: 'id_'
+:<span class="error" style="font-size:inherit;">liveweb</span> – <code>liveweb.archive.org</code> is a deprecated form of the domain name
+When the archive.org url has any of these errors, Module:Citation/CS1 does not link to archive.org and emits an appropriate error message.
+
+To resolve this error, choose the url of an appropriate snapshot from those held at archive.org. [https://archive.org/web/ Search for the target url].
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:Pages with archiveurl citation errors | Category:Pages with archiveurl citation errors | [[:Category:Pages with archiveurl citation errors]] }}.<ref group="lower-alpha" name="categories" /><section end=archive_url_help_text />
+
+==<span id="archive_missing_date">|archive-url= requires |archive-date= </span>==
+<section begin=archive_missing_date_help_text />{{help desk}}<span class="error"><code style="color:inherit; border:inherit; padding:inherit;">|archive-url=</code> requires <code style="color:inherit; border:inherit; padding:inherit;">|archive-date=</code></span>
+
+{{para|archive-date}} (or its alias, {{para|archivedate}}), identifies the date that the web resource was archived.
+
+To resolve this error, provide a value for {{para|archive-date}}. For web resources archived at archive.org,<ref name="archive.org" /> the archival date can be found in the {{para|archive-url}}; for resources archived at webcitation.org,<ref name="webcitation.org" /> the cache date is included in the archive header.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:Pages with archiveurl citation errors | Category:Pages with archiveurl citation errors | [[:Category:Pages with archiveurl citation errors]] }}.<ref group="lower-alpha" name="categories" /><section end=archive_missing_date_help_text />
+
+==<span id="archive_missing_url">|archive-url= requires |url= </span>==
+<section begin=archive_missing_url_help_text />{{help desk}}<span class="error"><code style="color:inherit; border:inherit; padding:inherit;">|archive-url=</code> requires <code style="color:inherit; border:inherit; padding:inherit;">|url=</code></span>
+
+A properly formatted citation that includes {{para|archive-url}} and {{para|archive-date}} requires {{para|url}}. When the citation includes {{para|url-status|live}}, the ordering of elements in the rendered citation is changed to put the original url first.
+
+To resolve this error, provide a value for {{para|url}}. For web resources archived at archive.org,<ref name="archive.org" /> the original url can be found in the {{para|archive-url}} value; for resources archived at webcitation.org,<ref name="webcitation.org" /> the original url is included in the archive header.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:Pages with archiveurl citation errors | Category:Pages with archiveurl citation errors | [[:Category:Pages with archiveurl citation errors]]}}.<ref group="lower-alpha" name="categories" /><section end=archive_missing_url_help_text />
+
+==<span id="arxiv_missing">|arxiv= required</span>== 
+<section begin=arxiv_missing_help_text />{{help desk}}<span class="error"><code style="color:inherit; border:inherit; padding:inherit;">|arxiv=</code> required</span>
+
+{{tlx|cite arXiv}} requires one, but not both, of the identifier parameters {{para|arxiv}} or {{para|eprint}}.
+
+To resolve this error, ensure that the template has {{para|arxiv}} or {{para|eprint}} with a properly constructed value.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: arXiv| Category:CS1 errors: arXiv | [[:Category:CS1 errors: arXiv]]}}.<ref group="lower-alpha" name="categories" /><section end=arxiv_missing_help_text />
+
+==<span id="chapter_ignored">|chapter= ignored</span>==
+<section begin=chapter_ignored_help_text />{{help desk}}<span class="error"><code style="color:inherit; border:inherit; padding:inherit;">|chapter=</code> ignored</span>
+
+{{cs1}} templates {{tlx|cite web}}, {{tlx|cite news}}, {{tlx|cite journal}}, {{tlx|cite press release}}, {{tlx|cite podcast}}, {{tlx|cite newsgroup}}, as well as template {{tlx|citation}} when it uses {{para|work}} or any of its aliases, do not support {{para|chapter}} or the aliases {{para|contribution}}, {{para|entry}}, {{para|article}}, or {{para|section}}.
+
+To resolve this error:
+
+*use a more appropriate citation template, or
+*place the content of the {{para|chapter}} parameter in {{para|title}}, or
+*for {{tl|cite news}}, {{para|department}} can be used to give the name of the newspaper's section, such as "Obituaries"
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: chapter ignored | Category:CS1 errors: chapter ignored | [[:Category:CS1 errors: chapter ignored]]}}.<ref group="lower-alpha" name="categories" /><section end=chapter_ignored_help_text />
+
+==<span id="bad_arxiv">Check |arxiv= value</span>== 
+<section begin=bad_arxiv_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|arxiv=</code> value</span>
+
+When {{cs1}} and {{cs2}} templates contain {{para|arxiv}}, a test is done to see if the arXiv identifier conforms with the arXiv identifier scheme.<ref>{{cite web |url=https://arxiv.org/help/arxiv_identifier |title=Understanding the arXiv identifier |website=[[Cornell University Library]] |accessdate=2014-08-20}}</ref> The identifier is checked for a valid number of digits in the article id; valid year and month values; and properly-placed hyphens, slashes, and dots.
+
+To resolve this error, ensure that the {{para|arxiv}} value is correct.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: arXiv| Category:CS1 errors: arXiv | [[:Category:CS1 errors: arXiv]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_arxiv_help_text />
+
+==<span id="bad_asin">Check |asin= value</span>== 
+
+<section begin=bad_asin_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|asin=</code> value</span>
+
+When {{cs1}} and {{cs2}} templates contain {{para|asin}}, a test is done to see if the [[ASIN]] identifier is contains ten upper-case alphanumeric characters without punctuation or spaces and that if the first character is numeric, that the ASIN conforms to the rules for a ten-digit [[ISBN]].  
+
+To resolve this error, ensure that the {{para|asin}} value is correct.
+
+If the {{para|asin}} value is correct and all-numeric, use {{para|isbn}} instead and delete any {{para|asin-tld}} parameters.  Articles with CS1 citations that use {{para|asin}} with all numeric values are categorized in {{cl|CS1 maint: ASIN uses ISBN}}.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: ASIN| Category:CS1 errors: ASIN | [[:Category:CS1 errors: ASIN]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_asin_help_text />
+
+==<span id="bad_bibcode">Check |bibcode= &lt;message></span>== 
+
+<section begin=bad_bibcode_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|bibcode=</code> &lt;message></span>
+
+When {{cs1}} and {{cs2}} templates contain {{para|bibcode}}, a test is done to see if the [[bibcode]] identifier has the proper format.<ref>{{cite web |url=http://adsabs.harvard.edu/abs_doc/help_pages/data.html#bibcodes |title=1.2.3 - Bibliographic Identifiers |website=The SAO/NASA Astrophysics Data System}}</ref>  Bibcodes are expected to match these requirements:
+:length must be 19 characters (&lt;message> = '<span class="error" style="font-size:100%">length</span>')
+:characters in position(s): (except as specified otherwise, violations produce '<span class="error" style="font-size:100%">value</span>' in the &lt;message> portion of the error message):
+::1–4 must be digits and must represent a year in the range of 1000 – next year (&lt;message> = '<span class="error" style="font-size:100%">year</span>')
+::5 must be a letter
+::6–8 must be letter, ampersand, or dot (ampersand cannot directly precede a dot; &. (&lt;message> = '<span class="error" style="font-size:100%">journal</span>'))
+::9 must be letter or dot
+::10–18 must be letter, digit, or dot
+::19 must be a letter or dot
+To resolve this error, ensure that the {{para|bibcode}} value is correct.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: bibcode| Category:CS1 errors: bibcode | [[:Category:CS1 errors: bibcode]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_bibcode_help_text />
+
+==<span id="bad_biorxiv">Check |biorxiv= value</span>== 
+
+<section begin=bad_biorxiv_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|biorxiv=</code> value</span>
+
+When {{cs1}} and {{cs2}} templates contain {{para|biorxiv}}, a test is done to see if the [[bioRxiv]] identifier has the proper form.  There are two valid forms:
+:six numeric characters without punctuation or spaces.
+:ymd format date prefix followed by six numeric characters without punctuation or spaces followed by optional version:
+::{{para|biorxiv|yyyy.mm.dd.######v#}} where:
+:::<code>yyyy.mm.dd.</code> – represents a date no earlier than 11 December 2019 (<code>2019.12.11.</code>) and no later than tomorrow's date; date must be a valid date
+:::<code>######</code> – 6-digit BioRxiv identifier
+:::<code>v#</code> – optional version indicator
+
+A common error is to include the bioRxiv ''url'' (<code><nowiki>https://dx.doi.org/10.1101/</nowiki>{{red|&lt;{{var|BIORXIV>}}}}</code>), or the biorxiv ''doi'' (<code>10.1101/{{red|&lt;{{var|BIORXIV>}}}}</code>)
+
+To resolve this error, ensure that the {{para|biorxiv}} value is correct.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: bioRxiv| Category:CS1 errors: bioRxiv | [[:Category:CS1 errors: bioRxiv]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_biorxiv_help_text />
+
+==<span id="bad_citeseerx">Check |citeseerx= value</span>== 
+
+<section begin=bad_citeseerx_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|citeseerx=</code> value</span>
+
+When {{cs1}} and {{cs2}} templates contain {{para|citeseerx}}, a test is done to see if the [[CiteSeerX]] identifier has the proper format.
+The expected identifier is the value assigned to the <code>?doi=</code> query key in the URL of a CiteSeerX document. (This query key should not be confused with a [[Digital Object Identifier]]: it should not be input as {{para|doi}}.)
+
+For instance, if you want to link to <code>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.220.7880</code>, use {{para|citeseerx|10.1.1.220.7880}}.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: citeseerx| Category:CS1 errors: citeseerx | [[:Category:CS1 errors: citeseerx]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_citeseerx_help_text />
+
+==<span id="bad_date">Check date values in: |&lt;param1>=, |&lt;param2>=, ...</span>==
+<section begin=bad_date_help_text />{{help desk}}<span class="error">Check date values in: <code style="color:inherit; border:inherit; padding:inherit;"><nowiki>|<param1>=, |<param2>=, ...</nowiki></code></span>
+
+When {{cs1}} and {{cs2}} templates contain date-holding parameters, an automated test is done to see if the dates are real dates that comply with a [[Help:Citation_Style_1#Date_compliance_with_Wikipedia's_Manual_of_Style|subset of the date rules]] in  Wikipedia's Manual of Style, specifically checking for violations of [[Wikipedia:Manual of Style/Dates and numbers#Dates and years|MOS:DATEFORMAT]].
+
+To resolve this error, ensure that the date is an actual date and that the date format follows the [[MOS:DATEFORMAT|Wikipedia Manual of Style's guidance on dates]] in the named parameter. See [[Help:CS1 errors#ExamplesOfUnacceptableDates|examples of unacceptable dates and how to fix them]], below.  Or, some conceptual issues to look for:
+*impossible dates, such as 29 February 2011 (2011 was not a leap year)
+* {{para|access-date}} must specify a day, not just a month or year.
+*misplaced, incorrect, or extraneous punctuation
+*extraneous text 
+*hyphens or slashes instead of en dashes in date ranges (en dashes are required) 
+*misspelling or improper capitalization (see [[MOS:ALLCAPS]] for more detail that is not in [[MOS:DATEFORMAT|Wikipedia Manual of Style's guidance on dates]])
+*other unacceptable date formats listed in [[MOS:BADDATEFORMAT]]
+*more than one date in a date-holding parameter
+*years before 100 AD, including BCE/BC dates. Try using parameter {{para|orig-year}} instead. 
+
+See [[Help:Citation_Style_1#CS1_compliance_with_Wikipedia.27s_Manual_of_Style|Help: Citation Style 1]] for information about limitations in the CS1 citation templates' handling of date formats. [[WP:DATERANGE|The MOS section on date ranges]] describes how to separate dates in a date range. Do not use <code>&amp;nbsp;</code>, <code>&amp;ndash;</code>, or {{tlx|spaced ndash}} as these corrupt the metadata. To add an en dash, use the [[Help:CharInsert#Insert|CharInsert]] edit tool or see [[Wikipedia:How to make dashes]]. You may also use this one: &ndash;. A bot is often able to correct the separator, provided the overall format is unambiguous.
+
+Future dates in {{para|date}} in CS1|2 citations are limited to current year + 1; that is, for {{#time:Y}}, citation dates in {{#time:Y|now +1 year}} are acceptable but citation dates in {{#time:Y|now +2 year}} and beyond are not.
+
+Dates prior to 1582 are treated as [[Julian calendar]] dates. Dates from 1582 onward are treated as [[Gregorian calendar]] dates. The Julian calendar was used in some places until approximately 1923. Three Julian calendar dates in the overlap period, 29 February in the years 1700, 1800, and 1900, will cause this error message because those years are not leap years in the Gregorian calendar.
+
+The access date (in {{para|access-date}}) is checked to ensure that it contains a full date (day, month, and year) and is between 15 January 2001 (the founding date of Wikipedia) and today's date plus one day, because it represents the date that an editor viewed a web-based source to verify a statement on Wikipedia. Because editors may be in time zones that are one day ahead of the UTC date, one extra day is accepted.
+ 
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: dates | Category:CS1 errors: dates | [[:Category:CS1 errors: dates]] ({{PAGESINCATEGORY:CS1 errors: dates}} pages)}}.<ref group="lower-alpha" name="categories" /><section end=bad_date_help_text />
+{{anchor| Date Fix Table|Dates|DateFixTable}}
+{{anchor|ExamplesOfUnacceptableDates}}
+{| class="wikitable"
+|+ Examples of unacceptable dates and how to fix them
+|-
+! Issue !! Unacceptable !! Acceptable
+|-
+| Hyphen in date range (use en dash) || {{para|plain=y|date|2002{{red|-}}2003}} || {{para|plain=y|date|2002{{green|–}}2003}}
+|-
+| Slash  in date range (use en dash) || {{para|plain=y|date|2002{{red|/}}2003}} or {{para|plain=y|date|July{{red|/}}August 2003}}||{{para|plain=y|date|2002{{green|–}}2003}} or {{para|plain=y|date|July{{green|–}}August 2003}}
+|-
+| Hyphen  in date range (use en dash) || {{para|plain=y|date|April{{red|-}}May 2004}} || {{para|plain=y|date|April{{green|–}}May 2004}}
+|-
+| Missing space around en dash for range of full dates || {{para|plain=y|date|April 2003{{red|–}}May 2004}} || {{para|plain=y|date|April 2003 {{green|–}} May 2004}}
+|-
+| Month capitalization  || {{para|plain=y|date|28 {{red|f}}ebruary 1900}} || {{para|plain=y|date|28 {{green|F}}ebruary 1900}}
+|-
+| Month capitalization  || {{para|plain=y|date|28 F{{red|EBRUARY}} 1900}} || {{para|plain=y|date|28 F{{green|ebruary}} 1900}}
+|-
+| Season capitalization || {{para|plain=y|date|{{red|s}}pring 2011}} || {{para|plain=y|date|{{green|S}}pring 2011}}
+|-
+| Future date (typo) || {{para|plain=y|date|2{{red|10}}2}} || {{para|plain=y|date|2{{green|01}}2}}
+|-
+| Access date in future (see note above) || {{para|plain=y|accessdate|{{red|{{day+1|{{day+1}}}}, {{CURRENTYEAR}}}}}} || {{para|plain=y|accessdate|{{Currentmonthday}}, {{CURRENTYEAR}}}}
+|-
+| Access date impossibly far in the past (typo) || {{para|plain=y|access-date|1 January 20{{red|01}}}} || {{para|plain=y|access-date|1 January 20{{green|10}}}}
+|-
+| Access date only specifies month || {{para|plain=y|access-date|{{red|January}} 2015}} || {{para|plain=y|access-date|{{green|12 January}} 2015}}
+|-
+| Ambiguous date range or year and month || {{para|plain=y|date|2002-{{red|03}}}} || {{plainlist|
+*{{para|plain=y|date|2002–{{green|20}}03}}
+*{{para|plain=y|date|{{green|March}} 2002}}}}
+|-
+| Bad abbreviation || {{para|plain=y|date|{{red|Febr.}} 28, 1900}} || {{plainlist|
+*{{para|plain=y|date|{{green|Feb}} 28, 1900}}
+*{{para|plain=y|date|{{green|February}} 28, 1900}}}}
+|-
+| Nonexistent date || {{para|plain=y|date|{{red|February 29, 1900}}}} ||
+|-
+| Undated || {{para|plain=y|date|{{red|Undated}}}} || {{para|plain=y|date|{{green|n.d.}}}}
+|-
+| Comma in month and year || {{para|plain=y|date|February{{red|,}} 1900}} || {{para|plain=y|date|February 1900}}
+|-
+| Comma in season || {{para|plain=y|date|Winter{{red|,}} 1900–1901}} || {{para|plain=y|date|Winter 1900–1901}}
+|-
+| Missing comma in format which requires it || {{para|plain=y|date|{{red|February 28 1900}}}} || {{para|plain=y|date|February 28{{green|,}} 1900}} or {{para|plain=y|date|28 February 1900}}
+|-
+| Non-date text  || {{para|plain=y|date|2008{{red|, originally 2000}}}} || {{para|plain=y|date|2008}} {{green|{{para|plain=y|orig-year|2000}}}}
+|-
+| Zero-padding  || {{para|plain=y|date|January {{red|04}}, 1987}} || {{para|plain=y|date|January {{green|4}}, 1987}}
+|-
+| Date with slashes  || {{para|plain=y|date|12{{red|/}}6{{red|/}}87}} || {{plainlist|
+*{{para|plain=y|date|{{green|December 6, 19}}87}}
+*{{para|plain=y|date|{{green|12 June 19}}87}}}}
+|-
+| Two-digit year  || {{para|plain=y|date|{{red|87}}-12-06}} || {{para|plain=y|date|{{green|19}}87-12-06}}
+|-
+| One-digit month or day || {{para|plain=y|date|2007-{{red|3}}-{{red|6}}}} || {{para|plain=y|date|2007-{{green|03}}-{{green|06}}}}
+|-
+| Wikified date || {{para|plain=y|date|{{red|<nowiki>[[</nowiki>}}April 1{{red|<nowiki>]]</nowiki>}}, {{red|<nowiki>[[</nowiki>}}1999{{red|<nowiki>]]</nowiki>}} }} || {{para|plain=y|date|{{green|April 1, 1999}}}}
+|-
+| "mm-dd-yyyy" or "dd-mm-yyyy" date format || {{para|plain=y|date|{{red|07-12-}}2009}} || {{para|plain=y|date|{{green|7 December}} 2009}} or {{para|plain=y|date|{{green|12 July}} 2009}}<br />or<br />{{para|plain=y|date|{{green|July 12,}} 2009}} or {{para|plain=y|date|{{green|December 7,}} 2009}}
+|-
+|Approximate or uncertain dates || {{para|plain=y|date|{{red|circa}} 1970}} or {{para|plain=y|date|{{red|<nowiki>{{circa}}</nowiki>}} 1970}} ||{{para|plain=y|date|{{green|c.}} 1970}}
+|-
+|}
+
+==<span id="bad_doi">Check |doi= value</span>==
+<section begin=bad_doi_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|doi=</code> value</span>
+
+When {{cs1}} and {{cs2}} templates contain {{para|doi}}, a test is done to see if the prefix portion of the [[Digital object identifier|DOI]] value is correctly formatted and has what appears to be a valid registrant code.  A proper doi prefix begins with the <code>10.</code> directory indicator.  The remaining portion of the prefix is a string of digits and the dot character which form the registrant code.  When the directory indicator is <code>10.</code>, the cs1|2 templates test for a valid registrant code.  Valid registrant codes:
+*must be composed of digits
+*must be in the range:
+** 1000–9999
+** 10000–49999
+*may have one or more subcodes that begin with a dot followed by digits (1000.10)
+*must not be 5555 (invalid/temporary/test)
+Additionally, the {{para|doi}} value is checked to make sure that it does not contain spaces, en dashes, does not end with punctuation. Further validation of the DOI is not performed.
+
+Do not include the <code><nowiki>https://doi.org/</nowiki></code> scheme and domain name from a url. A proper {{para|doi}} value looks like {{para|doi|10.1103/PhysRevLett.80.904}}.
+
+To resolve this error, ensure that the {{para|doi}} value is correct.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: DOI | Category:CS1 errors: DOI | [[:Category:CS1 errors: DOI]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_doi_help_text />
+
+==<span id="bad_hdl">Check |hdl= value</span>==
+<section begin=bad_hdl_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|hdl=</code> value</span>
+
+When {{cs1}} and {{cs2}} templates contain {{para|hdl}}, a test is done to see if the [[Handle System|hdl]] value looks like a properly defined value. The {{para|hdl}} value is checked to make sure that it does not contain spaces or en dashes and does not end with punctuation. Further validation of the hdl is not performed.
+
+To resolve this error, ensure that the {{para|hdl}} value is correct.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: HDL | Category:CS1 errors: HDL | [[:Category:CS1 errors: HDL]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_hdl_help_text />
+
+==<span id="bad_isbn">Check |isbn= value</span>==
+<section begin=bad_isbn_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|isbn=</code> value: &lt;type></span>
+
+{{cs1}} and {{cs2}} templates that contain {{para|isbn}} are checked to ensure that the [[ISBN]] is the proper length (ten or thirteen digits), that the ISBN uses the correct optional separators (simple space or hyphen), and that the final [[check digit]] is correct according to the ISBN specification. Only one ISBN is allowed in this field because the whole {{para|isbn}} value is included in the citation's [[COinS]] [[metadata]]. See also [[Wikipedia:COinS]]. More than one ISBN, or characters that are not part of the ISBN, corrupt the COinS metadata and may also corrupt the link to [[Special:BookSources]].
+
+The error message &lt;type> indicator can be:
+:{{error-small|length}} – ISBN is not 10 or 13 digits
+:{{error-small|checksum}} – ISBN has one or more incorrect digits; look for typos and transposition
+:{{error-small|invalid character}} – ISBN has one or more 'digits' that is not in the allowed set appropriate to ISBN length
+:{{error-small|invalid prefix}} – 13-digit ISBNs must begin with '978' or '979'
+:{{error-small|invalid form}} – 10-digit ISBNs with the mis-positioned 'X' character
+:{{error-small|invalid group id}} – 13-digit ISBN begins with '9790'; this prefix / group ID combination is reserved to [[ISMN]]
+To resolve this error, ensure that the {{para|isbn}} value is correct, that only one ISBN is used, that the proper optional separators are used, and that no other text is included. Use the 13-digit ISBN ''when it is available''. When a 10-digit ISBN is used, if the check digit is a lowercase 'x', change it to an uppercase 'X'.
+
+*'''Do not''' try to resolve the error by simply recalculating the check digit.  The check digit is there to check whether the main part of the number is correct.  If the ISBN is failing to validate, it is likely that there is a typo in the main part of the number.  In this case, recalculating the check digit results in an apparently valid ISBN that leads to the wrong source (or to nowhere).
+*If you only have a 10-digit ISBN, '''do''' use the number as-is, do not try to convert it to the 13-digit form.
+*If the ISBN as printed in your source is refusing to validate, '''do''' check both the front matter and the book cover for ISBNs.  It is not uncommon for the ISBN to be misprinted in the front matter but correct on the cover.
+*'''Do''' preview your edit and check that the new ISBN does now link to the correct source.
+
+In very rare cases, publishers have released books with malformed ISBNs. If you are certain that a non-conforming ISBN truly corresponds to the published work, then you can add {{para|ignore-isbn-error|true}} to the citation in order to suppress the error message. In many cases, books may have been reissued with a corrected ISBN. Use a corrected ISBN when possible.
+
+Sometimes there are numbers assigned to {{para|isbn}} that appear to be legitimate – length is right, check digit is correct – but that aren't true ISBN numbers.  This [http://isbn.org/ISBN_converter tool] may be helpful.
+
+See also [[Wikipedia:ISBN]].
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: ISBN | Category:CS1 errors: ISBN | [[:Category:CS1 errors: ISBN]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_isbn_help_text /><!-- See [[bugzilla:47049]] about {{FULLPAGENAME}}, category pagenames containing ISBN, and #ifeq: -->
+
+==<span id="bad_ismn">Check |ismn= value</span>==
+<section begin=bad_ismn_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|ismn=</code> value</span>
+
+{{cs1}} and {{cs2}} templates that contain {{para|ismn}} are checked to ensure that the [[ISMN]] is the proper length (thirteen digits), that the ISMN uses the correct optional separators (simple space or hyphen), and that the final [[check digit]] is correct according to the ISMN specification. Only one ISMN is allowed in this field because the whole {{para|ismn}} value is included in the citation's [[COinS]] [[metadata]]. See also [[Wikipedia:COinS]]. More than one ISMN, or characters that are not part of the ISMN, corrupt the COinS metadata.
+
+To resolve this error, ensure that the {{para|ismn}} value is correct, that only one ISMN is used, that the proper optional separators are used, and that no other text is included. Make sure that the ISMN contains exactly 13 digits.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: ISMN | Category:CS1 errors: ISMN | [[:Category:CS1 errors: ISMN]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_ismn_help_text />
+
+==<span id="bad_issn">Check |issn= value</span>==
+<section begin=bad_issn_help_text />{{help desk}}<div class="plainlist">
+*<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|issn=</code> value</span>
+*<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|eissn=</code> value</span></div>
+
+{{cs1}} and {{cs2}} templates that contain {{para|issn}} and/or {{para|eissn}} are checked to ensure that the [[ISSN]] is the proper length (eight digits) and that the final [[check digit]] validates according to the ISSN specification. Only one each of ISSN and eISSN is allowed in this field because the whole {{para|issn}} and {{para|eissn}} values are included in the citation's [[COinS]] [[metadata]]. See also [[Wikipedia:COinS]]. The ISSN and eISSN are always rendered as two four-digit numbers separated with a hyphen.
+
+To resolve this error, ensure that the {{para|issn}} and {{para|eissn}} values are correct, that only one value per parameter is used, and that no other text is included (allowable characters are 0-9, X, and -). If the check-digit is a lowercase 'x', change it to an uppercase 'X'.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: ISSN | Category:CS1 errors: ISSN | [[:Category:CS1 errors: ISSN]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_issn_help_text /><!-- See [[bugzilla:47049]] about {{FULLPAGENAME}}, category pagenames containing ISBN, and #ifeq: -->
+
+==<span id="bad_jfm">Check |jfm= value</span>==
+<section begin=bad_jfm_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|jfm=</code> value</span>
+
+When {{cs1}} and {{cs2}} templates contain {{para|jfm}}, a test is done to see if the [[Jahrbuch über die Fortschritte der Mathematik|jfm]] identifier value looks like a properly defined value. The {{para|jfm}} identifier is checked to make sure that it has the form: <code>nn.nnnn.nn</code> where <code>n</code> is any digit 0–9. Further validation of the jfm identifier is not performed.
+
+To resolve this error, ensure that the {{para|jfm}} value is correct.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: JFM | Category:CS1 errors: JFM | [[:Category:CS1 errors: JFM]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_jfm_help_text />
+
+==<span id="bad_lccn">Check |lccn= value</span>==
+<section begin=bad_lccn_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|lccn=</code> value</span>
+
+The {{para|lccn}} parameter is the [[Library of Congress Control Number]] identifier. It is checked to ensure that the identifier is the proper length and has the correct initial digits.
+
+LCCN is a character string 8–12 characters long. The length of the LCCN dictates the character type of the initial 1–3 characters; the rightmost eight are always digits.<ref>{{cite web |url=https://www.loc.gov/marc/lccn-namespace.html#syntax |title=The LCCN Namespace |website=Network Development and MARC Standards Office |publisher=[[Library of Congress]] |date=November 2003}}</ref>
+{|class="wikitable"
+|+LCCN format description
+!Length!!Description
+|-
+|8 || all characters are digits
+|-
+|9 || first character is a lower case letter
+|-
+|10|| first two characters are either both lower case letters or both digits
+|-
+|11|| first character is a lower case letter, second and third characters are either both lower case letters or both digits
+|-
+|12|| first two characters are both lower case letters
+|-
+|}
+
+Further validation is not performed.
+
+To resolve this error, ensure that the {{para|lccn}} value is correct and that there are no other letters, punctuation, or other characters. 
+
+When receiving this error, be on the lookout for publishers who omitted leading zeros in the LCCN following the two or four digit year. For example, an LCCN that is [https://catalog.loc.gov/vwebv/search?searchCode=LCCN&searchArg=92035247&searchType=1&permalink=y properly 92-035427] could be shortened in the printed work to [https://books.google.com/books?id=3ocPU-S9gloC&q=35247 92-35247]. When experimenting with inserting omitted zeroes, cross-check the finished number against the LCCN permalinks online.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: LCCN | Category:CS1 errors: LCCN | [[:Category:CS1 errors: LCCN]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_lccn_help_text />
+
+==<span id="bad_message_id">Check |message-id= value</span>==
+<section begin=bad_message_id_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|message-id=</code> value</span>
+
+The {{para|message-id}} parameter holds the unique identifier associated with a netnews message.<ref>{{cite web |url=//tools.ietf.org/html/rfc5536 |title=Netnews Article Format |website=[[Internet Engineering Task Force]] |at=[//tools.ietf.org/html/rfc5536#section-3.1.3 3.1.3]|rfc=5536 |date=November 2009}}</ref>  The value in {{para|message-id}} is checked to make sure that it contains <code>@</code> between left and right identifiers. {{para|message-id}} is also checked to make sure that the first character is not <code>&lt;</code> and the last character is not <code>></code>. [[Module:Citation/CS1]] adds the uri <code>news:</code> to the value in {{para|message-id}}.  If the value in {{para|message-id}} is wrapped in <code><...></code> characters, the link created fails.
+
+Further validation is not performed.
+
+To resolve this error, ensure that the {{para|message-id}} value is correct, that it contains <code>@</code> and is not wrapped in <code><...></code> characters.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: message-id | Category:CS1 errors: message-id | [[:Category:CS1 errors: message-id]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_message_id_help_text />
+
+==<span id="bad_mr">Check |mr= value</span>==
+<section begin=bad_mr_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|mr=</code> value</span>
+
+When {{cs1}} and {{cs2}} templates contain {{para|mr}}, a test is done to see if the [[Mathematical Reviews|mr]] identifier value looks like a properly defined value. The {{para|mr}} identifier is checked to make sure that it contains only digits and that it is no more than seven digits in length. Further validation of the mr identifier is not performed.
+
+To resolve this error, ensure that the {{para|mr}} value is correct.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: MR | Category:CS1 errors: MR | [[:Category:CS1 errors: MR]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_mr_help_text />
+
+==<span id="bad_oclc">Check |oclc= value</span>==
+<section begin=bad_oclc_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|oclc=</code> value</span>
+
+The {{para|oclc}} parameter is the [[OCLC]] identifier. Only a single OCLC identifier is allowed. The identifier must be in one of these forms:
+#prefix <code>ocm</code> followed by 8 digits
+#prefix <code>ocn</code> followed by 9 digits
+#prefix <code>on</code> followed by 10 digits
+#prefix <code>(OCoLC)</code> followed by a variable number of digits without leading zeros
+#1 to 10 digits without prefix
+Further validation is not performed.
+
+To resolve this error, ensure that the {{para|oclc}} value is correct.
+
+A tip for fixing this error: Editors sometimes place valid [[ISBN]], [[LCCN]], [[ASIN]], or other identifiers in {{para|oclc}}. 
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: OCLC | Category:CS1 errors: OCLC | [[:Category:CS1 errors: OCLC]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_oclc_help_text />
+
+==<span id="bad_ol">Check |ol= value</span>==
+<section begin=bad_ol_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|ol=</code> value</span>
+
+The {{para|ol}} parameter is the [[Open Library]] identifier. The identifier is one or more digits followed by a last character that is either <code>A</code> (authors), <code>M</code> (books), or <code>W</code> (works). Further validation is not performed.
+
+To resolve this error, ensure that the {{para|ol}} value is correct. Do not include "OL" in the value.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: OL | Category:CS1 errors: OL | [[:Category:CS1 errors: OL]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_ol_help_text />
+
+==<span id="bad_paramlink">Check |&lt;param>-link= value</span>==
+<section begin=bad_paramlink_help_text />{{help desk}}<div class="plainlist">
+*<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|&lt;param>-link=</code> value</span>
+*<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|&lt;param>=</code> value</span></div>
+
+These link-holding parameters and their matching title-holding parameters are combined to create a working [[wikilink]] to a related article.
+{{div col|colwidth=20em}}
+*{{para|author-link}}
+*{{para|contributor-link}}
+*{{para|editor-link}}
+*{{para|episode-link}}
+*{{para|series-link}}
+*{{para|subject-link}}
+*{{para|title-link}}
+*{{para|translator-link}}
+*{{para|author}}
+*{{para|contributor}}
+*{{para|editor}}
+*{{para|episode}}
+*{{para|series}}
+*{{para|subject}}
+*{{para|title}}
+*{{para|translator}}
+{{div col end}}
+
+(Parameters checked for this error may also be of the form {{para|authorlink}}, {{para|authorlink1}}, {{para|author1-link}}, or {{para|author-link1}}.)
+
+This error occurs when any of these {{para|&lt;param>-link}} parameters contain a wikilink or a URL, or they contain any of the characters not permitted in Wikipedia article titles per [[WP:TITLESPECIALCHARACTERS]] (except <code>_</code> (underscore), used as a replacement for spaces, and <code>#</code>, used as a [[fragment identifier]] when linking to article sections).  The prohibited characters are: <code>&lt; > [ ] | { }</code>.
+
+The {{para|&lt;param>-link}} parameter value should contain only the title of a Wikipedia article or a link to a section of a Wikipedia article. [[Module:Citation/CS1]] checks the {{para|&lt;param>-link}} parameter values for wikimarkup and for a [[URI scheme]] (<code>http://</code>, <code>https://</code>, the protocol relative scheme <code>//</code>, etc.).
+
+This error can also be caused when there is a {{para|&lt;param>-link}} value and the matching {{para|&lt;param>}} parameter contains a wikilink.<!--formatting template such as {{tl|smallcaps}} or {{tl|IAST}}, which should not be used in CS1 or CS2 templates.-->
+
+To resolve this error, do one of the following:
+* Ensure that the {{para|&lt;param>-link}} value is the full name of a Wikipedia article (without brackets) or a section of an article, and not a link to an external web site.
+* Make sure that there are no wikilinks in the matching {{para|&lt;param>}} parameters. 
+* If you want to link to a URL outside of Wikipedia, move the link to {{para|url}} or a similar parameter, if one is available in the template you are using.
+<!--* Make sure that there are no illegal characters in the paired parameters. These templates or HTML entities can be used to replace illegal characters in the title-holding parameter:
+{| class="wikitable" style="margin-left: 6.4em"
+|+replacements for prohibited wikilink title characters
+! < !! > !! [ !! ] !! {{pipe}} !! {  !! }
+|-
+| &amp;lt; || &amp;gt; || &amp;#91; || &amp;#93; || &amp;#124; || &amp;#123; || &amp;#125;
+|-
+|colspan="2"|&nbsp;||colspan="2" style="text-align: center;" | [[Template:Bracket|<nowiki>{{bracket|text}}</nowiki>]] || [[Template:Pipe|<nowiki>{{pipe}}</nowiki>]] ||colspan="2" | &nbsp;
+|}-->
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: parameter link | Category:CS1 errors: parameter link | [[:Category:CS1 errors: parameter link]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_paramlink_help_text />
+
+==<span id="bad_pmc">Check |pmc= value</span>==
+<section begin=bad_pmc_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|pmc=</code> value</span>
+
+The {{para|pmc}} parameter is the [[PubMed Central]] identifier. PMCs are sequential numbers beginning at 1 and counting up. [[Module:Citation/CS1]] checks the PMC identifier to make sure that the value is a number greater than zero and less than {{#invoke:Cs1 documentation support|id_limits_get|pmc}} and that the identifier contains only digits. Further validation is not performed.
+
+To resolve this error, ensure that the {{para|pmc}} value is correct, and that there are no letters, punctuation, or other characters. Do not include "PMC" in the value. 
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: PMC | Category:CS1 errors: PMC | [[:Category:CS1 errors: PMC]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_pmc_help_text />
+
+==<span id="bad_pmid">Check |pmid= value</span>==
+<section begin=bad_pmid_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|pmid=</code> value</span>
+
+The {{para|pmid}} parameter is the [[PubMed#PubMed identifier|PubMed identifier]]. PMIDs are checked to ensure that the identifier is a simple number without punctuation or spaces with a value between 1 and {{#invoke:Cs1 documentation support|id_limits_get|pmid}}. Further validation is not performed.
+
+To resolve this error, ensure that the {{para|pmid}} value is correct. If you find something that looks like a PMID and begins with "PMC", use {{para|pmc}} instead of {{para|pmid}}.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: PMID | Category:CS1 errors: PMID | [[:Category:CS1 errors: PMID]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_pmid_help_text />
+
+==<span id="bad_sbn">Check |sbn= value</span>==
+<section begin=bad_sbn_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|sbn=</code> value</span>
+
+{{cs1}} and {{cs2}} templates that contain {{para|sbn}} are checked to ensure that the [[Standard Book Number|SBN]] is the proper length (nine digits), that the SBN uses the correct optional separators (simple space or hyphen), and that the final [[check digit]] is correct according to the SBN specification. Only one SBN is allowed in this field because the whole {{para|sbn}} value is included in the citation's [[COinS]] [[metadata]]. See also [[Wikipedia:COinS]]. More than one SBN, or characters that are not part of the SBN, corrupt the COinS metadata and may also corrupt the link to [[Special:BookSources]].
+
+The error message &lt;type> indicator can be:
+:<span class="error" style="font-size:100%">length</span> – SBN is not 9 digits
+:<span class="error" style="font-size:100%">checksum</span> – SBN has one or more incorrect digits; look for typos and transposition
+:<span class="error" style="font-size:100%">invalid character</span> – SBN has one or more 'digits' that is not in the allowed set
+:<span class="error" style="font-size:100%">invalid form</span> – mis-positioned 'X' check digit
+
+To resolve this error, ensure that the {{para|sbn}} value is correct, that only one SBN is used, that the proper optional separators are used, and that no other text is included. If the check digit is a lowercase 'x', change it to an uppercase 'X'.
+
+*'''Do not''' try to resolve the error by simply recalculating the check digit.  The check digit is there to check whether the main part of the number is correct.  If the SBN is failing to validate, it is likely that there is a typo in the main part of the number.  In this case, recalculating the check digit results in an apparently valid ISBN that leads to the wrong source (or to nowhere).
+*If the SBN as printed in your source is refusing to validate, '''do''' check both the front matter and the book cover for SBNs.  It is not uncommon for the SBN to be misprinted in the front matter but correct on the cover.
+*'''Do''' preview your edit and check that the new SBN does now link to the correct source.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: SBN | Category:CS1 errors: SBN | [[:Category:CS1 errors: SBN]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_sbn_help_text />
+
+==<span id="bad_ssrn">Check |ssrn= value</span>==
+<section begin=bad_ssrn_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|ssrn=</code> value</span>
+
+The {{para|ssrn}} parameter is the [[Social Science Research Network|Social Science Research Network identifier]]. SSRNs are checked to ensure that the identifier is a simple number without punctuation or spaces with a value between 100 and {{#invoke:Cs1 documentation support|id_limits_get|ssrn}}. Further validation is not performed.
+
+To resolve this error, ensure that the {{para|ssrn}} value is correct.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: SSRN | Category:CS1 errors: SSRN | [[:Category:CS1 errors: SSRN]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_ssrn_help_text />
+
+==<span id="bad_s2cid">Check |s2cid= value</span>==
+<section begin=bad_s2cid_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|s2cid=</code> value</span>
+
+The {{para|s2cid}} parameter is the [[Semantic Scholar]] corpus identifier. S2CIDs are checked to ensure that the identifier is a simple number without punctuation or spaces with a value between 1 and {{#invoke:Cs1 documentation support|id_limits_get|s2cid}}. Further validation is not performed.
+
+To resolve this error, ensure that the {{para|s2cid}} value is correct.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: S2CID | Category:CS1 errors: S2CID | [[:Category:CS1 errors: S2CID]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_s2cid_help_text />
+
+==<span id="bad_url">Check |url= value</span>==
+<section begin=bad_url_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|url=</code> value</span>
+
+External links in {{cs1}} and {{cs2}} templates are made from two parts: the ''title'' ({{para|title}}, {{para|chapter}}, etc.) and the ''URL'' ({{para|url}}, {{para|archive-url}}, {{para|chapter-url}}, {{para|lay-url}}, etc.). The {{para|url}} parameter and other URL parameters must begin with a supported [[URI scheme]]. The URI schemes <code>http://</code>, <code>https://</code> and the protocol relative scheme <code>//</code> are most commonly used; <code>irc://</code>, <code>ircs://</code>, <code>ftp://</code>, <code>news:</code>, <code>mailto:</code> and <code>gopher://</code> are also supported.
+
+The URL field is checked to ensure that it contains only Latin characters and does not contain spaces.  The URL may be protocol relative (begins with <code>//</code>).  If there are no spaces and the URL is not protocol relative, then the scheme must comply with <nowiki>RFC 3986</nowiki>.<ref>{{citation |mode=cs1 |contribution-url=http://tools.ietf.org/html/std66#section-3.1 |contribution=Scheme |title=Uniform Resource Identifier (URI): Generic Syntax |publisher=[[Internet Engineering Task Force]] |date=January 2005|rfc=3986}}</ref>  
+
+Top- and second-level domain names are checked for proper form.  Generally, top-level domain names must be two or more letters; second-level domain names must be two or more letters, digits, or hyphens (first and last character must be a letter or digit).  [[Single-letter second-level domain]]s are supported for:
+*all [[Country code top-level domain|cc TLD]]s (the country code is not validated)
+*the [[.org]] [[TLD]]
+*certain letters of the [[.com]] TLD (q, x, z)
+*certain letters of the [[.net]] TLD (i, q)
+Third- and subsequent-level domain names are not checked.  The path portion of the URL is not checked.
+
+To resolve this error, ensure that {{para|url}} and other URL parameters contain valid URLs.  Online tools are available to [[Internationalized domain name|internationalize]] URLs that are written in non-Latin scripts:
+*{{cite web |url=https://www.verisign.com/en_US/channel-resources/domain-registry-products/idn/idn-conversion-tool/index.xhtml?loc=en_US |title=IDN Conversion Tool |website=Verisign }}
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:Pages with URL errors | Category:Pages with URL errors | [[:Category:Pages with URL errors]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_url_help_text />
+
+==<span id="bad_zbl">Check |zbl= value</span>==
+<section begin=bad_zbl_help_text />{{help desk}}<span class="error">Check <code style="color:inherit; border:inherit; padding:inherit;">|zbl=</code> value</span>
+
+When {{cs1}} and {{cs2}} templates contain {{para|zbl}}, a test is done to see if the [[Zentralblatt MATH|zbl]] identifier value looks like a properly defined value. The {{para|zbl}} identifier is checked to make sure that it has the form: <code>nnnn.nnnnn</code> where <code>n</code> is any digit 0–9. Up to three leading zeros in the first quartet may be omitted.  Further validation of the zbl identifier is not performed.
+
+To resolve this error, ensure that the {{para|zbl}} value is correct.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: ZBL | Category:CS1 errors: ZBL | [[:Category:CS1 errors: ZBL]]}}.<ref group="lower-alpha" name="categories" /><section end=bad_zbl_help_text />
+
+==<span id="biorxiv_missing">|biorxiv= required</span>== 
+<section begin=biorxiv_missing_help_text />{{help desk}}<span class="error"><code style="color:inherit; border:inherit; padding:inherit;">|biorxiv=</code> required</span>
+
+{{tlx|cite bioRxiv}} requires the identifier parameter {{para|biorxiv}}.
+
+To resolve this error, ensure that the template has {{para|biorxiv}} with a properly constructed value.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: bioRxiv| Category:CS1 errors: bioRxiv| [[:Category:CS1 errors: bioRxiv]]}}.<ref group="lower-alpha" name="categories" /><section end=biorxiv_missing_help_text />
+
+==<span id="missing_periodical"></span>Cite &lt;template> requires |&lt;param>===
+<section begin=missing_periodical_help_text />{{help desk}}<span class="error">Cite &lt;template> requires <code style="color:inherit; border:inherit; padding:inherit;">|&lt;param></code></span> 
+
+These CS1 periodical templates require a periodical parameter. The periodical templates are:
+:{{tlx|cite journal}}
+<!-- :{{tlx|cite news}}
+ -->:{{tlx|cite magazine}}
+<!-- :{{tlx|cite web}}
+ -->The error message suggests a periodical parameter that matches the template, but there is no requirement to use the suggested parameter; any one of these periodical parameters may be used:
+*{{para|journal}}
+*{{para|magazine}}
+*{{para|newspaper}}
+*{{para|periodical}}
+*{{para|website}}
+*{{para|work}}
+
+In some cases, an incorrect template has been used (e.g. {{tlx|cite journal}} for a web page, book, or standalone document). The appropriate resolution in these cases is to change the incorrect template to {{tlx|cite web}}, {{tlx|cite book}}, or a different, more appropriate template.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: missing periodical | Category:CS1 errors: missing periodical | [[:Category:CS1 errors: missing periodical]] ({{PAGESINCATEGORY:CS1 errors: missing periodical}} pages)}}.<ref group="lower-alpha" name="categories" /><section end=missing_periodical_help_text />
+
+==<span id="deprecated_params"></span>Cite uses deprecated parameter |&lt;param>==
+<section begin=deprecated_params_help_text />{{help desk}}<span class="error">Cite uses deprecated parameter <code style="color:inherit; border:inherit; padding:inherit;">|&lt;param></code></span>
+
+Over time, some parameters have become obsolete or unnecessary. When this happens, the parameters are identified as deprecated. Editors are encouraged to use other parameters that accomplish the same purpose as those that have been deprecated. The CS1|2 deprecated parameters are listed in the following table, along with recommended replacement parameters. Parameter names are case-sensitive. Editors should expect that support for deprecated parameters will be withdrawn.<section begin=deprecated_params_table />
+{|class="wikitable"
+|+Deprecated CS1/CS2 parameters
+!Deprecated parameter!!Replace with
+|-
+|none deprecated at present
+|
+<!--
+|-
+| {{para|editors}}
+| {{para|editor}} (1 editor) or {{para|editor<sub>n</sub>}} (more than 1 editor) or {{para|veditors}} (for Vancouver style editors). Consider {{para|editor-mask<sub>n</sub>}} if annotation is required.
+-->
+|}<section end=deprecated_params_table />
+
+To resolve this error, use a supported parameter.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: deprecated parameters | Category:CS1 errors: deprecated parameters | [[:Category:CS1 errors: deprecated parameters]]}}.<ref group="lower-alpha" name="categories" /><section end=deprecated_params_help_text />
+
+==<span id="citeseerx_missing">|citeseerx= required</span>== 
+<section begin=citeseerx_missing_help_text />{{help desk}}<span class="error"><code style="color:inherit; border:inherit; padding:inherit;">|citeseerx=</code> required</span>
+
+{{tlx|cite citeseerx}} requires the identifier parameter {{para|citeseerx}}.
+
+To resolve this error, ensure that the template has {{para|citeseerx}} with a properly constructed value.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: citeseerx| Category:CS1 errors: citeseerx| [[:Category:CS1 errors: citeseerx]]}}.<ref group="lower-alpha" name="categories" /><section end=citeseerx_missing_help_text />
+
+==<span id="class_ignored">|class= ignored</span>==
+<section begin=class_ignored_help_text />{{help desk}}<span class="error"><code style="color:inherit; border:inherit; padding:inherit;">{{pipe}}class=</code> ignored</span>
+
+Only used in {{tlx|cite arXiv}} templates, {{para|class}} is only appropriate when the template uses {{para|arxiv|YYMM.NNNN}} or {{para|arxiv|YYMM.NNNNN}} identifier formats; see [[Template:Cite arXiv#Usage|Cite arXiv §Usage]].
+
+To resolve this error, remove {{para|class}}.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: class | Category:CS1 errors: class | [[:Category:CS1 errors: class]]}}.<ref group="lower-alpha" name="categories" /><section end=class_ignored_help_text />
+
+==<span id="contributor_ignored">|contributor= ignored</span>==
+<section begin=contributor_ignored_help_text />{{help desk}}<span class="error"><code style="color:inherit; border:inherit; padding:inherit;">{{pipe}}contributor=</code> ignored</span>
+
+Only used in book citations, {{para|contributor}} identifies the author of a contribution, typically an afterword, foreword, introduction, preface, etc., to another (primary) author's work.  This error occurs when {{para|contributor}} is used in a template that is not {{tlx|cite book}} or {{tlx|citation}} or is one of these two templates and one of the {{para|work}} parameter aliases is set.  
+
+To resolve this error, choose a more appropriate CS1 or CS2 template or remove {{para|contributor}}.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: contributor | Category:CS1 errors: contributor | [[:Category:CS1 errors: contributor]]}}.<ref group="lower-alpha" name="categories" /><section end=contributor_ignored_help_text />
+
+==<span id="contributor_missing_required_param">|contributor= requires |&lt;param>= </span>==
+<section begin=contributor_missing_required_param_help_text />{{help desk}}<div class="plainlist">
+*<span class="error"><code style="color:inherit; border:inherit; padding:inherit;">{{pipe}}contributor=</code> requires <code style="color:inherit; border:inherit; padding:inherit;">{{pipe}}author=</code></span>
+*<span class="error"><code style="color:inherit; border:inherit; padding:inherit;">{{pipe}}contributor=</code> requires <code style="color:inherit; border:inherit; padding:inherit;">{{pipe}}contribution=</code></span></div>
+
+Only used in book citations, {{para|contributor}} identifies the author of a contribution, typically an afterword, foreword, introduction, preface, etc., to another (primary) author's work.  As such, the primary author is required ({{para|author}} or appropriate alias) as is the title of the contribution ({{para|contribution}}).  
+
+To resolve this error, include the book's primary author in {{para|author1}}, or {{para|last1}}, {{para|first1}}, or {{para|vauthors}} and include the contribution title in {{para|contribution}}; or remove {{para|contributor}}.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: contributor | Category:CS1 errors: contributor | [[:Category:CS1 errors: contributor]]}}.<ref group="lower-alpha" name="categories" /><section end=contributor_missing_required_param_help_text />
+
+==<span id="empty_citation">Empty citation</span>==
+<section begin=empty_citation_help_text />{{help desk}}<span class="error">Empty citation</span>
+
+A {{cs1}} or {{cs2}} template marked as "Empty" contains no recognizable parameter identifiers. For example, this citation is marked as "empty" even though it contains usable information:
+:<code><nowiki>{{cite web | http://www.foobar.com | The Foobar News}}</nowiki></code>
+The citation is "empty" because it does not contain the necessary parameter identifiers (in this case {{para|url}} and {{para|title}}) that tell {{tlx|cite web}} how to use the information that the citation does contain.
+
+A citation is also marked as "empty" when it contains only parameters that it doesn't recognize:
+:<code><nowiki>{{cite book |titolo=The Bazquux Uprising |anno=2015}}</nowiki></code>
+This citation is "empty" because the Italian-language parameters {{para|titolo}} and {{para|anno}} are not recognized as valid parameter names on the English Wikipedia.
+
+"Empty citation" may also mean that an editor meant to use another template entirely. Perhaps the editor used {{tlx|citation}} when the intent was to use {{tlx|citation needed}} or {{tlx|quote}}.
+
+To resolve this error, add appropriate parameter identifiers, translate foreign language parameter names to their English equivalents, or replace the CS1/CS2 template with a more appropriate template.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:Pages with empty citations | Category:Pages with empty citations | [[:Category:Pages with empty citations]]}}.<ref group="lower-alpha" name="categories" /><section end=empty_citation_help_text />
+
+== <span id="explicit_et_al">Explicit use of et al.</span> ==
+<section begin=explicit_etal_help_text />{{help desk}}<span class="error">Explicit use of et al. in: <code style="color:inherit; border:inherit; padding:inherit; background: inherit;">|&lt;param>=</code></span>
+
+This error occurs where a {{cs1}} or {{cs2}} template detects that one of the names parameters contains some form of "et al." either as a separate name parameter ({{para|author6|et al.}}) or as a suffix added to a name list ({{para|author|Smith, A.B. et al.}}) or first name ({{para|first|John, et al.}}).
+
+This error can occur in any of the author, editor, interviewer, translator, or contributor parameters.
+
+Use the {{para|display-authors}} parameter instead (or other applicable display-X parameter), as documented at [[Help:Citation Style 1#Display options]].
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: explicit use of et al. | Category:CS1 errors: explicit use of et al. | [[:Category:CS1 errors: explicit use of et al.]]}}<ref group="lower-alpha" name="categories" /><section end=explicit_etal_help_text />
+
+==<span id="param_has_ext_link">External link in |&lt;param>=</span>==
+<section begin=param_has_ext_link_help_text />{{help desk}}<span class="error">External link in <code style="color:inherit; border:inherit; padding:inherit;">|&lt;param>=</code></span>
+
+This error occurs when any of the [[Help:Citation Style 1|CS1]] or [[Help:Citation Style 2|CS2 citation]] title-holding parameters –  {{para|title}}, {{para|chapter}}, {{para|publisher}}, {{para|work}} or any of its aliases: {{para|journal}}, {{para|magazine}}, {{para|newspaper}}, {{para|periodical}} and {{para|website}} – hold an external link (URL). External links in these parameters corrupt the citation's metadata and can be the source of a variety of other error messages.
+
+To resolve this error, remove the external link from the identified parameter.  Consider placing the external link in a more appropriate parameter:
+* for {{para|chapter}}, the URL may belong in {{para|chapter-url}}.
+* for other parameters, it may belong in {{para|url}}.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: external links | Category:CS1 errors: external links | [[:Category:CS1 errors: external links]] ({{PAGESINCATEGORY:CS1 errors: external links}} pages)}}.<ref group="lower-alpha" name="categories" /><section end=param_has_ext_link_help_text />
+
+==<span id="first_missing_last">|&lt;first>''n''= missing |&lt;last>''n''=</span>==
+
+<section begin=first_missing_last_help_text />{{help desk}}<span class="error"><code style="color:inherit; border:inherit; padding:inherit; background:inherit">|&lt;first>{{var|n}}=</code> missing <code style="color:inherit; border:inherit; padding:inherit; background:inherit">|&lt;last>{{var|n}}=</code></span>
+
+{{cs1}} and {{cs2}} templates requires a {{para|&lt;last>''n''}} parameter for each {{para|&lt;first>''n''}} parameter in a citation. Author, contributor, editor, interviewer, and translator lists are checked for proper last/first pairing.  CS1|2 will emit this error message for the first mismatch it detects.  If there are more last/first mismatches in a citation, subsequent mismatches are not detected.
+
+There is no requirement that each {{para|&lt;last>''n''}} have a matching {{para|&lt;first>''n''}}.
+
+To resolve this error, ensure that each {{para|&lt;first>''n''}} has a corresponding {{para|&lt;last>''n''}}. 
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: missing name | Category:CS1 errors: missing name | [[:Category:CS1 errors: missing name]]}}.<ref group="lower-alpha" name="categories" /><section end=first_missing_last_help_text />
+
+==<span id="format_missing_url">|format= requires |url= </span>==
+<section begin=format_missing_url_help_text />{{help desk}}<div class="plainlist">
+*<span class="error"><code style="color:inherit; border:inherit; padding:inherit;">|format=</code> requires <code style="color:inherit; border:inherit; padding:inherit;">|url=</code></span>
+*<span class="error"><code style="color:inherit; border:inherit; padding:inherit;">|...-format=</code> requires <code style="color:inherit; border:inherit; padding:inherit;">|...-url=</code></span></div>
+
+These errors occur when {{cs1}} and {{cs2}} templates use {{para|format}} or {{para|...-format}} without also providing a corresponding URL for {{para|url}} or {{para|...-url}}, respectively. The {{para|format}} and {{para|...-format}} parameters are used to specify the file format of a web resource, such as [[PDF]], [[Doc (computing)|DOC]], or [[Microsoft Excel file format|XLS]]. In some cases an editor may have intended to use {{para|type}} to specify a kind of document, such as hard cover, paperback, or pamphlet. The {{para|format}} and {{para|...-format}} value is always displayed.
+
+The list of {{para|...-format}} parameters is:
+:{{para|archive-format}}, {{para|chapter-format}}, {{para|conference-format}}, {{para|contribution-format}}, {{para|event-format}}, {{para|lay-format}}, {{para|section-format}}, {{para|transcript-format}}
+
+As of 29 November 2014, {{para|chapter-format}} is a new parameter.  Citations that relied on the old, somewhat odd use of {{para|url}} and {{para|format}} may need adjustment.
+
+To resolve this error, remove {{para|format}} or {{para|chapter-format}}; define {{para|url}} or {{para|chapter-url}}; or change {{para|format}} to {{para|type}} (or to {{para|chapter-format}} if {{para|chapter-url}} is used without {{para|url}}.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:Pages using citations with format and no URL | Category:Pages using citations with format and no URL | [[:Category:Pages using citations with format and no URL]]}}.<ref group="lower-alpha" name="categories" /><section end=format_missing_url_help_text />
+
+==<span id="script_parameter">Invalid |script-&lt;param>=: &lt;type></span>==
+<section begin=script_parameter_help_text />{{help desk}}<span class="error">Invalid <code style="color:inherit; border:inherit; padding:inherit;">|script-&lt;param>=: &lt;type></code></span>
+
+The various {{para|script-&lt;{{var|param}}>}} parameters are checked for proper form.  When an error is detected, the error message briefly identifies the type of the error:
+:<span class="error" style="font-size:100%">missing title part</span> – the {{para|script-&lt;{{var|param}}>}} parameter has a language-code prefix but is otherwise empty
+:<span class="error" style="font-size:100%">missing prefix</span> – the {{para|script-&lt;{{var|param}}>}} parameter has text but is missing the required language-code prefix; the prefix has the form <code>xx:</code> or <code>xxx:</code> where <code>xx</code> or <code>xxx</code> is a valid [[ISO 639-1]] or [[ISO 639-3]] language code known to cs1|2 as a language that uses a non-Latin script; the colon (<code>:</code>) is required
+:<span class="error" style="font-size:100%">unknown language code</span> – the {{para|script-&lt;{{var|param}}>}} parameter has a (possibly valid) language code that cs1|2 does not recognize as a language using a non-Latin script
+Language codes known to cs1|2 for languages that do not use a Latin script are:
+{{#invoke:Cs1 documentation support|script_lang_lister}}<!-- makes a language code: name list from the master list in [[Module:Citation/CS1/Configuration]] -->
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: script parameters | Category:CS1 errors: script parameters | [[:Category:CS1 errors: script parameters]]}}.<ref group="lower-alpha" name="categories" /><section end=script_parameter_help_text />
+
+==<span id="invalid_param_val">Invalid &lt;param>=&lt;value></span>==
+<section begin=invalid_param_val_help_text />{{help desk}}<span class="error">Invalid <code style="color:inherit; border:inherit; padding:inherit;">|&lt;param>=&lt;value></code></span>
+
+To function properly, some parameters are limited to a certain set of acceptable values.  This error message indicates that a parameter has been assigned a value that is not a member of the parameter's defined set of acceptable values. 
+
+Letters in values must all be in lower case, as shown below.
+{|class="wikitable"
+|+Parameters with limited acceptable values
+|-
+!parameter !! acceptable values
+|-
+|{{para|df}} ||<code>dmy</code>, <code>dmy-all</code>, <code>mdy</code>, <code>mdy-all</code>, <code>ymd</code>, <code>ymd-all</code>
+|-
+|{{para|ignore-isbn-error}}||rowspan=2|<code>true</code>, <code>y</code>, <code>yes</code>
+|-
+|{{para|last-author-amp}}
+|-
+|{{para|mode}}||<code>cs1</code>, <code>cs2</code>
+|-
+|{{para|name-list-format}}||<code>vanc</code>
+|-
+|{{para|nopp}}||rowspan=4|<code>true</code>, <code>y</code>, <code>yes</code>
+|-
+|{{para|no-tracking}}
+|-
+|{{para|registration}}
+|-
+|{{para|subscription}}
+|-
+|{{para|url-access}}||rowspan=7|<code>subscription</code>, <code>registration</code>, <code>limited</code>
+|-
+|{{para|article-url-access}}
+|-
+|{{para|chapter-url-access}}
+|-
+|{{para|contribution-url-access}}
+|-
+|{{para|entry-url-access}}
+|-
+|{{para|map-url-access}}
+|-
+|{{para|section-url-access}}
+|-
+|{{para|bibcode-access}}||rowspan=6|<code>free</code>
+|-
+|{{para|doi-access}}
+|-
+|{{para|hdl-access}}
+|-
+|{{para|jstor-access}}
+|-
+|{{para|ol-access}}
+|-
+|{{para|osti-access}}
+|-
+|{{para|url-status}}||<code>dead</code>, <code>live</code>, <code>unfit</code>, <code>usurped</code>
+|}
+
+To resolve this error, use an appropriate value.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: invalid parameter value | Category:CS1 errors: invalid parameter value | [[:Category:CS1 errors: invalid parameter value]]}}.<ref group="lower-alpha" name="categories" /><section end=invalid_param_val_help_text />
+
+==<span id="apostrophe_markup">Italic or bold markup not allowed in: |&lt;param>=</span>==
+
+<section begin=apostrophe_markup_help_text />{{help desk}}<span class="error">Italic or bold markup not allowed in: <code style="color:inherit; border:inherit; padding:inherit; background:inherit">|&lt;param>{{var|n}}=</code></span>
+Italic (<code><nowiki>''</nowiki></code>) or bold (<code><nowiki>'''</nowiki></code>) wikimarkup is not allowed in publisher and periodical parameters.  These parameters include:
+*{{para|publisher}}
+*{{para|journal}}
+*{{para|magazine}}
+*{{para|newspaper}}
+*{{para|periodical}}
+*{{para|website}}
+*{{para|work}}
+To resolve this error, remove wiki markup from the named parameter's value and ensure that the template is using the correct parameters; when citing a newspaper, use {{para|newspaper}} for the newspaper's name, not {{para|publisher}}, etc.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: markup | Category:CS1 errors: markup | [[:Category:CS1 errors: markup]]}}.<ref group="lower-alpha" name="categories" /><section end=apostrophe_markup_help_text />
+
+==<span id="missing_name">Missing |&lt;name>''n''=</span>==
+
+<section begin=missing_name_help_text />{{help desk}}<span class="error">Missing <code style="color:inherit; border:inherit; padding:inherit; background:inherit">|&lt;name>{{var|n}}=</code></span>
+
+So that all names are listed in a rendered citation, {{cs1}} and {{cs2}} templates require ''n'' in {{para|&lt;last>{{var|n}}}} (and its aliases) to increment by 1 for each name in the list (author, contributor, editor, interviewer, translator).  This error message is emitted when there is a 'hole' in the numbering (an author list made up of {{para|author1}} and {{para|author3}} but without {{para|author2}} for example).
+
+The test will not detect a 'hole' that is larger than 1.  It is presumed that when {{para|author{{var|n}}}} and {{para|author{{var|n+1}}}} are both not present, then the test has reached the end of the list.
+
+To resolve this error, ensure that the numbering of the {{para|&lt;last>{{var|n}}}} parameters increments properly. 
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: missing name | Category:CS1 errors: missing name | [[:Category:CS1 errors: missing name]]}}.<ref group="lower-alpha" name="categories" /><section end=missing_name_help_text />
+
+==<span id="missing_pipe">Missing pipe</span>==
+<section begin=missing_pipe_help_text />{{help desk}}
+<span class="error">Missing pipe in: <code style="color:inherit; border:inherit; padding:inherit; background: inherit;">&lt;param>=</code></span>
+
+{{cs1}} and {{cs2}} templates report this error when one parameter has text that looks like it is a parameter missing a pipe (<code>|</code>). This error occurs when a template parameter value contains characters and digits followed by an equal sign.  If the alphanumeric text immediately preceding the equal sign is a valid cs1|2 parameter name, the module assumes that the template is missing a pipe and emits this error message.
+
+Some legitimate titles will contain a cs1|2 parameter name followed by an equal sign. In that case, enclose the equal sign in nowiki tags, like this: {{tag|nowiki|content={{=}}}}.  For most other cases, simply add the missing pipe.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: missing pipe | Category:CS1 errors: missing pipe | [[:Category:CS1 errors: missing pipe]]}}.<ref group="lower-alpha" name="categories" /><section end=missing_pipe_help_text />
+
+==<span id="missing_title">Missing or empty |title= </span>==
+There are two slightly different error conditions that can arise when [[Help:Citation Style 1|CS1 citations]] lack appropriate titles. In each case, CS1 reports this error message. The necessary resolution may vary depending on the cause of the error. The error message links to the appropriate description below.
+
+===<span id="bare_url_missing_title">Bare URL without a title</span>===
+<section begin=bare_url_missing_title_help_text />{{help desk}}<span class="error"><code style="color:inherit; border:inherit; padding:inherit;">&#124;&lt;param>=</code> missing title</span>
+
+All {{cs1}} and {{cs2}} templates report this error when one of the [[URL]]-containing parameters cannot be paired with an associated title. This error may also occur when {{para|title}} cannot be linked with {{para|url}} because the citation also contains a conflicting {{para|title-link}} parameter.
+
+{|class="wikitable"
+|+URL-containing parameters and associated title parameters
+|-
+!URL parameters
+!Title parameters
+|-
+| {{para|archive-url}}
+| {{para|title}}
+|-
+|{{para|chapter-url}}
+| {{para|chapter}}, {{para|contribution}}, {{para|entry}}, {{para|article}}
+|-
+| {{para|conference-url}}
+| {{para|conference}}
+|-
+| {{para|contribution-url}}
+| {{para|chapter}}, {{para|contribution}}, {{para|entry}}, {{para|article}}
+|-
+| {{para|transcript-url}}
+| {{para|transcript}}
+|-
+| {{para|url}}
+| {{para|title}}
+|}
+
+A unique case exists: if {{para|pmc}} has a value and {{para|url}} is omitted or empty, then {{para|title}} is linked with the same URL as the PMC.
+
+Because URLs are ugly and generally uninformative, it is expected that editors should provide a meaningful title for each URL. In most cases this can be accomplished by using the {{para|title}} parameter.
+
+To resolve this error, provide an appropriate title for the URL-containing parameter. In the case where {{para|url}} and {{para|title-link}} are contending for {{para|title}} you must choose which one to keep. Consider moving {{para|url}} or {{para|title-link}} to a more suitable parameter.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:Pages with citations having bare URLs | Category:Pages with citations having bare URLs | [[:Category:Pages with citations having bare URLs]] ({{PAGESINCATEGORY:Pages with citations having bare URLs}} pages)}}.<ref group="lower-alpha" name="categories" /><section end=bare_url_missing_title_help_text />
+
+===<span id="citation_missing_title">Citation without a title of any form</span>===
+<section begin=citation_missing_title_help_text />{{help desk}}<div class="plainlist">
+*<span class="error">Missing or empty <code style="color:inherit; border:inherit; padding:inherit;">&#124;title=</code></span>
+*<span class="error">Missing or empty <code style="color:inherit; border:inherit; padding:inherit;">&#124;series=</code></span></div>
+
+This error occurs for {{cs1}} and {{cs2}} templates when all of {{para|title}}, {{para|trans-title}}, and {{para|script-title}} are omitted or left blank.  At least one of these title parameters must be provided for each citation.
+
+{{tlx|cite episode}} will show this error if {{para|series}} is omitted or left blank (even if a {{para|title}} is provided).
+
+Sometimes this error occurs because an editor has used a CS1|2 citation as a [[Help:Shortened footnotes|shortened footnote]] when {{tlx|sfn}} or one of the {{tlx|harv}} family of templates would have been more appropriate. This error also occurs when an editor used {{tlx|citation}} but intended to use {{tlx|citation needed}}.
+
+To resolve this error, provide a value for {{para|title}}, {{para|trans-title}}, and/or {{para|script-title}} or replace the CS1|2 template with a more appropriate template. If you are listing a periodical or an issue of a periodical in a bibliography rather than within {{tag|ref}} tags, {{tlx|List journal}} may be more appropriate.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:Pages with citations lacking titles | Category:Pages with citations lacking titles | [[:Category:Pages with citations lacking titles]] ({{PAGESINCATEGORY:Pages with citations lacking titles}} pages)}}.<ref group="lower-alpha" name="categories" /><section end=citation_missing_title_help_text />
+
+==<span id="cite_web_url">Missing or empty |url= </span>==
+<section begin=cite_web_url_help_text />{{help desk}}<span class="error">Missing or empty <code style="color:inherit; border:inherit; padding:inherit;">|url=</code></span>
+
+This error message is reported by {{tlx|cite web}}, {{tlx|cite podcast}}, and {{tlx|cite mailing list}} when the template parameters {{para|url}} and {{para|archive-url}} are both missing, blank or not properly entered. Note that {{para|website}} or {{para|work}} is the name of the site, not the URL.
+
+To resolve this error, provide a value for {{para|url}} or use a more appropriate template such as {{tl|cite book}}, {{tl|cite journal}} or other {{cs1}} or {{cs2}} template.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:Pages using web citations with no URL | Category:Pages using web citations with no URL | [[:Category:Pages using web citations with no URL]] ({{PAGESINCATEGORY:Pages using web citations with no URL}} pages)}}.<ref group="lower-alpha" name="categories" /><section end=cite_web_url_help_text />
+
+==<span id="redundant_parameters">More than one of |&lt;param1>=, |&lt;param2>=, and |&lt;param3>= specified</span>==
+<section begin=redundant_parameters_help_text />{{help desk}}<span class="error">More than one of <code style="color:inherit; border:inherit; padding:inherit;">|&lt;param1>=</code>, <code style="color:inherit; border:inherit; padding:inherit;">|&lt;param2>=</code>, and <code style="color:inherit; border:inherit; padding:inherit;">|&lt;param3>=</code> specified</span>
+
+This error occurs when a {{cs1}} or {{cs2}} template includes more than one parameter that maps to the same meaning. For example, {{para|author}}, {{para|last}}, and {{para|last1}} are all synonyms of each other, so no more than one of these parameters should ever be used in a single template.
+
+To resolve this error, remove or modify the redundant parameter(s).
+
+<div class="plainlist">
+*<span class="error">More than one of author-name-list parameters specified</span>
+*<span class="error">More than one of editor-name-list parameters specified</span>
+</div>
+This error occurs when a CS1 or CS2 template uses more than one type of author or editor name-list style.  There are three kinds of incompatible author-name-list styles: 
+:{{para|author''n''}} and {{para|last''n''}} / {{para|first''n''}} (and their various aliases), {{para|vauthors}}, and {{para|authors}}
+and similarly, three editor-name-list styles:
+:{{para|editor''n''}} and {{para|editor-last''n''}} / {{para|editor-first''n''}} (and their various aliases), {{para|veditors}}, and {{para|editors}}
+
+To resolve this error, choose one name-list-style.  Use the chosen style for both of the author and editor name-lists.
+
+Pages with these errors are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:Pages with citations having redundant parameters | Category:Pages with citations having redundant parameters | [[:Category:Pages with citations having redundant parameters]]}}.<ref group="lower-alpha" name="categories" /><section end=redundant_parameters_help_text />
+
+==<span id="ssrn_missing">|ssrn= required</span>== 
+<section begin=ssrn_missing_help_text />{{help desk}}<span class="error"><code style="color:inherit; border:inherit; padding:inherit;">|ssrn=</code> required</span>
+
+{{tlx|cite ssrn}} requires the identifier parameter {{para|ssrn}}.
+
+To resolve this error, ensure that the template has {{para|ssrn}} with a properly constructed value.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: SSRN| Category:CS1 errors: SSRN| [[:Category:CS1 errors: SSRN]]}}.<ref group="lower-alpha" name="categories" /><section end=ssrn_missing_help_text />
+
+==<span id="text_ignored">Text "????" ignored</span>==
+<section begin=text_ignored_help_text />{{help desk}}<span class="error">Text "????" ignored</span>
+
+Unlike many Wikipedia templates, the {{cs1}} and {{cs2}} templates do not use unnamed or positional parameters. When a citation contains text between [[vertical bar]]s and that text does not contain an equal sign (=), CS1|2 ignores the text and reports the error. This is true even when the text is the name of a valid parameter.
+
+This error can also be caused by vertical bars (pipe characters) that are part of URLs or titles. When vertical bars occur in URLs, replace each vertical bar with <code>%7c</code>. When vertical bars occur in parameter values that are not URLs, replace each vertical bar with <code>&amp;#124;</code> or <code>{{tl|!}}</code>.
+
+To resolve this error, remove the extraneous text, add '=', add an appropriate parameter name from the template you're using to complete the parameter, or properly encode vertical bars in URLs and titles.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:Pages with citations using unnamed parameters | Category:Pages with citations using unnamed parameters | [[:Category:Pages with citations using unnamed parameters]]}}.<ref group="lower-alpha" name="categories" /><section end=text_ignored_help_text />
+
+==<span id="trans_missing_title">|trans-&lt;param>= requires |&lt;param>= </span>==
+<section begin=trans_missing_title_help_text />{{help desk}}<div class="plainlist">
+*<span class="error"><code style="color:inherit; border:inherit; padding:inherit;">|trans-title=</code> requires <code style="color:inherit; border:inherit; padding:inherit;">|title=</code></span>
+*<span class="error"><code style="color:inherit; border:inherit; padding:inherit;">|trans-chapter=</code> requires <code style="color:inherit; border:inherit; padding:inherit;">|chapter=</code></span></div>
+
+{{cs1}} and {{cs2}} templates report this error when the citation has an English translation of the title in {{para|trans-title}} or chapter title in {{para|trans-chapter}} but does not have the original-language title in {{para|title}} or original-language chapter title in {{para|chapter}}.
+
+To resolve this error, provide the original language title for {{para|title}} or chapter title for {{para|chapter}}. Consider adding {{para|language}} if not already part of the citation.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: translated title | Category:CS1 errors: translated title | [[:Category:CS1 errors: translated title]]}}.<ref group="lower-alpha" name="categories" /><section end=trans_missing_title_help_text />
+
+==<span id="parameter_ignored">Unknown parameter |xxxx= ignored<span id="parameter_ignored_suggest"> </span></span>==
+<section begin=parameter_ignored_help_text />{{help desk}}<div class="plainlist">
+*<span class="error">Unknown parameter <code style="color:inherit; border:inherit; padding:inherit;">|xxxx=</code> ignored</span>
+*<span class="error">Unknown parameter <code style="color:inherit; border:inherit; padding:inherit;">|xxxx=</code> ignored (<code style="color:inherit; border:inherit; padding:inherit;">|yyyy=</code> suggested)</span></div>
+
+{{cs1}} and {{cs2}} templates report this error when the name portion of a parameter's {{para|name|value}} pair is not recognized as a valid name. Typically, this is caused by spelling or capitalization errors or when a page is reverted to a version where the citation template did support the parameter.
+
+The CS1|2 engine does not ignore unrecognized parameters. The purpose of the citation is to properly identify the source; not act as a repository of notes and ancillary information.
+
+CS1|2 template parameters are lower case. CS1|2 will report this error when the parameter's name contains uppercase letters ({{!xt|Xxxx, xxXx, XXXX}}) but the parameter's name is defined as lowercase ({{xt|xxxx}}). The identifier parameters, like {{para|isbn}}, {{para|pmc}}, {{para|doi}}, etc., can be either lower case or upper case, but not of mixed case ({{xt|{{para|isbn}}}} or {{xt|{{para|ISBN}}}} but not {{!xt|{{para|Isbn}}}}). For [[Module:Citation/CS1/Suggestions|common parameter misspellings]], like {{para|pubisher}} instead of {{para|publisher}}, CS1|2 will suggest a valid parameter name.
+
+To resolve this error, replace the erroneous parameter name with a correct one, possibly using the suggested name. Ensure that the parameter's name is correctly spelled and that there are no characters except spaces between the parameter's name and the leading vertical bar (|) or trailing equals sign (=). A list of valid parameters can be found by consulting [[Help:Citation Style 1]] or visiting the description page of the specific template being used, such as {{tlx|cite web}}, {{tlx|cite book}}, {{tlx|cite journal}}, etc. Consider moving information associated with the unknown parameter into an appropriate parameter or to a section of the article's talk page for preservation.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:Pages with citations using unsupported parameters | Category:Pages with citations using unsupported parameters | [[:Category:Pages with citations using unsupported parameters]]}}.<ref group="lower-alpha" name="categories" /><section end=parameter_ignored_help_text />
+
+==<span id="wikilink_in_url">URL–wikilink conflict</span>==
+<section begin=wikilink_in_url_help_text />{{help desk}}<span class="error">URL–wikilink conflict</span>
+
+External links in a rendered citation are a combination of url-holding parameters, {{para|url}}, {{para|chapter-url}}, etc., with title-holding parameters, {{para|title}}, {{para|chapter}}, etc. Title-holding parameters may be [[wikilink]]ed to another Wikipedia article but not when there is a matching url-holding parameter in the citation. When this condition occurs, the wikilink is suppressed, the wiki markup ignored, and the rendered citation links to the external site.
+
+Some [[Help:Template|templates]] will also cause this error if they are part of a title-holding parameter. The error occurs when the template produces wikilinked content. For example, {{tlx|lang}} templates output a wikilinked category. Templates in url-holding parameters may also corrupt the citation's [[WP:COinS|COinS]] metadata. As a general rule, avoid using templates in title-holding parameters unless you know that the template's effects are entirely visual ({{tlx|!}} and the like).
+
+This type of error may also occur in identifier-based templates ({{tlx|cite doi}}, etc.). When this happens, the error message is shown in the article but the error is actually located in the identifier-based citation template.
+
+To resolve this error, remove wikilinks from title-holding parameters that are intended to be externally linked or remove the external URL, which will allow the internal wikilinks to work as expected. If wikilink-producing templates are important to the citation, move them out of the CS1 template but leave them inside the citation's {{tag|ref}} tags. Some of the functionality provided by templates may also be available through CS1 parameters.
+
+To resolve errors in identifier-based citation templates, the template must be edited to correct the error. Exercise caution when editing these templates because identifier-based citation templates are often used in multiple articles.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: URL–wikilink conflict | Category:CS1 errors: URL–wikilink conflict | [[:Category:CS1 errors: URL–wikilink conflict]]}}.<ref group="lower-alpha" name="categories" /><section end=wikilink_in_url_help_text />
+
+==<span id="vancouver">Vancouver style error</span>==
+<section begin=vancouver_help_text />{{help desk}}<span class="error">Vancouver style error</span>
+
+This error is reported for citations that use {{para|vauthors}}, {{para|veditors}}, {{para|name-list-format|vanc}}.
+
+[[Vancouver style]] restricts author or editor names to the Latin alphabet. For the purposes of this test, [[Module:Citation/CS1]] defines the Latin alphabet as the letters defined in the [[Unicode]] Latin character sets:
+:C0 Controls and Basic Latin<ref>{{cite web |url=https://www.unicode.org/charts/PDF/U0000.pdf |title=C0 Controls and Basic Latin |website=[[Unicode]] |accessdate=2015-04-19}}</ref> (0041–005A, 0061–007A)
+:C1 Controls and Latin-1 Supplement<ref>{{cite web |url=https://www.unicode.org/charts/PDF/U0080.pdf |title=C1 Controls and Latin-1 Supplement |website=Unicode |accessdate=2015-04-19}}</ref> (00C0–00D6, 00D8–00F6, 00F8–00FF)
+:Latin Extended-A<ref>{{cite web |url=https://www.unicode.org/charts/PDF/U0100.pdf |title=Latin Extended-A |website=Unicode |accessdate=2015-04-19}}</ref> (0100–017F)
+:Latin Extended-B<ref>{{cite web |url=https://www.unicode.org/charts/PDF/U0180.pdf |title=Latin Extended-B |website=Unicode |accessdate=2015-04-19}}</ref> (0180–01BF, 01C4–024F)
+
+This error is also reported when more than two initials are used: in case of more than two initials, list only the first two.
+
+This error is also reported when a corporate or institutional author is listed in {{para|vauthors}} without proper delimiters.  Corporate authors should be listed this way:
+:{{para|vauthors|First Surname FM, Surname AB, {{green|((}}Corporate or institutional Author{{green|))}}, Lastsurname XY}}
+
+While normally correct, sometimes the names listed on a PMID page contain errors when the author surname has a lowercase [[nobiliary particle]].  For example, {{PMID|17726700}} lists Magnus von Knebel Doeberitz as Doeberitz Mv which is not correct.  This author's name should be listed as {{para|vauthors|von Knebel Doeberitz M}}.<ref>{{cite web |url=https://www.ncbi.nlm.nih.gov/books/NBK7282/box/A33081/ |title=Other surname rules |website=National Center for Biotechnology Information|date=2018-05-18 }}</ref>
+
+Certain punctuation will be flagged as an error.  For example, Unicode U+2019, right single quotation mark, causes an error because it is not a member of the Latin character sets identified above: {{para|vauthors|Van{{red|’}}t Veer M}}.  Replace this character with the straight (or typewriter) apostrophe: {{para|vauthors|Van{{green|'}}t Veer M}}.
+
+To resolve this error, Romanize author and editor names.<ref>{{cite book |last=Patrias |first=K |editor-last=Wendling |editor-first=D |location=Bethesda |publisher=National Library of Medicine |date=2007 |chapter=Names in non-roman alphabets or character-based languages |chapter-url=https://www.ncbi.nlm.nih.gov/books/NBK7258/box/A48818/ |title=Citing Medicine: The NLM Style Guide for Authors, Editors, and Publishers [Internet]. |edition=2nd |name-list-format = vanc}}</ref>  Romanizing can result in two-letter initials, for example, the Greek letter 'Θ' Romanizes to 'Th'.<ref>{{cite web |url=https://www.loc.gov/catdir/cpso/romanization/greek.pdf |title=Greek |website=Library of Congress}}</ref> When author names have this kind of initial, Module:Citation/CS1 can't know if this kind of initial is a typo or a legitimate Romanized character so it will emit the Vancouver error.  To suppress the error after determining that the two-character initial is correct and not a typo, treat the name as if it were a corporate name by wrapping it in doubled parentheses: {{para|vauthors|...,  Tatarinov IuS, ...}} → {{para|vauthors|...,  ((Tatarinov IuS)), ...}}
+
+Similarly, Chinese hyphenated given names may appear in PubMed listings.  For example: 'Wang Hsien-yu' may be listed on PubMed as 'Wang Hy' which will result in a Vancouver error.  When this occurs, and upon verification that such names are correct, wrap them in doubled parentheses.
+
+Specific Rules for Names:<ref>{{cite book |url=https://www.ncbi.nlm.nih.gov/books/NBK7282/ |title=Citing Medicine: The NLM Style Guide for Authors, Editors, and Publishers [Internet] | edition=2nd | first = K | last = Patrias | editor-first  = D | editor-last = Wendling |location=Bethesda, MD | publisher = National Library of Medicine (US) | year = 2007 | accessdate = 2019-03-31 | name-list-format = vanc }}</ref>
+* [https://www.ncbi.nlm.nih.gov/books/NBK7282/box/A33071/?report=objectonly Surnames with hyphens and other punctuation in them]
+* [https://www.ncbi.nlm.nih.gov/books/NBK7282/box/A33081/?report=objectonly Other surname rules]
+* [https://www.ncbi.nlm.nih.gov/books/NBK7282/box/A33104/?report=objectonly Given names containing punctuation, a prefix, a preposition, or particle]
+* [https://www.ncbi.nlm.nih.gov/books/NBK7282/box/A33118/?report=objectonly Degrees, titles, and honors before or after a personal name]
+* [https://www.ncbi.nlm.nih.gov/books/NBK7282/box/A33127/?report=objectonly Designations of rank within a family, such as Jr and III]
+* [https://www.ncbi.nlm.nih.gov/books/NBK7282/box/A33134/?report=objectonly Names appearing in non-roman alphabets (Cyrillic, Greek, Arabic, Hebrew, Korean) or character-based languages (Chinese, Japanese)]
+* [https://www.ncbi.nlm.nih.gov/books/NBK7282/box/A33152/?report=objectonly Organizations as author]
+**cs1|2 does not obey the semicolon-as-separator rule.  Separate corporate and organizational names from each other and from individual names with a comma; wrap corporate and organizational names in doubled parentheses as described above
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: Vancouver style | Category:CS1 errors: Vancouver style | [[:Category:CS1 errors: Vancouver style]]}}.<ref group="lower-alpha" name="categories" /><section end=vancouver_help_text />
+
+==<span id="invisible_char">&lt;char> character in |&lt;param>= at position ''n''</span>==
+<section begin=invisible_char_help_text />{{help desk}}<span class="error">&lt;char> character in <code style="color:inherit; border:inherit; padding:inherit;">|&lt;param>=</code> at position ''n''</span>
+
+This error is reported for citations with parameter values that contain invisible or non-printable characters known as [[control character]]s; the error includes the position at which the character can be found.  [[Module:Citation/CS1]] detects parameter values that contain any of these characters:
+
+*[[non-breaking space]], U+00A0
+*[[soft hyphen]], U+00AD
+*[[replacement character]], U+FFFD
+*[[hair space]], U+200A
+*[[zero width space]], U+200B
+*[[zero width joiner]], U+200D
+*[[horizontal tab]], U+0009 (HT)
+*[[line feed]], U+0010 (LF)
+*[[carriage return]], U+0013 (CR)
+*[[delete character]], U+007F (DEL)
+*[[C0 and C1 control codes|C0 control]], U+0000–U+001F (NULL–US)
+*[[C0 and C1 control codes|C1 control]], U+0080–U+009F (XXX–APC)
+To resolve invisible-character errors, remove or replace the identified character. Because these characters are mostly invisible, the error message identifies the character's position in the parameter value counted from the left. Space characters between the assignment operator (the '=' sign) and the parameter value are not counted. If you move through the citation with the arrow keys then the cursor may stand still once at an invisible character which can be removed with {{keypress|Delete}} or {{keypress|Backspace}}. If you copy-paste a string to the "Characters" field at https://r12a.github.io/app-conversion/ and click "View in UniView" then the position and name of all characters is shown.
+
+<span class="error">&lt;name> stripmarker in <code style="color:inherit; border:inherit; padding:inherit;">|&lt;param>=</code> at position ''n''</span>
+
+[[Help:Strip markers|Strip markers]] are special sequences of characters that [[MediaWiki]] inserts as a place-holder for certain [[xml]]-like tags.  These tags include {{tag|gallery}}, {{tag|math}}, {{tag|nowiki}}, {{tag|pre}}, and {{tag|ref}}.  The strip markers are replaced with content before the final page rendering.  The module ignores math and nowiki strip markers.
+
+To resolve strip marker errors, remove or replace the identified tag.  The error message identifies the strip marker's position in the parameter value counted from the left.  Space characters between the assignment operator (the '=' sign) and the parameter value are not counted.
+
+Strip marker errors can also be caused by unsupported additional text or templates in parameter values{{mdash}}for example, {{tl|ISBN}} in {{para|title}}. Resolve the problem by moving the extraneous text outside of the citation template or by removing the extraneous text or template markup, as appropriate.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: invisible characters | Category:CS1 errors: invisible characters | [[:Category:CS1 errors: invisible characters]]}}.<ref group="lower-alpha" name="categories" /><section end=invisible_char_help_text />
+
+==<span id="doibroken_missing_doi">&#124;&lt;param>= requires &#124;doi=</span>==
+<section begin=doibroken_missing_doi_help_text />{{help desk}}<span class="error"><code style="color:inherit; border:inherit; padding:inherit;">&#124;&lt;param>=</code> requires {{para|doi|plain=yes}}</span>
+
+When any of {{para|doi-broken}}, {{para|doi-broken-date}}, or {{para|doi-inactive-date}} are used in a cs1|2 template, {{para|doi}} or {{para|DOI}} (with value) must also be present.
+
+To resolve this error, either add the missing DOI or remove the 'broken' parameter.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} | Category:CS1 errors: DOI | Category:CS1 errors: DOI | [[:Category:CS1 errors: DOI]]}}.<ref group="lower-alpha" name="categories" /><section end=doibroken_missing_doi_help_text />
+
+==<span id="param_access_requires_param">&#124;&lt;param>-access= requires &#124;&lt;param>=</span>==
+<section begin=param_access_requires_param_help_text />{{help desk}}<span class="error"><code style="color:inherit; border:inherit; padding:inherit;">&#124;&lt;param>-access=</code> requires <code style="color:inherit; border:inherit; padding:inherit;">&#124;&lt;param>=</code></span>
+
+This error is reported when an access level has been specified for some external link, but the corresponding required parameter is missing or empty.
+The parameter can be one of
+{| class="wikitable"
+|+access-level specifier required parameter
+|-
+!specifier !! required parameter
+|-
+|{{para|url-access}} || {{para|url}}
+|-
+|{{para|bibcode-access}} || {{para|bibcode}}
+|-
+|{{para|doi-access}} || {{para|doi}}
+|-
+|{{para|hdl-access}} || {{para|hdl}}
+|-
+|{{para|jstor-access}} || {{para|jstor}}
+|-
+|{{para|ol-access}} || {{para|ol}}
+|-
+|{{para|osti-access}} || {{para|osti}}
+|-
+|}
+
+To resolve this error, either provide a value for the parameter, or remove the access level specification.
+
+Pages with this error are automatically placed in {{#ifeq: {{FULLPAGENAME}} |Category:CS1 errors: param-access|
+Category:CS1 errors: param-access|[[:Category:CS1 errors: param-access]]}}.<ref group="lower-alpha" name="categories" /><section end=param_access_requires_param_help_text /><section begin=notes_help_text />
+
+==Notes==
+{{reflist |group=lower-alpha |refs=
+<ref group="lower-alpha" name="categories">Pages in the Book talk, Category talk, Draft talk, Education Program talk, File talk, Help talk, MediaWiki talk, Module talk, Portal talk, Talk, Template talk, User, User talk, and Wikipedia talk namespaces are not included in the error tracking categories.</ref>
+}}<section end=notes_help_text /><section begin=references_help_text />
+
+==References==
+{{reflist |refs=
+<ref name="archive.org">{{cite web |url=https://archive.org |title=archive.org website | website=Internet Archive}}</ref>
+<ref name="webcitation.org">{{cite web |url=https://www.webcitation.org |title=webcitation.org website | website=WebCite}}</ref>
+}}<section end=references_help_text />
+
+{{Wikipedia referencing}}
+{{Help navigation}}

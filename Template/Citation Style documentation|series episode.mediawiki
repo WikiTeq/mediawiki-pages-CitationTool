@@ -1,0 +1,2 @@
+* '''series''': The name of the series the episode belongs to; may be wikilinked.
+** '''series-link''': Wikilink to an existing Wikipedia article.

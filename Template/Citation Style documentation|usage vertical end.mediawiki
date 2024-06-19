@@ -1,0 +1,2 @@
+|}
+* If a field name is listed in the '''Prerequisites''' column, it is a prerequisite for the field to the left.

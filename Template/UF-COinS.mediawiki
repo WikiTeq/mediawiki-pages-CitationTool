@@ -1,0 +1,8 @@
+''This template produces [[w:COinS|COinS]] metadata; see [[Wikipedia:COinS|COinS in Wikipedia]] for background information.''<includeonly>[[Category:Templates generating COinS|{{PAGENAME}}]]</includeonly><noinclude>
+{{documentation}}
+
+<!--Categories-->
+[[Category:Templates generating COinS| ]]
+
+
+</noinclude>

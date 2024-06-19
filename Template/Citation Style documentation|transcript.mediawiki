@@ -1,0 +1,2 @@
+* '''transcript''': Transcript of the original source.
+** '''transcript-url''': URL of the transcript.

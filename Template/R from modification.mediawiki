@@ -1,0 +1,13 @@
+<noinclude>{{This is a redirect/rcat}}
+</noinclude>{{Redirect template
+  |name=From a modification
+  |from=a modification of the target's title or a closely related title.  For example, the words may be rearranged{{#if: {{{1|{{{reason|{{{of|}}}}}}}}}|. This redirect is a modification of {{{1|{{{reason|{{{of|}}}}}}}}}}}
+  |info=
+** Please note that there are are many {{em|more specific templates}}. Please use {{tl|R from alternative spelling}} for spelling changes (including punctuation and spacing); see subcategories of [[:Category:Redirects from modifications]] for other options (capitals, abbreviations, diacritics, plurals, stylizations, transliteration, ligatures, different parts of speech, etc.). If you are unsure which to use, this template is fine; someone will make it more specific later if necessary.
+** In cases of modification from distinctly longer or shorter names, please use {{tl|R from long name}} or {{tl|R from short name}}, respectively.  Abbreviations (including acronyms) should also receive {{tl|R from abbreviation}}.
+** Use this [[WP:rcat|rcat]] instead of {{tl|R from other capitalisation}} and {{tl|R from plural}} in namespaces other than [[WP:Mainspace|mainspace]] for those types of modification. This may also apply to several other subcategories of modification; please check those templates' output before saving if using outside of mainspace.
+  |all category={{#ifeq:{{{demo}}}|yes||Redirects from modifications}}
+}}<noinclude>
+<!-- Place categories on /doc subpage; interwikis go to Wikidata. -->
+{{Documentation}}
+</noinclude>

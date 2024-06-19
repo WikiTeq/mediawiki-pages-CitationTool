@@ -1,0 +1,10 @@
+<span class="plainlinks">[{{#if:{{{title|{{{page|{{{1|}}}}}}}}}
+ |{{fullurl:{{{title|{{{page|{{{1}}}}}}}}}|{{#if:{{{diff|{{{2|}}}}}}
+  |diff={{trim|{{{diff|{{{2}}}}}}}}&
+ }}oldid={{trim|{{{oldid|{{{3|}}}}}}}}}}
+ |{{SERVER}}{{SCRIPTPATH}}/index.php?title={{#if:{{{diff|{{{2|}}}}}}
+  |&diff={{trim|{{{diff|{{{2}}}}}}}}
+ }}&oldid={{trim|{{{oldid|{{{3|}}}}}}}}
+}}{{#ifeq:{{{diffonly|}}}|yes|&diffonly=1}} {{{label|{{{4|}}}}}}]</span><noinclude>
+{{documentation}}
+</noinclude>

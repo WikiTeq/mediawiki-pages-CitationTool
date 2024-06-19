@@ -1,0 +1,156 @@
+<noinclude>{{Notice |style=margin-bottom:1.5em; |1=<span style="font-size:large;color:purple;">Please do not post your requests or questions on this page. If you have questions about using Wikipedia, please ask at the '''[[Wikipedia:Help desk|Help&nbsp;desk]]''' or the '''[[Wikipedia:Teahouse|Teahouse]]'''. For questions about subjects and topics, please use the '''[[Wikipedia:Reference desk|Reference Desk]]'''. Volunteers at these locations will respond to your questions as soon as possible.</span>}}</noinclude><!--
+-->{{Navbox
+| name = Wikipedia help pages
+| state ={{{state<includeonly>|{{{1|collapsed}}}</includeonly>}}}
+| bodyclass = hlist
+| basestyle = text-align:center;
+| title = [[Help:Directory|Wikipedia help pages]]
+| navbar = {{{state|off}}}
+
+| above = 
+*'''Visit the ''[[Wikipedia:Teahouse|Teahouse]]'' or the ''[[Wikipedia:Help desk|Help desk]]'' for an interactive {{abbr|Q & A|questions and answers}} forum.'''
+----
+* '''[[Wikipedia:FAQ|FAQs]]'''&nbsp;'''{{Define|(?)|This is a list of frequently asked questions about using and contributing to Wikipedia.}}'''
+* '''[[Wikipedia:Reference desk|Reference desks]]'''&nbsp;'''{{Define|(?)|Works like a library reference desk. Ask a question here and Wikipedia volunteers will try to answer it.}}'''
+* '''[[Wikipedia:Noticeboards|Noticeboards]]'''&nbsp;'''{{Define|(?)|Pages where editors can ask questions and request assistance from people who are familiar with the policies and guidelines covered by each individual board.}}'''
+* '''[[Help:Cheatsheet|Cheatsheet]]'''&nbsp;'''{{Define|(?)| For a list of the most commonly used Wiki markup and templates.}}'''
+*''' [[Wikipedia:Directories and indexes|Directories]]'''&nbsp;'''{{Define|(?)|For a list of Wikipedia's directories and indexes.}}'''
+
+| group1 = [[Wikipedia:About|About Wikipedia]]&nbsp;{{Define|(?)|Wikipedia's governess and customs}}
+| list1 =
+* [[Wikipedia:Administration|Administration]]
+**[[Wikipedia:Purpose|Purpose]]
+** [[Wikipedia:Five pillars|Principles]]
+* [[Wikipedia:Policies and guidelines|Policies and guidelines]]
+* [[Wikipedia:What Wikipedia is not|What Wikipedia is not]]
+* [[Wikipedia:General disclaimer|Disclaimer]]&nbsp;([[Wikipedia:Advice for parents|parental advice]])
+* [[Wikipedia:Request directory|Making requests]]
+* [[Wikipedia:Who writes Wikipedia?|Who writes Wikipedia?]]
+
+
+| group2 = [[Wikipedia:Reader's index to Wikipedia|Help for readers]]&nbsp;{{Define|(?)|Concerns and questions readers may have about Wikipedia}}
+| list2 =
+*[[Wikipedia:FAQ/Readers|FAQ]]
+* [[Help:Copyright|Copyright]]
+* [[Help:Glossary|Glossary]]
+* [[Help:Mobile access|Mobile access]]
+* [[Help:Navigation|Navigation]]
+* [[Help:Other languages|Other languages]]
+* [[Help:Searching|Searching]]
+* [[Help:Student help|Students]]
+* [[Help:Viewing media|Viewing media]]
+
+| group3 = [[Wikipedia:Contributing to Wikipedia|Contributing<br/>to Wikipedia]]&nbsp;{{Define|(?)|Overviews and resources needed to comprehend, comment on, and edit}}
+| list3 =
+* [[Wikipedia:Guidance for younger editors|Advice for young editors]]
+* [[Wikipedia:Avoiding common mistakes|Avoiding common mistakes]]
+* [[Wikipedia:Etiquette|Etiquette]]
+* [[Wikipedia:Simplified Manual of Style|Simplified Manual of Style]]
+* [[Wikipedia:Simplified ruleset|Simplified rule-set]]
+** [[Wikipedia:Ignore all rules|"Ignore all rules"]]
+** [[Wikipedia:The rules are principles|"The rules are principles"]]
+*[[Wikipedia:Styletips|Style-tips]]
+* [[Wikipedia:Tip of the day|Tip of the day]]
+* [[Help:Your first article|Your first article]]&nbsp;([[Wikipedia:Article wizard|article wizard]])
+
+| group4 = [[Help:Getting started|Getting started]]&nbsp;{{Define|(?)|Introductions and tutorials}}
+| list4 =
+* [[Wikipedia:Why create an account?|Why create an account?]]
+*[[Help:Introduction|Introductions by topic]] 
+* [[Wikipedia:The Wikipedia Adventure|The Wikipedia Adventure]]
+* [[Wikipedia:Graphics tutorials|Graphics tutorials]]
+** [[Help:Pictures|Picture tutorial]]
+** [[Wikipedia:IRC/Tutorial|IRC {{smaller|(live chat)}} tutorial]]
+* [[Wikipedia:VisualEditor/User guide|VisualEditor user guide]] 
+
+| group5 = [[Wikipedia:Dos and don'ts|Dos and don'ts]]&nbsp;{{Define|(?)|Wikipedia policies, guidelines, and formatting standards in bullet points}}
+| list5 =
+* [[Wikipedia:Accessibility dos and don'ts|Accessibility]]
+* [[Wikipedia:Biography dos and don'ts|Biographies]]
+* [[Wikipedia:Biographies of living persons dos and don'ts|Biographies (living)]]
+* [[Wikipedia:Categorization dos and don'ts|Categorization]]
+* [[Wikipedia:Consensus dos and don'ts|Consensus]]
+* [[Wikipedia:Talk dos and don'ts|Discussions]]
+* [[Wikipedia:Disambiguation dos and don'ts|Disambiguation]]
+* [[Wikipedia:Image dos and don'ts|Images]]
+* [[Wikipedia:Lead dos and don'ts|Leads]]
+* [[Wikipedia:Linking dos and don'ts|Links]]
+* [[Wikipedia:List dos and don'ts|Lists]]
+* [[Wikipedia:References dos and don'ts|References]]
+* [[Wikipedia:Table dos and don'ts|Tables]]
+* [[Wikipedia:Article title dos and don'ts|Titles (of articles)]]
+
+| group7 = [[:Category:Wikipedia how-to|How-to pages]] and<br/>[[:Category:Wikipedia information pages|information pages]]&nbsp;{{Define|(?)|Topic specific informative and instructional pages}}
+| list7 =
+* [[Wikipedia:Guide to appealing blocks|Appealing blocks]]
+* [[Wikipedia:Guide to deletion|Article deletion]]
+* [[Help:Category|Categories]]
+* [[Help:Citations quick reference|Citations/references]]
+** [[Help:Referencing for beginners|Referencing for beginners]]
+** [[Help:Citation Style 1|Citation Style 1]]
+** [[Help:Cite errors|Cite errors]]
+** [[Help:References and page numbers|References and page numbers]]
+* [[Help:Convert|Convert]]
+* [[Help:Diff|Diff]]
+* [[Help:Editing|Editing]]
+** [[Help:Minor edit|Minor edit]]
+** [[Help:Edit toolbar|toolbar]]
+** [[Help:Edit conflict|edit conflict]]
+* [[Help:Find sources|Find sources]]
+* [[Help:Files|Files]]
+* [[Help:Footnotes|Footnotes]]
+* [[Wikipedia:Guide to image deletion|Image deletion]]
+* [[Help:Infobox|Infoboxes]]
+* [[Help:Link|Linking]]&nbsp;([[Help:Link color|link color]])
+* [[Help:Logging in|Logging in]]
+* [[Wikipedia:Merging|Merging]]
+* [[Help:Page name|Page name]]
+** [[Help:How to move a page|Renaming pages]]
+* [[Help:Redirect|Redirect]]
+* [[Help:Reset password|Passwords]]
+** [[Help:Email confirmation|Email confirmation]]
+* [[Help:Reverting|Reverting]]
+** [[Help:Simple guide to vandalism cleanup|Simple vandalism cleanup]]
+* [[Help:Talk pages|Talk pages]]&nbsp;([[Help:Archiving a talk page|archiving]])
+* [[Help:User contributions|User contributions]]
+
+| group8 = [[Wiki markup|Coding]]&nbsp;{{Define|(?)|Wikitext information consists of the syntax used to format a page}}
+| list8 =
+* [[Help:Wikitext|Wiki markup]]
+* [[Help:Barchart|Barchart]]s
+* [[Help:Calculation|Calculation]]s
+* [[Help:Special characters|Characters]]
+* [[Help:Columns|Column]]s
+* [[Wikipedia:Manual of Style/Hidden text|Hidden text]]
+* [[Help:HTML in wikitext|HTML]]
+* [[Help:List|Lists]]
+* [[Help:Magic words|Magic words]]
+* [[Help:Musical symbols|Music symbols]]
+* [[Help:Section|Sections]]
+* [[Help:Sound file markup|Sounds]]
+* [[Help:Table|Tables]]
+* [[Help:Template|Template]]s
+* [[Wikipedia:Transclusion|Transclusion]]
+* [[Help:URL|URL]]
+* [[Help:Visual file markup|Visual files]]
+
+| group9 = [[Wikipedia:Directories and indexes|Directories]]&nbsp;{{Define|(?)|Wikipedia's directories and indexes}}
+| list9 =
+* [[Wikipedia:Wikipedia abbreviations|Abbreviations]]
+*[[Wikipedia:Contents|Contents]] <small>(Encyclopedia proper)</small>
+* [[Wikipedia:Department directory|Departments]]
+* [[Wikipedia:Editor's index to Wikipedia|Editor's index]]
+* [[Wikipedia:Essay directory|Essays]]
+* [[Wikipedia:FAQ/Index|FAQs]]
+* [[Wikipedia:Glossary|Glossary]]
+* [[Wikipedia:List of guidelines|Guidelines]]
+* [[Wikipedia:Manual of Style/Contents|Manual of Style ]]
+* [[Wikipedia:List of policies|Policies]]
+*[[Wikipedia:Maintenance|Tasks]]
+* [[Wikipedia:Tips|Tips]]
+* [[Wikipedia:Tools|Tools]]
+| below =''' [[Help: Wikipedia: The Missing Manual|Missing Manual]]'''
+----
+{{edit|Special:MyTalk|'''Ask for help on your talk page'''|section=new|preload=Help:Contents/helpmepreload|preloadtitle=Help me!}}&nbsp;'''{{Define|(?)|
+If you need help, you can use this link to ask a question on your talk page; a volunteer will visit you there shortly!}}'''
+}}<noinclude>{{documentation}}</noinclude>

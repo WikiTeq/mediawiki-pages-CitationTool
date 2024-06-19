@@ -1,0 +1,1 @@
+* <b id="csdoc_agency">agency</b>: The [[news agency]] (wire service) that provided the content; examples: [[Associated Press]], [[Reuters]], [[Agence France-Presse]]. Do not use for sources published on the agency's own website; e.g. apnews.com or reuters.com; instead, use '''work''' or '''publisher'''. May be wikilinked if relevant.

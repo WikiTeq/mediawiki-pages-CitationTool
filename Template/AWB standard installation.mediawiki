@@ -1,0 +1,5 @@
+{{ mbox
+| image = [[File:AWB logo draft.png|44x50px|alt=|link=]]
+| text = This template is used by the standard installation of [[Wikipedia:AutoWikiBrowser|AutoWikiBrowser]] (AWB). If you are planning to make changes to this template, how it should be used, or nominate it for deletion, please notify AWB's user base and maintainers beforehand at [[Wikipedia talk:AutoWikiBrowser|Wikipedia talk:AWB]] as a courtesy.{{#if:{{{1|}}}|<p>
+{{{1}}}}}}}<includeonly>{{#if:{{{nocat|}}}||{{#ifeq:{{PAGENAME}}|{{BASEPAGENAME}}|[[Category:Templates used by AutoWikiBrowser|{{PAGENAME}}]]}}}}</includeonly><noinclude>
+{{Documentation}}<!-- Add categories and interwikis to the /doc subpage, not here! --></noinclude>

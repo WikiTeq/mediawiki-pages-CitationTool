@@ -1,0 +1,129 @@
+{{documentation subpage}}
+__NOTOC__
+<!-- EDIT TEMPLATE DOCUMENTATION BELOW THIS LINE -->
+Format based on information from the article [[Case citation]].
+
+==Usage==
+Copy a blank version to use.  All parameter names {{strong|must}} be [[lowercase]].  At this point, all fields are optional; however, this is subject to change as the template matures.
+
+{| class="wikitable"
+|- width="50%" style="vertical-align:top;"
+! Horizontal list
+|- width="50%" style="vertical-align:top;"
+| style="vertical-align:top; padding:1ex;" |<pre>
+{{cite court |litigants= |vol= |reporter= |opinion= |pinpoint= |court= |date= |url= |access-date= |quote=}}</pre>
+|- width="50%" style="vertical-align:top;"
+! Vertical list
+|- width="50%" style="vertical-align:top;"
+| style="vertical-align:top; padding:1ex;" |<pre>
+{{cite court
+|litigants=
+|vol=
+|reporter=
+|opinion=
+|pinpoint=
+|court=
+|date=
+|url=
+|access-date=
+|quote=
+}}</pre>
+|}
+
+==Examples==
+*<code><nowiki>{{cite court |litigants=Parker v. D.C. |vol=478 |reporter=F.3d |opinion=370 |pinpoint=401 |court=D.C. Cir. |date=2007 |url=http://pacer.cadc.uscourts.gov/docs/common/opinions/200703/04-7041a.pdf |quote=As such, we hold it unconstitutional.}}</nowiki></code>
+*{{cite court |litigants=Parker v. D.C. |vol=478 |reporter=F.3d |opinion=370 |pinpoint=401 |court=D.C. Cir. |date=2007 |url=http://pacer.cadc.uscourts.gov/docs/common/opinions/200703/04-7041a.pdf|quote=As such, we hold it unconstitutional.}}
+
+==Description of fields==
+''All fields are optional!''
+; litigants : List of litigants, such as "Miranda v. Arizona"; also known as the title of the case.  If a Wikipedia article using this exact string exists, a link will automatically be created.  Alternately, if an article exists but another name is desired for display, a wikilink may be specified; i.e., "<nowiki>[[Case article|This v. That]]</nowiki>".  Note: This parameter should likely not be optional. This presently cannot be specified as ''title'', which is inconsistent with other citation templates.
+; reporter : The abbreviated term for whatever [[Reporter (law)|reporter]] is being referenced; i.e., "U.S." for the U.S. Supreme Court's "[[United States Reports]]". '''Important:''' "reporter" in this context means an official law publication, not a journalist.  This presently cannot be specified as ''work'', which is inconsistent with other citation templates. Do not wikilink.
+; vol : Volume of the reporter. Only used for US case citations (and those given in the same format); otherwise, just include the information as part of ''reporter'' in the format given by the source. This presently cannot be specified as ''volume'', which is inconsistent with other citation templates.
+; opinion : The opinion number, often the number of the first page of the case. Only used for US case citations (and those given in the same format); otherwise, just include the information as part of ''reporter'' in the format given by the source.
+; [[Case citation#Pinpoint citations|pinpoint]] : Identifies a specific part of a decision, typically by page or paragraph number. This presently cannot be specified as ''at'', ''page'', or ''pages'', which is inconsistent with other citation templates.
+; court : The name or (optionally) standard abbreviation for the court being cited (e.g. "[[3d Cir.]]" or "[[M.D. Ala.]]" or "[[Allahabad High Court‎]], India"). If the abbreviated form would be a red link, use the long one (even if it is also a red link for now). See [https://web.archive.org/web/20171118125409/http://www.alwd.org/wp-content/uploads/2013/03/pdf/CM2_Appendix4.pdf here] for a list of courts in the United States. In order for ''court'' to appear, ''date'' must also be specified.  Note: This parameter also should likely not be optional.
+; date : The year or full date in which the court rendered its decision. Note: This parameter also should likely not be optional, or the ''court'' parameter will break.
+; url : A Web address for the court document(s).  For example, for a [[Supreme Court of the United States|U.S. Supreme Court]] case, the [[URL]] to ''[[FindLaw]]'' is <code><nowiki>http://caselaw.lp.findlaw.com/scripts/getcase.pl?navby=CASE&court=US&vol={{{vol}}}&page={{{page}}}</nowiki></code>. It may be permissible to use the URL of a Web page that provides summary information about the case, if the case documents are not available;  however, an article about the case should be cited with {{tl|Cite web}} or {{tl|Cite news}}.  {{em|This}} template is for citing a legal document and its wording directly.
+; access-date or accessdate : The date that you viewed the URL, not the date of the case.  This presently is not displayed, which is inconsistent with other citation templates.
+; via : Name of the website (republisher) if the URL does not go to the site of the ''reporter'' above. This presently is not displayed, which is inconsistent with other citation templates.
+; lang : Two-letter [[ISO 639-1]] language code for the language in which the document is written, {{em|if}} it is not English (leave this parameter out if it is). This presently is not displayed, which is inconsistent with other citation templates.
+; archive-url or archiveurl : URL to a backup copy of the document at Wayback.Archive.org or some other archival site.  This presently is not displayed, which is inconsistent with other citation templates.
+; archive-date or archivedate : Date of the above archival. This presently is not displayed, which is inconsistent with other citation templates.
+; url-status : ''live'' if the original URL no longer works; ''dead'' or blank otherwise; controls what is done with the ''archive-url''. This presently is not functional, which is inconsistent with other citation templates.
+
+{{TemplateData header}}
+<templatedata>
+{
+	"params": {
+		"litigants": {
+			"label": "Litigants",
+			"description": "List of litigants. If a Wikipedia article using this exact string exists, a link will automatically be created.  Alternately, if an article exists but another name is desired for display, a wikilink may be specified; i.e., \"[[Case article|This v. That]]\".",
+			"example": "Miranda v. Arizona",
+			"type": "string",
+			"suggested": true
+		},
+		"vol": {
+			"label": "Volume",
+			"description": "Volume of the reporter"
+		},
+		"reporter": {
+			"label": "Reporter",
+			"description": "The abbreviated term for whatever reporter is being referenced",
+			"example": "\"U.S.\" for the U.S. Supreme Court's United States Reports",
+			"type": "string"
+		},
+		"opinion": {
+			"label": "Opinion number",
+			"description": "The opinion number, often the number of the first page of the case.",
+			"type": "string"
+		},
+		"url": {
+			"label": "URL",
+			"description": "A web site or other online article with information on the case. ",
+			"type": "url"
+		},
+		"pinpoint": {
+			"label": "Pinpoint citation",
+			"description": "Identifies a specific part of a decision, typically by page or paragraph number.",
+			"type": "string"
+		},
+		"court": {
+			"label": "Court name",
+			"description": "The standard abbreviation for the court being cited",
+			"example": "3d Cir.",
+			"type": "string",
+			"suggested": true
+		},
+		"date": {
+			"aliases": [
+				"year"
+			],
+			"label": "Date",
+			"description": "The year or date in which the court rendered its decision.",
+			"type": "date"
+		},
+		"quote": {
+			"label": "Quote",
+			"description": "A quote from the judgment",
+			"type": "string"
+		}
+	},
+	"description": "Cite a court judgment",
+	"paramOrder": [
+		"litigants",
+		"court",
+		"reporter",
+		"vol",
+		"opinion",
+		"pinpoint",
+		"date",
+		"url",
+		"quote"
+	]
+}
+</templatedata>
+<includeonly>{{sandbox other||
+<!-- Categories go here, and interwikis go in Wikidata -->
+[[Category:Bluebook style citation templates]]
+[[Category:Law citation templates]]
+}}</includeonly>

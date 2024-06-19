@@ -1,0 +1,1 @@
+By default, sets of fields are terminated with a comma (,).

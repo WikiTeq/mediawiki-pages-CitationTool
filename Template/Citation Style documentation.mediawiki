@@ -1,0 +1,3 @@
+<includeonly>{{#invoke:Template wrapper|wrap|_template=Citation Style documentation/{{{1|}}}|_include-positional=yes}}</includeonly><noinclude>
+{{documentation}}
+</noinclude>

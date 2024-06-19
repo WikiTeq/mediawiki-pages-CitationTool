@@ -1,0 +1,3 @@
+#REDIRECT [[Template:Redirect category shell]]
+
+{{Redirect category shell|{{r to redirect template}}{{r from template shortcut}}}}

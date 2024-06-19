@@ -1,0 +1,21 @@
+This template embeds [[COinS]] metadata in the HTML output, allowing [[reference management software]] to retrieve bibliographic metadata. {{crossref|See [[Wikipedia:COinS]].}} As a general rule, only one data item per parameter. Do not include explanatory or alternate text:
+* use {{xt|{{para|date|27 September 2007}}}} not {{!xt|{{para|date|27 September 2007 (print version 25 September)}}}}
+
+Use of templates within the citation template is discouraged because many of these templates will add extraneous HTML or CSS that will be included raw in the metadata. Also, HTML entities, for example <code>&amp;nbsp;</code>, <code>&amp;ndash;</code>, etc, should not be used in parameters that contribute to the metadata.  Do not include Wiki markup <code><nowiki>''</nowiki></code> (italic font) or <code><nowiki>'''</nowiki></code> (bold font) because these markup characters will contaminate the metadata.
+
+==== COinS metadata is created for these parameters ====
+Note: This table of metadata is displayed for all Citation Style 1 templates. Not all of these parameters are supported by every CS1 template. Some of these parameters are mutually exclusive, some are aliases of another parameter, and some require other parameters to be present. Please refer to each template's documentation for a full list of supported parameters, their aliases, and their dependencies.  
+* {{para|periodical}}, {{para|journal}}, {{para|newspaper}}, {{para|magazine}}, {{para|work}}, {{para|website}}, {{para|encyclopedia}}, {{para|encyclopaedia}}, {{para|dictionary}}
+* {{para|chapter}}, {{para|contribution}}, {{para|entry}}, {{para|article}}, {{para|section}}
+* {{para|title}}
+* {{para|publication-place}}, {{para|publicationplace}}, {{para|place}}, {{para|location}}
+* {{para|date}}, {{para|year}}, {{para|publication-date}}, {{para|publicationdate}}
+* {{para|series}}, {{para|version}}
+* {{para|volume}}, {{para|issue}}, {{para|number}}
+* {{para|page}}, {{para|pages}}, {{para|at}}
+* {{para|edition}}
+* {{para|publisher}}, {{para|institution}}
+* {{para|url}}, {{para|chapter-url}}, {{para|chapterurl}}, {{para|contribution-url}}, {{para|contributionurl}}, {{para|section-url}}, {{para|sectionurl}}
+* {{para|author#}}, {{para|author-last#}}, {{para|author#-last}}, {{para|last#}}, {{para|surname#}}
+* {{para|author-first#}}, {{para|author#-first}}, {{para|first#}}, {{para|given#}}
+* any of the named identifiers: {{para|isbn}}, {{para|issn}}, {{para|doi}}, {{para|pmc}}, etc.

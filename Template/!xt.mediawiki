@@ -1,0 +1,3 @@
+{{#ifeq:{{NAMESPACE}}|{{ns:0}}|{{FormattingError|[[:{{#invoke:TEMPLATENAME|main}}]] is only for examples of style and formatting. Do not use it in actual articles.}}|<span class="example deprecated-content example-bad" style="font-family: Georgia, 'DejaVu Serif', serif; color: #8B0000;" {{#if:{{{title|}}}|title="{{{title}}}"}}>{{{1|Example text}}}</span>}}<noinclude>
+{{Documentation}}
+</noinclude>

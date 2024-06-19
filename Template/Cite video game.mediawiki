@@ -1,0 +1,22 @@
+<includeonly>{{#if:{{#if:{{{developer|}}}|{{{title|}}}|{{{developer|}}}}}
+  |{{Cite book
+| title = {{{title|}}}
+| trans-title = {{{trans-title|}}}
+| author = {{{developer|}}}
+| author2 = {{{developer2|}}}
+| author3 = {{{developer3|}}}
+| author4 = {{{developer4|}}}
+| author5 = {{{developer5|}}}
+| publisher = {{{publisher|}}}
+| date = {{{date|}}}
+| medium = {{{platform|}}}
+| edition = {{#if:{{{version|}}}|{{{version|}}}}}
+| at = {{#if:{{{scene|}}}|Scene: {{{scene|}}}|}}{{#if:{{{level|}}}|{{#if:{{{scene|}}}|.&#32;}}Level/area: {{{level|}}}}}
+| language = {{{language|}}}
+| quote = {{{quote|}}}
+| ref = {{{ref|}}}
+  }}
+  |{{Citation error|{{tl|Cite video game}} requires '''title''' and '''developer''' parameters}}
+}}</includeonly><noinclude>
+{{Documentation}}
+</noinclude>

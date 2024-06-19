@@ -1,0 +1,225 @@
+{{Documentation subpage}}
+{{csdoc|lua}}
+{{csdoc|cs1}}
+{{csdoc|lead|[[Thesis or dissertation|theses or dissertations]] submitted to and approved by an educational institution recognized as capable of awarding higher degrees}}
+
+==Usage==
+{{csdoc|usage}}
+
+Horizontal format:
+
+<code><nowiki>{{cite thesis |last= |first= |date= |title= |type= |chapter= |publisher= |docket= |oclc= |url= |access-date=}}</nowiki></code>
+
+===Examples===
+<code><nowiki>{{cite thesis |type=PhD |last=Ducklover |first=Arnold A. |date=1901 |title=On some aspects of Ducks |publisher=Duck University}}</nowiki></code>
+* {{cite thesis |type=PhD |last=Ducklover |first=Arnold A. |date=1901 |title=On some aspects of Ducks |publisher=Duck University}}
+
+<code><nowiki>{{cite thesis |type=MSc |last=Ducklover |first=Arnold A. |date=1901 |title=On some aspects of Ducks |publisher=Duck University}}</nowiki></code>
+* {{cite thesis |type=MSc |last=Ducklover |first=Arnold A. |date=1901 |title=On some aspects of Ducks |publisher=Duck University}}
+
+<code><nowiki>{{cite thesis |last=Ducklover |first=Arnold A. |date=1901 |title=On some aspects of Ducks |publisher=Duck University}}</nowiki></code>
+* {{cite thesis |last=Ducklover |first=Arnold A. |date=1901|title=On some aspects of Ducks |publisher=Duck University}}
+
+==Parameters==
+===Syntax===
+{{csdoc|syntax}}
+
+{{csdoc|sep_period}}
+
+===COinS===
+{{csdoc|coins}}
+
+===Deprecated===
+{{csdoc|deprecated}}
+
+===Description===
+====Authors====
+{{csdoc|author|others=yes}}
+
+====Title====
+{{csdoc|title|title_format=quotes}}
+{{csdoc|chapter}}
+{{csdoc|type|type_default=Thesis}}
+{{csdoc|language}}
+
+====Date====
+{{csdoc|date}}
+
+====Publisher====
+{{csdoc|publisher}}
+
+====Edition, series, volume====
+{{csdoc|edition}}
+{{csdoc|series}}
+{{csdoc|volume}}
+
+====In-source locations====
+{{csdoc|pages}}
+
+====URL====
+{{csdoc|url}}
+
+====Anchor====
+{{csdoc|ref}}
+
+====Identifiers====
+{{csdoc|id1}}
+:Aliases: '''id''', '''docket'''
+{{csdoc|id2}}
+
+====Quote====
+{{csdoc|quote}}
+
+====Editors====
+{{csdoc|editor}}
+
+====Laysummary====
+{{csdoc|lay}}
+
+====Display options====
+{{csdoc|display}}
+
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+	"params": {
+		"last": {
+			"aliases": [
+				"last1",
+				"surname",
+				"surname1",
+				"author",
+				"author1"
+			],
+			"label": "Surname of author",
+			"description": "Surname of author. Do not wikilink—use author-link instead. For corporate authors or authors for whom only one name is listed by the source, use last or one of its aliases",
+			"type": "string",
+			"suggested": true
+		},
+		"first": {
+			"aliases": [
+				"first1",
+				"given",
+				"given1"
+			],
+			"label": "First name of author",
+			"description": "Given or first names of author, including title(s). Requires last; first name will not display if last is empty.",
+			"example": "Firstname Middlename or Firstname M. or Dr. Firstname M., Sr.",
+			"suggested": true
+		},
+		"title": {
+			"label": "Title of source",
+			"description": "Title of source. Can be wikilinked to an existing Wikipedia article or url may be used to add an external link, but not both. Displays in italics. If script-title is defined, title holds romanized transliteration of title in script-title. ",
+			"type": "string",
+			"required": true
+		},
+		"date": {
+			"label": "Date",
+			"description": "Date of source being referenced. Can be full date (day, month, and year) or partial date (month and year, season and year, or year). Use same format as other publication dates in the citations.",
+			"type": "date",
+			"suggested": true
+		},
+		"degree": {
+			"label": "Degree",
+			"default": "Thesis",
+			"example": "PhD",
+			"description": "The degree qualification received for the given thesis or dissertation.",
+			"type": "string",
+			"suggested": true
+		},
+		"publisher": {
+			"label": "Publisher (likely university)",
+			"description": "Name of awarding institution, e.g. university; may be wikilinked if relevant.",
+			"type": "string",
+			"suggested": true,
+			"example": "Texas A & M University"
+		},
+		"url": {
+			"label": "URL",
+			"description": "URL of an online location where the text of the publication can be found. Cannot be used if title is wikilinked.",
+			"type": "url",
+			"suggested": true
+		},
+		"url-access": {
+			"label": "URL access level",
+			"description": "Classification of the access restrictions on the URL ('registration', 'subscription' or 'limited')",
+			"type": "string"
+		},
+		"place": {
+			"label": "Location of publication",
+			"description": "Geographical place of publication; usually not wikilinked; omit when the publication name includes place",
+			"type": "string"
+		},
+		"isbn": {
+			"label": "ISBN",
+			"description": "International Standard Book Number; use the 13-digit ISBN where possible",
+			"type": "line"
+		},
+		"doi": {
+			"label": "DOI",
+			"description": "Digital Object Identifier; begins with '10.'",
+			"type": "string",
+			"suggested": true
+		},
+		"doi-broken-date": {
+			"label": "DOI broken date",
+			"description": "The date that the DOI was determined to be broken",
+			"type": "date"
+		},
+		"doi-access": {
+			"label": "DOI access level",
+			"description": "If the full text is free to read via the DOI, type 'free'.",
+			"type": "string"
+		},
+		"language": {
+			"label": "Language",
+			"description": "The language in which the source is written, if not English; use the full language name; do not use icons or templates",
+			"type": "content"
+		},
+		"format": {
+			"label": "Format",
+			"description": "Format of the work referred to by url; for example: PDF, DOC, or XLS; displayed in parentheses after title. HTML is implied and should not be specified. Automatically added when a PDF icon is displayed.",
+			"type": "string"
+		},
+		"oclc": {
+			"label": "OCLC code",
+			"description": "The OCLC code of the thesis",
+			"example": "23527868",
+			"type": "string"
+		}
+	},
+	"description": "A Citation Style 1 template used to create citations for theses or dissertations submitted to and approved by an educational institution recognized as capable of awarding higher degrees.",
+	"format": "inline",
+	"maps": {
+		"citoid": {
+			"title": "title",
+			"url": "url",
+			"university": "publisher",
+			"date": "date",
+			"place": "place",
+			"type": "degree",
+			"thesisType": "degree",
+			"ISBN": [
+				"isbn"
+			],
+			"DOI": "doi",
+			"language": "language",
+			"author": [
+				[
+					"first",
+					"last"
+				]
+			]
+		}
+	}
+}
+</templatedata>
+
+{{Citation Style 1}}
+{{Wikipedia referencing}}
+{{UF-COinS}}
+
+<includeonly>{{Sandbox other||
+[[Category:Citation Style 1 templates|T]]
+}}</includeonly>

@@ -1,0 +1,91 @@
+<includeonly>{{fmbox
+ | id    = mw-protectedpagetext
+ | type  = system
+ | image = none
+ | style = border-style:none;
+ | text  = 
+   {{mbox
+    | type = protection
+    | textstyle = font-weight:bold; font-size:130%;
+    | image = [[File:{{{image|Full-protection-shackle.svg}}}|40x40px|link=|alt=]]
+    | text = <div style="text-align: center;">{{{protection-message}}}</div>
+   }}{{#if: {{{suggestions|}}}
+    |
+<table style="margin-top:1em; background:none;">
+<tr>
+<td style="width:50%; vertical-align:top;">
+<div style="width:80%; vertical-align:top; background:transparent;">
+<h2 style="border-bottom:0; font-size:130%; font-weight:bold; padding:.15em;">Why is the page protected?</h2>
+<ul>
+<li>{{{protection-reason}}}
+</li>
+<li>{{{log-text|The reason for protection can be found in the [{{fullurl:Special:Log|type=protect&page={{urlencode:{{#ifeq:{{NAMESPACENUMBER}}|-1|{{#titleparts:{{FULLPAGENAME}}|0|2}}|{{FULLPAGENAME}}}}}}}} protection log]. If there are no relevant entries in the protection log, the page may have been moved after being protected.}}}
+</li>
+</ul>
+</div>
+</td>
+<td style="width:50%; vertical-align:top;">
+<h2 style="border-bottom:0; font-size:130%; font-weight:bold; padding:.15em;">What can I do?</h2>
+<ul>
+{{#if: {{{login-message|}}}
+ | <li> If you have a user account, [[Special:UserLogin|log in]] first. If you do not yet have an account, you may [{{fullurl:Special:UserLogin|type=signup&campaign=semiprotectednotice}} create one]; after [[Wikipedia:User access levels#Autoconfirmed users|4 days and 10 edits]], you will be able to edit semi-protected pages.
+</li>
+}}{{#ifeq: {{#if:{{{main-page-links|}}}|{{FULLPAGENAME}}}} | Main Page
+ | 
+<li>[[Wikipedia:Why create an account?|Register for an account]] if you don't already have one
+</li>
+<li>Visit the [[Wikipedia:Sandbox|Sandbox]] to make test edits
+</li>
+<li>Check out the [[Wikipedia:Tutorial|Tutorial]] to learn more about editing
+</li>
+<li>[[Wikipedia:Main Page/Errors|Report errors on the Main Page]]
+</li>
+ | {{#ifeq: {{#if:{{{template-links|}}}|{{NAMESPACE}}}} | Template
+    | {{#switch:
+         {{#ifexist: {{FULLPAGENAME}}/doc
+          | doc
+         }}{{#ifexist: {{FULLPAGENAME}}/sandbox
+          | sandbox
+         }}
+       | doc = <li> This template has a [[Wikipedia:Template documentation|documentation]] page – [[{{FULLPAGENAME}}/doc]] – which may be freely edited.
+</li>
+       | sandbox = <li> This template has a [[Wikipedia:Template test cases|sandbox]] page – [[{{FULLPAGENAME}}/sandbox]] – which may be freely edited.
+</li>
+       | docsandbox = <li> This template has a [[Wikipedia:Template documentation|documentation]] page – [[{{FULLPAGENAME}}/doc]] – and a [[Wikipedia:Template test cases|sandbox]] page – [[{{FULLPAGENAME}}/sandbox]] – both may be freely edited.
+</li>
+      }}
+   }}{{#ifexist: {{FULLPAGENAME}}
+    | {{#ifeq: {{NAMESPACE}} | {{TALKSPACE}}
+       |
+       | {{#if: {{TALKPAGENAME}}
+          | <li> [[{{TALKPAGENAME}}|Discuss this page]] with others.
+</li>
+         }}
+<li> For move-protected pages, see [[Wikipedia:requested moves|requested moves]].
+</li>
+      }}
+   }}
+{{#if: {{{hide-requestlower|}}}||<li> [[Wikipedia:Requests for page protection#Current requests for reduction in protection level|Request that the page's protection level be reduced]].
+</li>}}
+<li> [[Help:Introduction|Find out more about how to get started editing Wikipedia]].
+</li>
+{{#if: {{TALKPAGENAME}}
+ | 
+<li>If you have noticed an error or have a suggestion for a simple, non-controversial  change, you can submit an edit request, by clicking the button below and following instructions. {{{who-can-edit}}} may then make the change on your behalf. Please check [[{{TALKPAGENAMEE}}|the talk page]] first in case the issue is already being discussed.
+</li>
+<li style="list-style:none; display:inline;">
+<div style="text-align:center; margin:auto;">
+{{Submit an edit request|type={{{request-type}}}}}
+</div>
+</li>
+}}
+}}
+</ul>
+</td>
+</tr>
+</table>
+}}
+}}</includeonly><noinclude>
+{{documentation}}
+<!-- Categories go on the /doc subpage, and interwikis go on Wikidata. -->
+</noinclude>

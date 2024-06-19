@@ -1,0 +1,68 @@
+{{navbox
+| name = Wikipedia referencing
+| state = {{{state<includeonly>|{{{1|autocollapse}}}</includeonly>}}}
+| bodyclass = hlist
+| title = [[Wikipedia:Verifiability|Wikipedia referencing]]
+| group1 = Policies and guidelines
+| list1 = 
+* [[Wikipedia:Verifiability|Verifiability]]
+* [[Wikipedia:No original research|No original research]]
+* [[Wikipedia:Biographies of living persons|Biographies of living persons]]
+* [[Wikipedia:Reliable sources|Reliable sources]]
+** [[Wikipedia:Identifying reliable sources (medicine)|Medicine]]
+* [[Wikipedia:Citing sources|Citing sources]]
+* [[Wikipedia:Scientific citation guidelines|Scientific citations]]
+| group2 = General advice
+| list2 = 
+* [[Wikipedia:Citation needed|Citation needed]]
+* [[Help:Find sources|Find sources]]
+* [[Wikipedia:Combining sources|Combining sources]]
+* [[Wikipedia:Offline sources|Offline sources]]
+* [[Help:Overview of referencing styles|Referencing styles]]
+| group3 = [[Wikipedia:Citing sources|Citing sources]]
+| list3 = 
+* [[Help:Citation Style 1|Citation Style 1]]
+* [[Help:Citation Style 2|Citation Style 2]]
+* [[Help:Citation Style Vancouver|Citation Style Vancouver]]
+* [[:Category:LSA style citation templates|LSA]]
+* [[:Category:Comics citation templates|Comics]]
+* [[Wikipedia:Citation templates|Citation templates]]
+* [[Template:Reflist|Reflist template]]
+| group4 = [[Wikipedia:Inline citation|Inline citations]]
+| list4 = 
+* [[Help:Footnotes|Footnotes]]
+* [[Wikipedia:Parenthetical referencing|Parenthetical referencing]]
+* [[Wikipedia:Manual of Style#Punctuation and footnotes|Punctuation and footnotes]]
+* [[Help:Shortened footnotes|Shortened footnotes]]
+* [[Wikipedia:Nesting footnotes|Nesting footnotes]]
+| group5 = [[Help:Referencing for beginners|Help for beginners]]
+| list5 = 
+* [[Help:Reftags|Reference-tags]]
+* [[Help:Citations quick reference|Citations quick reference]]
+* [[Help:Introduction to referencing with Wiki Markup/1|Introduction to referencing]]
+* [[Help:Referencing for beginners with citation templates|Referencing with citation templates]]
+* [[Help:Referencing for beginners without using templates|Referencing without using templates]]
+* [[Wikipedia:References dos and don'ts|Referencing dos and don'ts]]
+* [[Wikipedia:Citing Wikipedia|Citing Wikipedia]]
+| group6 = Advanced help
+| list6 = 
+* [[Help:Cite link labels|Cite link labels]]
+* [[Help:Citation tools|Citation tools]]
+* [[Help:Cite errors|Cite errors]]
+* [[Help:Cite messages|Cite messages]]
+* [[Help:Converting between references formats|Converting between references formats]]
+* [[Help:Reference display customization|Reference display customization]]
+* [[Help:References and page numbers|References and page numbers]]
+* [[Wikipedia:Guidance on source reviewing at FAC|Guidance on source reviewing at FAC]]
+| group7 = Template documentation
+| list7 = 
+* {{tl|Edit refs}}
+* {{tl|Refref}}
+* {{tl|Refref2}}
+* {{tl|Refstart}}
+| group8 = Tools
+| list8 = 
+* [[Wikipedia:The Wikipedia Library|Wikipedia Library]]
+}}<noinclude>
+{{Documentation}}
+</noinclude>

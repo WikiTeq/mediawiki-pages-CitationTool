@@ -1,0 +1,1 @@
+<includeonly>{{#invoke:GetReferenceAuthors|main|{{{1|}}}}}</includeonly>

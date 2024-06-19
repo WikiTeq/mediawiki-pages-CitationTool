@@ -1,0 +1,129 @@
+{{Documentation subpage}}
+<!-- Please place categories where indicated at the bottom of this page and interwikis at Wikidata (see [[Wikipedia:Wikidata]]) -->
+{{cs1 wrapper |type=source |base=cite book}}
+{{Intricate template}}
+
+=== Usage ===
+<pre>{{cite video game
+| title = 
+| trans-title =
+| developer = 
+| publisher = 
+| date = 
+| platform = 
+| version = 
+| scene = 
+| level = 
+| language = 
+| quote = 
+}}</pre>
+
+;Or use the inline version: <code><nowiki>{{cite video game |title= |trans-title= |developer= |publisher= |date= |platform= |version= |scene= |level= |language= |quote=
+}}</nowiki></code>
+
+Sample input:
+<pre><nowiki>{{cite video game
+ |title=[[Halo 3]]
+ |developer=[[Bungie]]
+ |publisher=[[Microsoft Game Studios]]
+ |date=2007-09-25
+ |platform=[[Xbox 360]]
+ |version=1.0
+ |level=The Storm
+ |language=
+ |quote='''Arbiter''': 'More Brutes?' / '''Master Chief''': 'Worse.'
+}}</nowiki></pre>
+Sample output:
+{{cite video game|title=[[Halo 3]]|developer=[[Bungie]]|publisher=[[Microsoft Game Studios]]|date=2007-09-25|platform=[[Xbox 360]]|version=1.0|level=The Storm|language=|quote='''Arbiter''': 'More Brutes?' / '''Master Chief''': 'Worse.'}}
+
+==== Required parameters ====
+* '''title''': Title of the game.
+* '''developer''': Developer of the game.
+::Use '''developer2''', '''developer3''', '''developer4''', '''developer5''' for listing multiple developers.
+
+==== Optional parameters ====
+* '''trans-title''': Translated title of the game, if the cited version's title is not already in English
+* '''date''': Full date of publication of the specified version. Must not be wikilinked. {{crossref|For acceptable date formats, see {{section link|Help:Citation Style 1|Dates}}.}}
+* '''publisher''': Publisher, if applicable to translation/edition; omit if identical to developer
+* '''language''': language of publication (don't specify "English" as this is the default)
+* '''version''': version, if applicable
+* '''platform''': platform, if applicable to the reference. (If citing something that is the same across all versions, this is unnecessary)
+* '''quote''': the quote that is used as the reference. (Use quotation marks when quoting direct speech)
+* '''scene''': scene within which the referred event or quote (if any) occurs (e.g. opening, staff credits).
+* '''level''': level or area within which the referred event or quote (if any) occurs.
+
+==TemplateData==
+{{TemplateData header}}
+<templatedata>
+{
+	"description": "",
+	"params": {
+		"title": {
+			"label": "Title",
+			"type": "string",
+			"required": true,
+			"description": "Title of the video game"
+		},
+		"developer": {
+			"label": "Developer",
+			"type": "string",
+			"required": true,
+			"description": "Developer of the game"
+		},
+		"publisher": {
+			"label": "Publisher",
+			"type": "string",
+			"required": false,
+			"description": "Publisher, if applicable to translation/edition; omit if identical to developer"
+		},
+		"platform": {
+			"label": "Platform",
+			"type": "string",
+			"required": false,
+			"description": "Platform, if applicable to the reference. (If citing something that is the same across all versions, this is unnecessary)"
+		},
+		"version": {
+			"label": "Version",
+			"type": "string",
+			"required": false,
+			"description": "Version number of the video game cited, if applicable"
+		},
+		"scene": {
+			"label": "Scene",
+			"type": "string",
+			"required": false,
+			"description": "Scene within which the referred event or quote (if any) occurs (e.g. opening, staff credits)"
+		},
+		"level": {
+			"label": "Level",
+			"type": "string",
+			"required": false,
+			"description": "Level or area within which the referred event or quote (if any) occurs"
+		},
+		"date": {
+			"label": "Date",
+			"type": "string",
+			"required": false,
+			"description": "Full date of publication of the specified version. Must not be wikilinked."
+		},
+		"quote": {
+			"label": "Quote",
+			"type": "string",
+			"required": false,
+			"description": "The quote that is used as the reference"
+		},
+		"language": {
+			"label": "Language",
+			"type": "string",
+			"required": false,
+			"description": "Language of publication; specify only if it is not English"
+		}
+	}
+}
+</templatedata>
+
+
+<includeonly>{{sandbox other||
+<!-- Categories below this line, please; interwikis at Wikidata -->
+[[Category:Video game typing-aid templates|{{PAGENAME}}]]
+}}</includeonly>

@@ -1,0 +1,5 @@
+#REDIRECT [[Template:Crossreference]]
+
+{{Rcat shell|
+{{R from template shortcut}}
+}}

@@ -1,0 +1,6 @@
+#REDIRECT [[Template:Abbr]]
+
+{{Rcat shell|
+{{R related}}
+{{R tsh}}
+}}

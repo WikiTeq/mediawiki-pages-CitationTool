@@ -1,0 +1,1 @@
+* <b id="csdoc_id">id</b>: A [[unique identifier]], used where none of the specialized identifiers are applicable; wikilink or use a template as applicable. For example, {{para|id|NCJ 122967}} will append "NCJ 122967" at the end of the citation. You can use templates such as {{para|id|<nowiki>{{NCJ|122967}}</nowiki>}} to append {{NCJ|122967}} instead.

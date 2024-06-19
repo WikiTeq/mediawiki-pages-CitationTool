@@ -1,0 +1,1 @@
+*<b id="csdoc_quote">quote</b>: Relevant text quoted from the source. Displays enclosed in quotes.{{#if: {{{cs2|}}}||&#32;When supplied, the citation terminator (a period by default) is suppressed, so the quote must include terminating punctuation.}}

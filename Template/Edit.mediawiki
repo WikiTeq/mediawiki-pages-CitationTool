@@ -1,0 +1,3 @@
+<span class="noprint plainlinks" title="{{#if:{{{tooltip|}}}|{{{tooltip}}}|Edit {{{1}}}}}">[{{fullurl:{{#if:{{{1|}}}|{{{1}}}|{{FULLPAGENAME}}}}|action=edit{{#if:{{{section|}}}|&section={{{section}}}}}{{#if:{{{editintro|}}}|&editintro={{urlencode:{{{editintro}}}|wiki}}}}{{#if:{{{preload|}}}|&preload={{urlencode:{{{preload}}}|wiki}}}}{{#if:{{{preloadtitle|}}}|&preloadtitle={{urlencode:{{{preloadtitle}}}}}}}}} {{{2|edit}}}]</span><noinclude>
+{{documentation}}
+</noinclude>

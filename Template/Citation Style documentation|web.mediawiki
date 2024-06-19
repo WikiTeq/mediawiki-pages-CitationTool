@@ -1,0 +1,16 @@
+{{Crossreference|(See also [[Help:Citation Style 1#Titles and chapters|Help:Citation Style 1 § Titles and chapters]].)}}
+*<b id="csdoc_title">title</b>: Title of source page on website. Displays in quotes. If '''script-title''' is defined, '''title''' holds a [[WP:ROMAN|Romanization]] of title in '''script-title'''.
+** '''script-title''': Original title for languages that do not use a Latin-based script (Arabic, Chinese, Cyrillic, Greek, Hebrew, Japanese, Korean, etc); follows Romanization defined in '''title'''. May be prefixed with an [[List of ISO 639-1 codes|ISO 639-1]] two-character code to help browsers properly display the script:
+**:<code><nowiki>... |title=Tōkyō tawā |script-title=ja:東京タワー |trans-title=Tokyo Tower ...</nowiki></code>
+**<b id="csdoc_trans_title">trans-title</b>: English translation of the title if the source cited is in a foreign language. Displays in square brackets after '''title'''; '''trans-title''' is included in the link. Use of the '''language''' parameter is recommended.
+:Titles containing certain characters will display and link incorrectly unless those characters are encoded.
+{| class="wikitable" style="margin-left: 5em"
+! newline !! [ !! ] !! &#124;
+|-
+| space || style="text-align: center;" | &amp;#91; || style="text-align: center;" | &amp;#93; || style="text-align: center;" | &amp;#124;
+|-
+|
+| colspan="2" style="text-align: center;" | [[Template:Bracket|<nowiki>{{bracket|text}}</nowiki>]] || [[Template:Pipe|<nowiki>{{pipe}}</nowiki>]] – {{crossref|see also {{section link|Help:Table|Rendering pipe itself}}}}
+|}
+{{Citation Style documentation/required}}
+*<span id="csdoc_work"></span><b id="csdoc_website">website</b>: Title of website; may be wikilinked. Displays in italics. Aliases: '''work'''

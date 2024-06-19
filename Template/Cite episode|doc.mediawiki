@@ -1,0 +1,346 @@
+{{Use dmy dates|date=October 2014}}
+{{Documentation subpage}}
+{{csdoc|lua|lua=yes}}
+{{csdoc|cs1|lua=yes}}
+{{csdoc|lead|television or radio programs and episodes}}
+
+==Usage==
+{{csdoc|usage}}
+
+{{csdoc|usage full}}
+:<code><nowiki>{{Cite episode |title= |episode-link= |url= |access-date= |series= |series-link= |first= |last= |network= |station= |date= |season= |series-no= |number= |minutes= |time= |transcript= |transcript-url= |quote= |language=}}</nowiki></code>
+{{end}}
+{{csdoc|usage vertical}}
+<pre style="margin:0px;">
+{{Cite episode
+ | title          =
+ | episode-link   =
+ | url            =
+ | access-date    =
+ | series         =
+ | series-link    =
+ | first          =
+ | last           =
+ | network        =
+ | station        =
+ | date           =
+ | season         =
+ | series-no      =
+ | number         =
+ | minutes        =
+ | time           =
+ | transcript     =
+ | transcript-url =
+ | quote          =
+ | language       =
+}}
+</pre>
+{{csdoc|usage vertical mid}}
+<pre style="margin:0px;">
+&nbsp;
+&nbsp;
+&nbsp;
+title=
+&nbsp;
+&nbsp;
+series=
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+</pre>
+{{csdoc|usage vertical mid}}
+<pre style="margin:0px;">
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+Required
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+</pre>
+{{csdoc|usage vertical end}}
+
+==Examples==
+{{markup2|
+|m=<nowiki>{{cite episode |title=1968 |series=From the Earth to the Moon |first1=Ron |last1=Howard |first2=Brian |last2=Grazer |first3=Tom |last3=Hanks |first4=Michael |last4=Bostick |network=HBO |date=April 1998}}</nowiki>
+|r={{cite episode |title=1968 |series=From the Earth to the Moon |first1=Ron |last1=Howard |first2=Brian |last2=Grazer |first3=Tom |last3=Hanks |first4=Michael |last4=Bostick |network=HBO |date=April 1998}}
+}}
+
+{{markup2|
+|m=<nowiki>{{cite episode |title=Billy Crystal, 2nd Visit |series=Inside the Actors Studio |date=8 October 2007 |url=http://www.bravotv.com/Inside_the_Actors_Studio/guest/Billy_Crystal_-_2nd_Visit |network=Bravo |season=13 |number=1307 |last=Lipton |first=James (host)}}</nowiki>
+|r={{cite episode |title=Billy Crystal, 2nd Visit |series=Inside the Actors Studio |date=8 October 2007 |url=http://www.bravotv.com/Inside_the_Actors_Studio/guest/Billy_Crystal_-_2nd_Visit |network=Bravo |season=13 |number=1307 |last=Lipton |first=James (host)}}
+}}
+
+{{markup2|
+|m=<nowiki>{{cite episode |title=André the Giant |series=Biography |network=[[A&E (TV channel)|A&E]] |date=13 January 1999}}</nowiki>
+|r={{cite episode |title=André the Giant |series=Biography |network=[[A&E (TV channel)|A&E]] |date=13 January 1999}}
+}}
+
+==Parameters==
+===Syntax===
+{{csdoc|syntax}}
+
+{{csdoc|coins}}
+
+{{csdoc|sep_period}}
+
+===Deprecated===
+{{csdoc|deprecated}}
+
+===Description===
+====Authors====
+{{csdoc|author}}
+:Aliases: '''credits'''.
+
+====Title====
+{{csdoc|title|title_format=quotes}}
+* '''episode-link''': Wikilink to an existing Wikipedia article.
+{{csdoc|series_episode}}
+{{csdoc|transcript}}
+{{csdoc|language}}
+
+====Date====
+{{csdoc|date|aliases='''air-date'''}}
+
+====Publisher====
+{{csdoc|publisher}}
+
+====Edition, volume====
+{{csdoc|edition}}
+{{csdoc|volume}}
+
+====In-source locations====
+{{csdoc|time}}
+{{csdoc|pages}}
+{{csdoc|season}}
+
+====URL====
+{{csdoc|url}}
+
+====Anchor====
+{{csdoc|ref}}
+
+====Identifiers====
+{{csdoc|network}}
+{{csdoc|id2}}
+
+====Quote====
+{{csdoc|quote}}
+
+====Editors====
+{{csdoc|editor}}
+
+====Laysummary====
+{{csdoc|lay}}
+
+====Display options====
+{{csdoc|display}}
+
+==TemplateData==
+{{TemplateData header}}
+<templatedata>
+{
+	"description": "This template formats citations for television or radio programs and episodes.",
+	"params": {
+		"title": {
+			"label": "Episode title",
+			"description": "Title of the episode",
+			"type": "string",
+			"suggested": true
+		},
+		"episode-link": {
+			"label": "Episode article in Wikipedia.",
+			"description": " Wikilink to an existing Wikipedia article for this one episode.",
+			"type": "wiki-page-name",
+			"suggested": true
+		},
+		"url": {
+			"label": "URL",
+			"description": "The URL of the online location where the text of the publication can be found",
+			"type": "url",
+			"aliases": [
+				"URL"
+			]
+		},
+		"access-date": {
+			"label": "URL access date",
+			"description": "The full date when the original URL was accessed; do not wikilink",
+			"type": "string",
+			"aliases": [
+				"accessdate"
+			]
+		},
+		"series": {
+			"label": "Series",
+			"description": "The name of the series the episode belongs to.",
+			"type": "string",
+			"required": true
+		},
+		"series-link": {
+			"label": "Series article in Wikipedia.",
+			"description": "Wikilink to an existing Wikipedia article for this series.",
+			"type": "wiki-page-name",
+			"suggested": true
+		},
+		"last": {
+			"label": "Last name",
+			"description": "The surname of the author; don't wikilink, use 'authorlink'; can suffix with a numeral to add additional authors",
+			"aliases": [
+				"last1",
+				"author",
+				"author1",
+				"author1-last",
+				"author-last",
+				"surname1",
+				"author-last1",
+				"subject1",
+				"surname",
+				"author-last",
+				"subject"
+			],
+			"type": "string"
+		},
+		"first": {
+			"label": "First name",
+			"description": "Given or first name, middle names, or initials of the author; don't wikilink, use 'authorlink'; can suffix with a numeral to add additional authors",
+			"aliases": [
+				"given",
+				"author-first",
+				"first1",
+				"given1",
+				"author-first1",
+				"author1-first"
+			],
+			"type": "string"
+		},
+		"author-link": {
+			"label": "Author link",
+			"description": "Title of existing Wikipedia article about the author; can suffix with a numeral to add additional authors",
+			"type": "wiki-page-name",
+			"aliases": [
+				"authorlink",
+				"subjectlink",
+				"subject-link",
+				"authorlink1",
+				"author-link1",
+				"author1-link",
+				"subjectlink1",
+				"author1link",
+				"subject-link1",
+				"subject1-link",
+				"subject1link"
+			]
+		},
+		"network": {
+			"label": "Network",
+			"description": "The network the episode was aired on.",
+			"type": "string",
+			"suggested": true
+		},
+		"station": {
+			"label": "Station",
+			"description": "Call letters of the local station (if any).",
+			"type": "string"
+		},
+		"date": {
+			"label": "Source date",
+			"description": "Full date when the source was published; if unknown, use access-date instead; do not wikilink",
+			"type": "string",
+			"suggested": true
+		},
+		"season": {
+			"label": "Season number",
+			"description": "Season number, usually for US shows.",
+			"type": "number",
+			"suggested": true
+		},
+		"series-no": {
+			"aliases": [
+				"series-number",
+				"seriesno",
+				"seriesnumber"
+			],
+			"label": "Series number",
+			"description": "Series number, usually for British shows.",
+			"type": "number"
+		},
+		"number": {
+			"label": "Episode number",
+			"description": "Many episodic shows are identified by separate season and episode numbers. Alternately, some shows prefer the format of a single episode number that includes the season within it; this format can be used by omitting the season field.",
+			"type": "string",
+			"suggested": true
+		},
+		"minutes": {
+			"label": "Minutes into episode.",
+			"description": "Time the event occurs in the source. When rendered, followed by \"minutes in\".",
+			"type": "string"
+		},
+		"time": {
+			"label": "Time within episode.",
+			"description": "Alternate to minutes. Time the event occurs in the source. When rendered, preceded by default text \"Event occurs at time\".",
+			"type": "string"
+		},
+		"transcript": {
+			"label": "Transcript ",
+			"description": "Transcript of the original source.",
+			"type": "string"
+		},
+		"transcript-url": {
+			"label": "Transcript URL",
+			"description": "URL of the transcript.",
+			"type": "url"
+		},
+		"quote": {
+			"label": "Quote",
+			"description": "Relevant text quoted from the source; displays last, enclosed in quotes; must include terminating punctuation",
+			"type": "string"
+		},
+		"language": {
+			"label": "Language",
+			"description": "The language in which the source is written, if not English; use the full language name; do not use icons or templates",
+			"type": "string"
+		}
+	},
+	"format": "inline"
+}
+</templatedata>
+
+{{Citation Style 1}}
+{{Wikipedia referencing}}
+{{UF-COinS}}
+
+<includeonly>{{Sandbox other||
+<!-- Categories below this line, please; interwikis at Wikidata -->
+[[Category:Citation Style 1 templates|Episode]]
+}}</includeonly>

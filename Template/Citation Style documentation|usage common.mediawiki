@@ -1,0 +1,4 @@
+{| class="wikitable" style="width: 100%"
+|+ Most commonly used parameters in horizontal format
+|- style="vertical-align:top;"
+|

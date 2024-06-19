@@ -1,0 +1,23 @@
+<includeonly>{{Cite conference
+|title={{#show:Reference:{{{1}}}|?Title|link=none}}
+|date={{#show:Reference:{{{1}}}|?Document date#-F[Y]|link=none}}
+|publication-date={{#show:Reference:{{{1}}}|?Document date|link=none}}
+|authors={{GetReferenceAuthors|Reference:{{{1}}}}}
+
+|year={{#show:Reference:{{{1}}}|?Document date#-F[Y]|link=none}}
+|editor-first={{Get Reference Person|{{{1}}}|Editor|First name}}
+|editor-last={{Get Reference Person|{{{1}}}|Editor|Last name}}
+|url={{#explode:{{#show:Reference:{{{1}}}|?Websites}}|,|-1}}
+|series={{#show:Reference:{{{1}}}|?Series|link=none}}
+|language={{#show:Reference:{{{1}}}|?Language|link=none}}
+|volume={{#show:Reference:{{{1}}}|?Volume}}
+|publisher={{#show:Reference:{{{1}}}|?Document publisher|link=none}}
+|pages={{#if:{{{2|}}}|{{{2}}}}}
+|arxiv={{#show:Reference:{{{1}}}|?Arxiv|link=none}}
+|issn={{#show:Reference:{{{1}}}|?ISSN|link=none}}
+|isbn={{#show:Reference:{{{1}}}|?ISBN|link=none}}
+|doi={{#show:Reference:{{{1}}}|?DOI|link=none}}
+|pmid={{#show:Reference:{{{1}}}|?PMID|link=none}}
+|access-date={{#show:Reference:{{{1}}}|?Accessed|link=none}}
+|edition={{#show:Reference:{{{1}}}|?Revision|link=none}}
+}}</includeonly>

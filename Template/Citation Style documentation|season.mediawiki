@@ -1,0 +1,3 @@
+* '''season''': Season number, usually for US shows.
+* OR: '''series-number''': Series number, usually for British shows. Aliases: '''series-no''', '''seriesno''', '''seriesnumber'''.
+* '''number''': Many episodic shows are identified by separate season and episode numbers. Alternately, some shows prefer the format of a single episode number that includes the season within it; this format can be used by omitting the season field.

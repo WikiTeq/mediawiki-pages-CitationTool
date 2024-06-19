@@ -1,0 +1,25 @@
+<code class="{{#ifeq:{{{wrap|}}}|yes|wrap|nowrap}}" style="{{#ifeq:{{{style|}}}|plain|border:none;background:transparent;|{{{style|}}}}}"><!--
+ Opening tag
+-->{{#switch:{{{2|pair}}}
+  |c|close =
+  |e|empty|s|single|v|void
+  |o|open
+  |p|pair = &lt;{{#if:{{{link|}}}|[[HTML element#{{{1|tag}}}|{{{1|tag}}}]]|{{{1|tag}}}}}{{#if:{{{params|{{{attribs|}}}}}}|&#32;{{{params|{{{attribs}}}}}}}}
+ }}<!--
+ Content between tags
+-->{{#switch:{{{2|pair}}}
+  |c|close = {{{content|}}}
+  |e|empty|s|single|v|void = &#32;&#47;&gt;
+  |o|open = &gt;{{{content|}}}
+  |p|pair = {{#ifeq:{{{1|tag}}}|!--||&gt;}}{{{content|...}}}
+ }}<!--
+ Closing tag
+-->{{#switch:{{{2|pair}}}
+  |e|empty|s|single|v|void
+  |o|open =
+  |c|close
+  |p|pair = {{#ifeq:{{{1|tag}}}|!--|--&gt;|&lt;&#47;{{{1|tag}}}&gt;}}
+ }}<!--
+--></code><noinclude>
+{{Documentation}}
+</noinclude>

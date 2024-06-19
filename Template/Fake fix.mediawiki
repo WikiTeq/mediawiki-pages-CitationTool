@@ -1,0 +1,6 @@
+#REDIRECT [[Template:Fix]]
+
+{{rcat shell|
+{{Wikidata redirect}}
+{{R from alternative name}}
+}}
