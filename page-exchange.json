@@ -1418,7 +1418,22 @@
                     "name": "Footnotes\/whitelist",
                     "namespace": "NS_MODULE",
                     "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FFootnotes%7Cwhitelist.mediawiki"
-                }
+                },
+                {
+                    "name": "Visualeditor-cite-tool-definition.json",
+                    "namespace": "NS_MEDIAWIKI",
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/MediaWiki%2FVisualeditor-cite-tool-definition.json.mediawiki"
+                },
+                {
+                    "name": "Cite-tool-definition.json",
+                    "namespace": "NS_MEDIAWIKI",
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/MediaWiki%2FCite-tool-definition.json.mediawiki"
+                },
+                {
+                    "name": "Citoid-template-type-map.json",
+                    "namespace": "NS_MEDIAWIKI",
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/MediaWiki%2FCitoid-template-type-map.json.mediawiki"
+                }                
             ],
             "requiredExtensions": []
         }
