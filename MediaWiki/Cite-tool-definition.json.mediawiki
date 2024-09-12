@@ -21,7 +21,7 @@
     },
     {
         "name": "document",
-        "icon": "ref-cite-document",
+        "icon": "ref-cite-journal",
         "template": "Cite document"
     }
 ]
