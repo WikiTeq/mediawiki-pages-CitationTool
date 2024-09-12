@@ -110,6 +110,11 @@
                     "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20book.mediawiki"
                 },
                 {
+                    "name": "Cite document",
+                    "namespace": "NS_TEMPLATE",
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20document.mediawiki"
+                },
+                {
                     "name": "Cite act",
                     "namespace": "NS_TEMPLATE",
                     "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20act.mediawiki"
@@ -433,6 +438,11 @@
                     "name": "Cite book\/doc",
                     "namespace": "NS_TEMPLATE",
                     "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20book%7Cdoc.mediawiki"
+                },
+                {
+                    "name": "Cite document\/doc",
+                    "namespace": "NS_TEMPLATE",
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20document%7Cdoc.mediawiki"
                 },
                 {
                     "name": "Cl",
