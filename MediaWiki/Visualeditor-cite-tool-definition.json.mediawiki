@@ -18,5 +18,10 @@
         "name": "journal",
         "icon": "ref-cite-journal",
         "template": "Cite journal"
+    },
+    {
+        "name": "document",
+        "icon": "ref-cite-document",
+        "template": "Cite document"
     }
 ]

@@ -9,7 +9,7 @@
     "computerProgram": "Citation",
     "conferencePaper": "Cite journal",
     "dictionaryEntry": "Citation",
-    "document": "Citation",
+    "document": "Cite document",
     "email": "Cite web",
     "encyclopediaArticle": "Citation",
     "film": "Citation",
