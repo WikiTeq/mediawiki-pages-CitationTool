@@ -1443,7 +1443,12 @@
                     "name": "Citoid-template-type-map.json",
                     "namespace": "NS_MEDIAWIKI",
                     "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/MediaWiki%2FCitoid-template-type-map.json.mediawiki"
-                }                
+                },
+                {
+                    "name": "Visualeditor-cite-tool-name-document",
+                    "namespace": "NS_MEDIAWIKI",
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/MediaWiki%2FVisualeditor-cite-tool-name-document.mediawiki"
+                }
             ],
             "requiredExtensions": [
                 "Cite",
