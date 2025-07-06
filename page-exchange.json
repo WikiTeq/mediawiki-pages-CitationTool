@@ -4,10 +4,10 @@
     "language": "en",
     "url": "https:\/\/github.com\/WikiTeq\/mediawiki-pages-CitationTool",
     "packages": {
-        "CitatonTool": {
+        "CitationTool": {
             "globalID": "com.wikiteq.CitationTool",
             "description": "",
-            "version": "0.1",
+            "version": "0.2",
             "pages": [
                 {
                     "name": "Ref",
@@ -17,82 +17,82 @@
                 {
                     "name": "Cite map\/book",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%7Cbook.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%23book.mediawiki"
                 },
                 {
                     "name": "Cite map\/act",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%7Cact.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%23act.mediawiki"
                 },
                 {
                     "name": "Cite map\/court",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%7Ccourt.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%23court.mediawiki"
                 },
                 {
                     "name": "Cite map\/video game",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%7Cvideo%20game.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%23video%20game.mediawiki"
                 },
                 {
                     "name": "Cite map\/conference",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%7Cconference.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%23conference.mediawiki"
                 },
                 {
                     "name": "Cite map\/encyclopedia",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%7Cencyclopedia.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%23encyclopedia.mediawiki"
                 },
                 {
                     "name": "Cite map\/film",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%7Cfilm.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%23film.mediawiki"
                 },
                 {
                     "name": "Cite map\/generic",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%7Cgeneric.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%23generic.mediawiki"
                 },
                 {
                     "name": "Cite map\/journal",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%7Cjournal.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%23journal.mediawiki"
                 },
                 {
                     "name": "Cite map\/magazine",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%7Cmagazine.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%23magazine.mediawiki"
                 },
                 {
                     "name": "Cite map\/newspaper",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%7Cnewspaper.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%23newspaper.mediawiki"
                 },
                 {
                     "name": "Cite map\/patent",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%7Cpatent.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%23patent.mediawiki"
                 },
                 {
                     "name": "Cite map\/report",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%7Creport.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%23report.mediawiki"
                 },
                 {
                     "name": "Cite map\/episode",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%7Cepisode.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%23episode.mediawiki"
                 },
                 {
                     "name": "Cite map\/thesis",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%7Cthesis.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%23thesis.mediawiki"
                 },
                 {
                     "name": "Cite map\/web",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%7Cweb.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20map%23web.mediawiki"
                 },
                 {
                     "name": "GetReferenceAuthors",
@@ -202,7 +202,7 @@
                 {
                     "name": "Citation\/CS1",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%7CCS1.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1.mediawiki"
                 },
                 {
                     "name": "Collapse top",
@@ -217,7 +217,7 @@
                 {
                     "name": "Cite book\/TemplateData",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20book%7CTemplateData.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20book%23TemplateData.mediawiki"
                 },
                 {
                     "name": "Citation",
@@ -227,7 +227,7 @@
                 {
                     "name": "Cite patent\/core",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20patent%7Ccore.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20patent%23core.mediawiki"
                 },
                 {
                     "name": "Delink",
@@ -272,177 +272,177 @@
                 {
                     "name": "Citation Style documentation\/author",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cauthor.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23author.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/auto-date-format",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cauto-date-format.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23auto-date-format.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/chapter",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cchapter.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23chapter.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/chapterurl",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cchapterurl.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23chapterurl.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/coins",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Ccoins.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23coins.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/cs1",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Ccs1.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23cs1.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/date",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cdate.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23date.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/deprecated",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cdeprecated.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23deprecated.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/display",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cdisplay.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23display.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/edition",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cedition.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23edition.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/editor",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Ceditor.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23editor.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/id1",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cid1.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23id1.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/id2",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cid2.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23id2.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/language",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Clanguage.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23language.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/lay",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Clay.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23lay.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/lead",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Clead.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23lead.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/lua",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Clua.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23lua.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/pages",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cpages.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23pages.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/publisher",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cpublisher.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23publisher.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/quote",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cquote.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23quote.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/ref",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cref.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23ref.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/registration",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cregistration.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23registration.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/series",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cseries.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23series.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/syntax",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Csyntax.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23syntax.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/title",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Ctitle.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23title.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/type",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Ctype.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23type.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/url",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Curl.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23url.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/usage",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cusage.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23usage.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/usage common",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cusage%20common.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23usage%20common.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/usage full",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cusage%20full.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23usage%20full.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/usage vertical common",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cusage%20vertical%20common.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23usage%20vertical%20common.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/volume",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cvolume.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23volume.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/whats new",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cwhats%20new.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23whats%20new.mediawiki"
                 },
                 {
                     "name": "Cite book\/doc",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20book%7Cdoc.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20book%23doc.mediawiki"
                 },
                 {
                     "name": "Cite document\/doc",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20document%7Cdoc.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20document%23doc.mediawiki"
                 },
                 {
                     "name": "Cl",
@@ -497,7 +497,7 @@
                 {
                     "name": "Hatnote inline\/invoke",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FHatnote%20inline%7Cinvoke.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FHatnote%20inline%23invoke.mediawiki"
                 },
                 {
                     "name": "High-risk",
@@ -592,7 +592,7 @@
                 {
                     "name": "R\/ref",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FR%7Cref.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FR%23ref.mediawiki"
                 },
                 {
                     "name": "Reflist",
@@ -707,37 +707,37 @@
                 {
                     "name": "Citation\/CS1\/COinS",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%7CCS1%7CCOinS.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23COinS.mediawiki"
                 },
                 {
                     "name": "Citation\/CS1\/Configuration",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%7CCS1%7CConfiguration.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23Configuration.mediawiki"
                 },
                 {
                     "name": "Citation\/CS1\/Date validation",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%7CCS1%7CDate%20validation.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23Date%20validation.mediawiki"
                 },
                 {
                     "name": "Citation\/CS1\/Identifiers",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%7CCS1%7CIdentifiers.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23Identifiers.mediawiki"
                 },
                 {
                     "name": "Citation\/CS1\/Utilities",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%7CCS1%7CUtilities.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23Utilities.mediawiki"
                 },
                 {
                     "name": "Citation\/CS1\/Whitelist",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%7CCS1%7CWhitelist.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23Whitelist.mediawiki"
                 },
                 {
                     "name": "Citation\/CS1\/styles.css",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%7CCS1%7Cstyles.css.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23styles.css.mediawiki"
                 },
                 {
                     "name": "Color contrast",
@@ -747,7 +747,7 @@
                 {
                     "name": "Color contrast\/colors",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FColor%20contrast%7Ccolors.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FColor%20contrast%23colors.mediawiki"
                 },
                 {
                     "name": "Cs1 documentation support",
@@ -762,7 +762,7 @@
                 {
                     "name": "Documentation\/config",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FDocumentation%7Cconfig.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FDocumentation%23config.mediawiki"
                 },
                 {
                     "name": "Exponential search",
@@ -797,52 +797,52 @@
                 {
                     "name": "Lang\/ISO 639 synonyms",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLang%7CISO%20639%20synonyms.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLang%23ISO%20639%20synonyms.mediawiki"
                 },
                 {
                     "name": "Lang\/data",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLang%7Cdata.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLang%23data.mediawiki"
                 },
                 {
                     "name": "Language\/data\/ISO 639-3",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%7Cdata%7CISO%20639-3.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23ISO%20639-3.mediawiki"
                 },
                 {
                     "name": "Language\/data\/iana languages",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%7Cdata%7Ciana%20languages.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23iana%20languages.mediawiki"
                 },
                 {
                     "name": "Language\/data\/iana regions",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%7Cdata%7Ciana%20regions.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23iana%20regions.mediawiki"
                 },
                 {
                     "name": "Language\/data\/iana scripts",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%7Cdata%7Ciana%20scripts.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23iana%20scripts.mediawiki"
                 },
                 {
                     "name": "Language\/data\/iana suppressed scripts",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%7Cdata%7Ciana%20suppressed%20scripts.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23iana%20suppressed%20scripts.mediawiki"
                 },
                 {
                     "name": "Language\/data\/iana variants",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%7Cdata%7Ciana%20variants.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23iana%20variants.mediawiki"
                 },
                 {
                     "name": "Language\/data\/wp languages",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%7Cdata%7Cwp%20languages.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23wp%20languages.mediawiki"
                 },
                 {
                     "name": "Language\/name\/data",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%7Cname%7Cdata.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23name%23data.mediawiki"
                 },
                 {
                     "name": "List",
@@ -862,7 +862,7 @@
                 {
                     "name": "Message box\/configuration",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FMessage%20box%7Cconfiguration.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FMessage%20box%23configuration.mediawiki"
                 },
                 {
                     "name": "Navbar",
@@ -907,7 +907,7 @@
                 {
                     "name": "Transclusion count\/data\/C",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FTransclusion%20count%7Cdata%7CC.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FTransclusion%20count%23data%23C.mediawiki"
                 },
                 {
                     "name": "Unicode data",
@@ -917,7 +917,7 @@
                 {
                     "name": "Unicode data\/scripts",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FUnicode%20data%7Cscripts.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FUnicode%20data%23scripts.mediawiki"
                 },
                 {
                     "name": "Yesno",
@@ -927,7 +927,7 @@
                 {
                     "name": "Cite act\/doc",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20act%7Cdoc.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20act%23doc.mediawiki"
                 },
                 {
                     "name": "Date",
@@ -942,7 +942,7 @@
                 {
                     "name": "Cite court\/doc",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20court%7Cdoc.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20court%23doc.mediawiki"
                 },
                 {
                     "name": "Strong",
@@ -967,7 +967,7 @@
                 {
                     "name": "Cite video game\/doc",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20video%20game%7Cdoc.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20video%20game%23doc.mediawiki"
                 },
                 {
                     "name": "Cs1 wrapper",
@@ -982,7 +982,7 @@
                 {
                     "name": "Intricate template\/text",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FIntricate%20template%7Ctext.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FIntricate%20template%23text.mediawiki"
                 },
                 {
                     "name": "Mbox",
@@ -1002,67 +1002,67 @@
                 {
                     "name": "Category handler\/blacklist",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCategory%20handler%7Cblacklist.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCategory%20handler%23blacklist.mediawiki"
                 },
                 {
                     "name": "Category handler\/config",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCategory%20handler%7Cconfig.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCategory%20handler%23config.mediawiki"
                 },
                 {
                     "name": "Category handler\/data",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCategory%20handler%7Cdata.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCategory%20handler%23data.mediawiki"
                 },
                 {
                     "name": "Category handler\/shared",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCategory%20handler%7Cshared.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCategory%20handler%23shared.mediawiki"
                 },
                 {
                     "name": "Namespace detect\/config",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FNamespace%20detect%7Cconfig.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FNamespace%20detect%23config.mediawiki"
                 },
                 {
                     "name": "Namespace detect\/data",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FNamespace%20detect%7Cdata.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FNamespace%20detect%23data.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/conference",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cconference.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23conference.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/sep period",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Csep%20period.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23sep%20period.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/usage vertical",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cusage%20vertical.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23usage%20vertical.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/usage vertical end",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cusage%20vertical%20end.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23usage%20vertical%20end.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/usage vertical mid",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cusage%20vertical%20mid.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23usage%20vertical%20mid.mediawiki"
                 },
                 {
                     "name": "Cite conference\/doc",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20conference%7Cdoc.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20conference%23doc.mediawiki"
                 },
                 {
                     "name": "Cite encyclopedia\/doc",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20encyclopedia%7Cdoc.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20encyclopedia%23doc.mediawiki"
                 },
                 {
                     "name": "Google books",
@@ -1077,12 +1077,12 @@
                 {
                     "name": "Citation Style documentation\/journal",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cjournal.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23journal.mediawiki"
                 },
                 {
                     "name": "Cite journal\/doc",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20journal%7Cdoc.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20journal%23doc.mediawiki"
                 },
                 {
                     "name": "Vcite",
@@ -1092,7 +1092,7 @@
                 {
                     "name": "Cite magazine\/doc",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20magazine%7Cdoc.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20magazine%23doc.mediawiki"
                 },
                 {
                     "name": "Basepage subpage",
@@ -1102,17 +1102,17 @@
                 {
                     "name": "Citation\/make link",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%7Cmake%20link.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%23make%20link.mediawiki"
                 },
                 {
                     "name": "Cite patent\/authors",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20patent%7Cauthors.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20patent%23authors.mediawiki"
                 },
                 {
                     "name": "Cite patent\/doc",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20patent%7Cdoc.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20patent%23doc.mediawiki"
                 },
                 {
                     "name": "When on basepage",
@@ -1122,37 +1122,37 @@
                 {
                     "name": "Cite report\/doc",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20report%7Cdoc.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20report%23doc.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/network",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cnetwork.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23network.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/season",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cseason.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23season.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/series episode",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cseries%20episode.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23series%20episode.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/time",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Ctime.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23time.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/transcript",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Ctranscript.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23transcript.mediawiki"
                 },
                 {
                     "name": "Cite episode\/doc",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20episode%7Cdoc.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20episode%23doc.mediawiki"
                 },
                 {
                     "name": "DMCA",
@@ -1192,7 +1192,7 @@
                 {
                     "name": "Cite thesis\/doc",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20thesis%7Cdoc.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20thesis%23doc.mediawiki"
                 },
                 {
                     "name": "AWB standard installation",
@@ -1202,17 +1202,17 @@
                 {
                     "name": "Citation Style documentation\/agency",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cagency.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23agency.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/required",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Crequired.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23required.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/web",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Cweb.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23web.mediawiki"
                 },
                 {
                     "name": "Cite news",
@@ -1222,7 +1222,7 @@
                 {
                     "name": "Cite web\/doc",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20web%7Cdoc.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCite%20web%23doc.mediawiki"
                 },
                 {
                     "name": "Diff",
@@ -1297,12 +1297,12 @@
                 {
                     "name": "Citation\/doc",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%7Cdoc.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%23doc.mediawiki"
                 },
                 {
                     "name": "Citation Style documentation\/sep comma",
                     "namespace": "NS_TEMPLATE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%7Csep%20comma.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Template%2FCitation%20Style%20documentation%23sep%20comma.mediawiki"
                 },
                 {
                     "name": "Define",
@@ -1417,17 +1417,17 @@
                 {
                     "name": "Footnotes\/anchor id list",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FFootnotes%7Canchor%20id%20list.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FFootnotes%23anchor%20id%20list.mediawiki"
                 },
                 {
                     "name": "Footnotes\/anchor id list\/data",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FFootnotes%7Canchor%20id%20list%7Cdata.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FFootnotes%23anchor%20id%20list%23data.mediawiki"
                 },
                 {
                     "name": "Footnotes\/whitelist",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FFootnotes%7Cwhitelist.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FFootnotes%23whitelist.mediawiki"
                 },
                 {
                     "name": "Visualeditor-cite-tool-definition.json",
