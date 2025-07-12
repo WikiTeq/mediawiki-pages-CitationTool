@@ -69,7 +69,9 @@ local function external_link_id(options)
 	local label_link = (cfg.use_identifier_redirects and is_set (options.redirect) and options.redirect) or wd_article or options.link;
 
 	return table.concat	({
-		make_wikilink (label_link, options.label),								-- redirect, wikidata link, or locally specified link (in that order)
+		-- make_wikilink (label_link, options.label),								-- redirect, wikidata link, or locally specified link (in that order)
+		-- CitationTool package modification: no links for identifiers
+		options.label,
 		options.separator or '&nbsp;',
 		ext_link
 		});
@@ -93,7 +95,9 @@ local function internal_link_id(options)
 
 	return table.concat (
 		{
-		make_wikilink (label_link, options.label),								-- wiki link the identifier label
+		-- make_wikilink (label_link, options.label),								-- wiki link the identifier label
+		-- CitationTool package modification: no links for identifiers
+		options.label,
 		options.separator or '&nbsp;',											-- add the separator
 		make_wikilink (
 			table.concat (

@@ -2,6 +2,13 @@
 
 `Package` is the installable set of MediaWiki pages. The CitationTool package provides a collection of pages from Wikipedia involved into citation management workflow.
 
+While the templates were initially imported from Wikipedia, the following
+modifications have been made that should be maintained when updating to newer
+versions of Wikipedia's templates:
+
+* `Module:Citation/CS1/Identifiers`: disable links to identifiers, see
+[PR](https://github.com/WikiTeq/mediawiki-pages-CitationTool/pull/3)
+
 # Requirements
 
 ## Extensions
