@@ -187,7 +187,7 @@
                 {
                     "name": "Template wrapper",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FTemplate%20wrapper.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FTemplate%20wrapper"
                 },
                 {
                     "name": "Space",
@@ -202,7 +202,7 @@
                 {
                     "name": "Citation\/CS1",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1"
                 },
                 {
                     "name": "Collapse top",
@@ -692,237 +692,237 @@
                 {
                     "name": "Anchor",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FAnchor.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FAnchor"
                 },
                 {
                     "name": "Arguments",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FArguments.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FArguments"
                 },
                 {
                     "name": "Check for unknown parameters",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCheck%20for%20unknown%20parameters.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCheck%20for%20unknown%20parameters"
                 },
                 {
                     "name": "Citation\/CS1\/COinS",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23COinS.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23COinS"
                 },
                 {
                     "name": "Citation\/CS1\/Configuration",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23Configuration.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23Configuration"
                 },
                 {
                     "name": "Citation\/CS1\/Date validation",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23Date%20validation.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23Date%20validation"
                 },
                 {
                     "name": "Citation\/CS1\/Identifiers",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23Identifiers.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23Identifiers"
                 },
                 {
                     "name": "Citation\/CS1\/Utilities",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23Utilities.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23Utilities"
                 },
                 {
                     "name": "Citation\/CS1\/Whitelist",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23Whitelist.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23Whitelist"
                 },
                 {
                     "name": "Citation\/CS1\/styles.css",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23styles.css.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23styles.css"
                 },
                 {
                     "name": "Color contrast",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FColor%20contrast.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FColor%20contrast"
                 },
                 {
                     "name": "Color contrast\/colors",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FColor%20contrast%23colors.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FColor%20contrast%23colors"
                 },
                 {
                     "name": "Cs1 documentation support",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCs1%20documentation%20support.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCs1%20documentation%20support"
                 },
                 {
                     "name": "Documentation",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FDocumentation.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FDocumentation"
                 },
                 {
                     "name": "Documentation\/config",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FDocumentation%23config.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FDocumentation%23config"
                 },
                 {
                     "name": "Exponential search",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FExponential%20search.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FExponential%20search"
                 },
                 {
                     "name": "Hatnote",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FHatnote.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FHatnote"
                 },
                 {
                     "name": "Hatnote inline",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FHatnote%20inline.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FHatnote%20inline"
                 },
                 {
                     "name": "High-use",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FHigh-use.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FHigh-use"
                 },
                 {
                     "name": "Infobox",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FInfobox.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FInfobox"
                 },
                 {
                     "name": "Lang",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLang.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLang"
                 },
                 {
                     "name": "Lang\/ISO 639 synonyms",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLang%23ISO%20639%20synonyms.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLang%23ISO%20639%20synonyms"
                 },
                 {
                     "name": "Lang\/data",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLang%23data.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLang%23data"
                 },
                 {
                     "name": "Language\/data\/ISO 639-3",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23ISO%20639-3.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23ISO%20639-3"
                 },
                 {
                     "name": "Language\/data\/iana languages",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23iana%20languages.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23iana%20languages"
                 },
                 {
                     "name": "Language\/data\/iana regions",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23iana%20regions.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23iana%20regions"
                 },
                 {
                     "name": "Language\/data\/iana scripts",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23iana%20scripts.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23iana%20scripts"
                 },
                 {
                     "name": "Language\/data\/iana suppressed scripts",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23iana%20suppressed%20scripts.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23iana%20suppressed%20scripts"
                 },
                 {
                     "name": "Language\/data\/iana variants",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23iana%20variants.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23iana%20variants"
                 },
                 {
                     "name": "Language\/data\/wp languages",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23wp%20languages.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23data%23wp%20languages"
                 },
                 {
                     "name": "Language\/name\/data",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23name%23data.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLanguage%23name%23data"
                 },
                 {
                     "name": "List",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FList.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FList"
                 },
                 {
                     "name": "Lua banner",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLua%20banner.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FLua%20banner"
                 },
                 {
                     "name": "Message box",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FMessage%20box.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FMessage%20box"
                 },
                 {
                     "name": "Message box\/configuration",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FMessage%20box%23configuration.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FMessage%20box%23configuration"
                 },
                 {
                     "name": "Navbar",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FNavbar.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FNavbar"
                 },
                 {
                     "name": "Navbox",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FNavbox.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FNavbox"
                 },
                 {
                     "name": "No globals",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FNo%20globals.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FNo%20globals"
                 },
                 {
                     "name": "Purge",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FPurge.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FPurge"
                 },
                 {
                     "name": "Section link",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FSection%20link.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FSection%20link"
                 },
                 {
                     "name": "String",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FString.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FString"
                 },
                 {
                     "name": "TableTools",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FTableTools.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FTableTools"
                 },
                 {
                     "name": "Transclusion count",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FTransclusion%20count.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FTransclusion%20count"
                 },
                 {
                     "name": "Transclusion count\/data\/C",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FTransclusion%20count%23data%23C.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FTransclusion%20count%23data%23C"
                 },
                 {
                     "name": "Unicode data",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FUnicode%20data.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FUnicode%20data"
                 },
                 {
                     "name": "Unicode data\/scripts",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FUnicode%20data%23scripts.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FUnicode%20data%23scripts"
                 },
                 {
                     "name": "Yesno",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FYesno.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FYesno"
                 },
                 {
                     "name": "Cite act\/doc",
@@ -952,7 +952,7 @@
                 {
                     "name": "Delink",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FDelink.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FDelink"
                 },
                 {
                     "name": "CS1 wrapper",
@@ -992,37 +992,37 @@
                 {
                     "name": "Category handler",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCategory%20handler.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCategory%20handler"
                 },
                 {
                     "name": "Category handler\/blacklist",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCategory%20handler%23blacklist.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCategory%20handler%23blacklist"
                 },
                 {
                     "name": "Category handler\/config",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCategory%20handler%23config.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCategory%20handler%23config"
                 },
                 {
                     "name": "Category handler\/data",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCategory%20handler%23data.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCategory%20handler%23data"
                 },
                 {
                     "name": "Category handler\/shared",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCategory%20handler%23shared.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCategory%20handler%23shared"
                 },
                 {
                     "name": "Namespace detect\/config",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FNamespace%20detect%23config.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FNamespace%20detect%23config"
                 },
                 {
                     "name": "Namespace detect\/data",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FNamespace%20detect%23data.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FNamespace%20detect%23data"
                 },
                 {
                     "name": "Citation Style documentation\/conference",
@@ -1177,12 +1177,12 @@
                 {
                     "name": "Ns has subpages",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FNs%20has%20subpages.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FNs%20has%20subpages"
                 },
                 {
                     "name": "Unsubst",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FUnsubst.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FUnsubst"
                 },
                 {
                     "name": "Cite thesis\/doc",
@@ -1252,7 +1252,7 @@
                 {
                     "name": "Tlg",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FTlg.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FTlg"
                 },
                 {
                     "name": "R from modification",
@@ -1277,7 +1277,7 @@
                 {
                     "name": "Redirect template",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FRedirect%20template.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FRedirect%20template"
                 },
                 {
                     "name": "Abbr",
@@ -1407,37 +1407,37 @@
                 {
                     "name": "Footnotes",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FFootnotes.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FFootnotes"
                 },
                 {
                     "name": "Footnotes\/anchor id list",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FFootnotes%23anchor%20id%20list.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FFootnotes%23anchor%20id%20list"
                 },
                 {
                     "name": "Footnotes\/anchor id list\/data",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FFootnotes%23anchor%20id%20list%23data.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FFootnotes%23anchor%20id%20list%23data"
                 },
                 {
                     "name": "Footnotes\/whitelist",
                     "namespace": "NS_MODULE",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FFootnotes%23whitelist.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FFootnotes%23whitelist"
                 },
                 {
                     "name": "Visualeditor-cite-tool-definition.json",
                     "namespace": "NS_MEDIAWIKI",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/MediaWiki%2FVisualeditor-cite-tool-definition.json.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/MediaWiki%2FVisualeditor-cite-tool-definition.json"
                 },
                 {
                     "name": "Cite-tool-definition.json",
                     "namespace": "NS_MEDIAWIKI",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/MediaWiki%2FCite-tool-definition.json.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/MediaWiki%2FCite-tool-definition.json"
                 },
                 {
                     "name": "Citoid-template-type-map.json",
                     "namespace": "NS_MEDIAWIKI",
-                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/MediaWiki%2FCitoid-template-type-map.json.mediawiki"
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/MediaWiki%2FCitoid-template-type-map.json"
                 },
                 {
                     "name": "Visualeditor-cite-tool-name-document",
