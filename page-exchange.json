@@ -1443,6 +1443,11 @@
                     "name": "Visualeditor-cite-tool-name-document",
                     "namespace": "NS_MEDIAWIKI",
                     "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/MediaWiki%2FVisualeditor-cite-tool-name-document.mediawiki"
+                },
+                {
+                    "name": "Citation\/CS1\/Suggestions",
+                    "namespace": "NS_MODULE",
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FCitation%23CS1%23Suggestions"
                 }
             ],
             "requiredExtensions": [
