@@ -125,7 +125,7 @@ local function delinkURL(s)
 end
 
 local function delinkLinkClass(s, pattern, delinkFunction)
-    if not type(s) == "string" then
+    if type(s) ~= "string" then
         error("Attempt to de-link non-string input.", 2)
     end
     if not ( type(pattern) == "string" and mw.ustring.sub(pattern, 1, 1) == "^" ) then
