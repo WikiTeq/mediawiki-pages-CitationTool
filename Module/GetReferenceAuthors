@@ -1,0 +1,61 @@
+--[[--------------------------< G E T   R E F E R E N C E   A U T H O R S >------------------------------------
+
+Return a list of authors for the named "Reference:" page.  Called by {{GetReferenceAuthors|<reference name>}}
+from the Cite map/* templates to fill |authors= of the underlying cs1|2 citation.
+
+The reference pages are Semantic MediaWiki pages that hold author information in properties:
+	Authors - a free-form or multi-value property listing the authors
+	Author - singular form used by some references
+
+When neither property holds a value, this function returns an empty string so that the cs1|2
+citation renders without an empty |authors= parameter.
+
+]]
+
+local p = {};
+
+local function authors_get (frame)
+	local name = frame.args[1] or '';
+	if '' == mw.text.trim (name) then
+		return '';																-- no reference name provided; nothing to do
+	end
+
+	local query = {
+		'[[Reference:' .. name .. ']]',
+		'?Authors',
+		'?Author',
+		'mainlabel=-',
+		limit = 1,
+	}
+
+	local result;																-- mw.smw.ask returns nil when Semantic MediaWiki not installed or no result
+	if mw.smw then
+		result = mw.smw.ask (query);
+	end
+
+	local authors;
+	if type (result) == 'table' and type (result[1]) == 'table' then			-- one row with both printouts
+		authors = result[1]['Authors'] or result[1]['Author'];
+	elseif type (result) == 'table' and type (result[1]) == 'string' then		-- single printout returned as plain value
+		authors = result[1];
+	end
+
+	if type (authors) == 'table' then											-- multi-valued property
+		for i, v in ipairs (authors) do
+			authors[i] = mw.text.trim (v);
+		end
+		return table.concat (authors, '; ');
+	elseif type (authors) == 'string' then
+		return mw.text.trim (authors);
+	end
+
+	return '';																	-- no author data found
+end
+
+
+function p.main (frame)
+	return authors_get (frame);
+end
+
+
+return p;
