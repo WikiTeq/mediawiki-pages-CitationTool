@@ -1410,6 +1410,11 @@
                     "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FFootnotes"
                 },
                 {
+                    "name": "GetReferenceAuthors",
+                    "namespace": "NS_MODULE",
+                    "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FGetReferenceAuthors"
+                },
+                {
                     "name": "Footnotes\/anchor id list",
                     "namespace": "NS_MODULE",
                     "url": "https:\/\/raw.githubusercontent.com\/WikiTeq\/mediawiki-pages-CitationTool\/master\/Module%2FFootnotes%23anchor%20id%20list"
